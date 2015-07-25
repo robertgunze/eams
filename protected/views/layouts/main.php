@@ -67,7 +67,7 @@
                                     ),
                                  array('label'=>'Common Market', 'icon'=>TbHtml:: ICON_INFO_SIGN ,'url'=>array('#'),'visible'=>!Yii::app()->user->isGuest,
                                              'items'=>array(
-                                                  array('label'=>'Indicator Reporting', 'url'=>array('/eacFacts/admin'),'visible'=>!Yii::app()->user->isGuest),
+                                                  array('label'=>'Indicator Updates', 'url'=>array('/eacFacts/admin'),'visible'=>!Yii::app()->user->isGuest),
                                                   array('label'=>'Import', 'url'=>array('/import/importCommonMarket'),'visible'=>!Yii::app()->user->isGuest),
                                                  )
                                             ),
