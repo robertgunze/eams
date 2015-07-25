@@ -76,7 +76,7 @@ $this->widget('bootstrap.widgets.TbGridView', array(
             'headerHtmlOptions' => array('style' => 'width: 100px'),
             'filter' => TbHtml::listData(Mda::model()->findAll(), "id", "description"),
             'editable' => array(
-                'type' => 'select',
+                'type' => 'checklist',
                 'url' => $this->createUrl('eacDecision/ajaxUpdate'),
                 'source' => TbHtml::listData(Mda::model()->findAll(), 'id', 'description'),
                 'placement' => 'right',
