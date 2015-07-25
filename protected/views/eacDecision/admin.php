@@ -72,6 +72,7 @@ $this->widget('bootstrap.widgets.TbGridView', array(
         //'meeting_no',
         array(
             'class' => 'editable.EditableColumn',
+            'header'=>'Responsible MDA(s)',
             'name' => 'responsible_mda_id',
             'headerHtmlOptions' => array('style' => 'width: 100px'),
             'filter' => TbHtml::listData(Mda::model()->findAll(), "id", "description"),

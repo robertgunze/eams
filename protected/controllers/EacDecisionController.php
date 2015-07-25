@@ -103,10 +103,27 @@ class EacDecisionController extends Controller
 	}
         
     public function actionAjaxUpdate(){
-        $es = new EditableSaver('EacDecision');
-        $es->update();
+        $mdas = $_POST['value'];
+        //print_r($mdas);exit;
+        foreach($mdas as $mda){
+            $mapping = new MdaDecisionMapping();
+            $mapping->decision_id = $_POST['pk'];
+            $mapping->mda_id = $mda;
+            if(!$mapping->exists('decision_id=:id AND mda_id=:mda', 
+                    array(
+                        ':id'=>$mapping->decision_id,
+                        ':mda'=>$mapping->mda_id
+                    ))){
+                $mapping->save();
+            }else{
+                echo "Unable to assign";
+            }
+        }
+        
+        //Notify subscribers
         $criteria = new CDbCriteria;
-        $criteria->addColumnCondition(array('is_mda'=>1,'mda_id'=>$_POST['value']));
+        $criteria->addColumnCondition(array('is_mda'=>1));
+        $criteria->addInCondition('mda_id', $mdas);
         $recipients = User::getNotificationSubscribers($criteria);
         $message = "You have been assigned to report on decision ".$this->loadModel($_POST['pk'])->decision_reference." by the Ministry of East African Cooperation - (MEAC)<br />";
         $message.="For more information click ".TbHtml::link("here",Yii::app()->getBaseUrl(true)."/index.php?r=eacDecision/view&id={$_POST['pk']}");

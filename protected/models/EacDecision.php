@@ -62,7 +62,8 @@ class EacDecision extends CActiveRecord
 		return array(
                     'status'=>array(self::BELONGS_TO,'EacLookup','implementation_status_id'),
                     'statusLogs'=>array(self::HAS_MANY,'EacStatusLog','decision_id'),
-                    'responsibleMda'=>array(self::BELONGS_TO,'Mda','responsible_mda_id')
+                    'responsibleMda'=>array(self::BELONGS_TO,'Mda','responsible_mda_id'),
+                    'responsibleMdas'=>array(self::MANY_MANY,'Mda','tbl_mda_decision_mapping(mda_id,decision_id)'),
 		);
 	}
 
@@ -208,8 +209,7 @@ class EacDecision extends CActiveRecord
 	}
 
 	public static function getDecisionsApproachingDeadline(){
-
-      return self::model()->count('datediff(deadline,now()) < 7');
+            return self::model()->count('datediff(deadline,now()) < 7');
 	}
 
 	/**
