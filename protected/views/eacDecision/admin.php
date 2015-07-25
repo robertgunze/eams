@@ -108,14 +108,14 @@ $this->widget('bootstrap.widgets.TbGridView', array(
 
         array(
             'type'=>'html',
-            'header'=>'Feedback',
+            'header'=>'Progress Updates',
             'value'=>'$data->getStatusLogs()'
             ),
         array(
             'type' => 'html',
             'header' => 'Status',
             'name' => 'implementation_status_id',
-            'value' => 'TbHtml::labelTb("&nbsp;&nbsp;", array("color" =>"{$data->getStatusColor($data)}"));'
+            'value' => 'TbHtml::labelTb("&nbsp;&nbsp;", array("style"=>"width:100%;height:100%","color" =>"{$data->getStatusColor($data)}"));'
         ),
         array(
             'class' => 'bootstrap.widgets.TbButtonColumn',
