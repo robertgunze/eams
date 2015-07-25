@@ -40,7 +40,7 @@ $('.search-form form').submit(function(){
     ?>
 </div><!-- search-form -->
 
-
+<div style="width:94%">
 <?php
  echo TbHtml::buttonDropdown('Export Data To', array(
     array('label' => 'HTML', 'url' => $this->createUrl('eacDecision/admin',array('format'=>'html'))),
@@ -65,11 +65,11 @@ $this->widget('bootstrap.widgets.TbGridView', array(
         'decision_reference',
         'decision_date',
         'description',
-        'budgetary_implications',
+        //'budgetary_implications',
         'time_frame',
         'performance_indicators',
         //'responsibility_center',
-        'meeting_no',
+        //'meeting_no',
         array(
             'class' => 'editable.EditableColumn',
             'name' => 'responsible_mda_id',
@@ -117,13 +117,11 @@ $this->widget('bootstrap.widgets.TbGridView', array(
             'name' => 'implementation_status_id',
             'value' => 'TbHtml::labelTb("&nbsp;&nbsp;", array("color" =>"{$data->getStatusColor($data)}"));'
         ),
-//		'date_created',
-//		'create_user_id',
-//		'date_updated',
-//		'update_user_id',
         array(
             'class' => 'bootstrap.widgets.TbButtonColumn',
         ),
     ),
 ));
 ?>
+
+</div>

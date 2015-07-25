@@ -191,13 +191,17 @@ class EacDecision extends CActiveRecord
 	}
 
 	public function getStatusLogs(){
+                $logs = $this->statusLogs;
 		$thread = "";
 		$thread.= "<div>";
-		foreach ($this->statusLogs as $key => $log) {
-			$thread.="<p>".$log->status_narrative;
-			$thread.="<br /><span><b><i>--".$log->createUser->first_name." ".$log->createUser->middle_name." ".$log->createUser->last_name."</i></b>";
-			$thread.= "</p>";
-		}
+                if($logs){
+                    $logs = array(end($logs));
+                    foreach ($logs as $key => $log) {
+                            $thread.="<p>".$log->status_narrative;
+                            $thread.="<br /><span><b><i>--".$log->createUser->first_name." ".$log->createUser->middle_name." ".$log->createUser->last_name."</i></b>";
+                            $thread.= "</p>";
+                    }
+                }
 		$thread.= "</div>";
 
 		return $thread;

@@ -24,7 +24,7 @@ $this->breadcrumbs = array(
                     <div style="width:95%;height:100%"  class="btn btn-warning">
                         <div>Number of partially implemented decisions</div>
                         <h2><?php echo EacDecision::model()->count(); ?></h2>
-                        <p><a>(View all&nbsp;<span class="icon-arrow-right">&nbsp;</span>)</a></p>
+                        <p><a href="<?php ?>">(View all&nbsp;<span class="icon-arrow-right">&nbsp;</span>)</a></p>
                     </div>
                 </td>
                 <td>
@@ -47,14 +47,14 @@ $this->breadcrumbs = array(
                     <div style="width:95%;height:100%"  class="btn btn-info">
                         <div>Number of Uploaded Decisions</div>
                         <h2><?php echo EacDecision::model()->count(); ?></h2>
-                        <p><a>(View all&nbsp;<span class="icon-arrow-right">&nbsp;</span>)</a></p>
+                        <p><a href="<?php echo $this->createUrl('/eacDecision/admin'); ?>" >(View all&nbsp;<span class="icon-arrow-right">&nbsp;</span>)</a></p>
                     </div>
                 </td>
                 <td>
                     <div style="width:95%;height:100%"  class="btn btn-info">
                         <div>Number of MDA Users</div>
                         <h2><?php echo User::model()->count('is_mda=:is_mda', array(':is_mda' => 1)); ?></h2>
-                        <p><a>(View all&nbsp;<span class="icon-arrow-right">&nbsp;</span>)</a></p>
+                        <p><a href="<?php echo $this->createUrl('/user/mdas'); ?>">(View all&nbsp;<span class="icon-arrow-right">&nbsp;</span>)</a></p>
                     </div>
                 </td>
             </tr>
@@ -63,14 +63,7 @@ $this->breadcrumbs = array(
                     <div style="width:95%;height:100%"  class="btn btn-info">
                         <div>Number of Users</div>
                         <h2><?php echo User::model()->count(); ?></h2>
-                        <p><a>(View all&nbsp;<span class="icon-arrow-right">&nbsp;</span>)</a></p>
-                    </div>
-                </td>
-                <td>
-                    <div style="width:95%;height:100%"  class="btn btn-info">
-                        <div>Number of Users</div>
-                        <h2><?php echo User::model()->count(); ?></h2>
-                        <p><a>(View all&nbsp;<span class="icon-arrow-right">&nbsp;</span>)</a></p>
+                        <p><a href="<?php echo $this->createUrl('/user/admin'); ?>">(View all&nbsp;<span class="icon-arrow-right">&nbsp;</span>)</a></p>
                     </div>
                 </td>
             </tr>
