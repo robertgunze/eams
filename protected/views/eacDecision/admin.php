@@ -27,7 +27,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-
+<div>
 <?php echo TbHtml::pageHeader('', 'Manage EAC Decisions'); ?>
 <div class="form-actions"> 
     <?php echo CHtml::link('Toggle Advanced Search', '#', array('class' => 'search-button btn', 'style' => 'float:right')); ?>
@@ -40,7 +40,6 @@ $('.search-form form').submit(function(){
     ?>
 </div><!-- search-form -->
 
-<div style="width:94%">
 <?php
  echo TbHtml::buttonDropdown('Export Data To', array(
     array('label' => 'HTML', 'url' => $this->createUrl('eacDecision/admin',array('format'=>'html'))),
@@ -71,6 +70,23 @@ $this->widget('bootstrap.widgets.TbGridView', array(
         //'responsibility_center',
         //'meeting_no',
         array(
+            'type' => 'html',
+            'header'=>'Responsible MDA(s)',
+            'value'=>'$data->getResponsibleMdas()'
+        ),
+
+        array(
+            'type'=>'html',
+            'header'=>'Progress Updates',
+            'value'=>'$data->getStatusLogs()'
+            ),
+        array(
+            'type' => 'html',
+            'header' => 'Status',
+            'name' => 'implementation_status_id',
+            'value' => 'TbHtml::labelTb("&nbsp;&nbsp;", array("style"=>"width:100%;height:100%","color" =>"{$data->getStatusColor($data)}"));'
+        ),
+        array(
             'class' => 'editable.EditableColumn',
             'header'=>'Responsible MDA(s)',
             'name' => 'responsible_mda_id',
@@ -83,40 +99,6 @@ $this->widget('bootstrap.widgets.TbGridView', array(
                 'placement' => 'right',
                 'emptytext' => '<p class="btn btn-success">Select responsible MDA</p>'
             )
-        ),
-//                array(
-//                    'name'=>'sectoral_council_id',
-//                    'value'=>'$data->sectoral_council_id',
-//                    'filter'=>TbHtml::listData(EacLookup::model()->findAll('type=:type',array(':type'=>  EacLookup::SECTORAL_COUNCIL)),"id","description"),
-//                ),
-        //'implementation_status_id',
-
-        /*
-        array(
-            'class' => 'editable.EditableColumn',
-            'name' => 'implementation_status_id',
-            'headerHtmlOptions' => array('style' => 'width: 100px;'),
-            'filter' => TbHtml::listData(EacLookup::model()->findAll('type=:type', array(':type' => EacLookup::IMPLEMENTATION_STATUS)), "id", "description"),
-            'editable' => array(
-                'type' => 'select',
-                'url' => $this->createUrl('eacDecision/ajaxUpdate'),
-                'source' => TbHtml::listData(EacLookup::model()->findAll('type=:type', array(':type' => EacLookup::IMPLEMENTATION_STATUS)), 'id', 'description'),
-                'placement' => 'right',
-                'emptytext' => '<p class="btn btn-success">Update Status</p>'
-            )
-        ),
-        */
-
-        array(
-            'type'=>'html',
-            'header'=>'Progress Updates',
-            'value'=>'$data->getStatusLogs()'
-            ),
-        array(
-            'type' => 'html',
-            'header' => 'Status',
-            'name' => 'implementation_status_id',
-            'value' => 'TbHtml::labelTb("&nbsp;&nbsp;", array("style"=>"width:100%;height:100%","color" =>"{$data->getStatusColor($data)}"));'
         ),
         array(
             'class' => 'bootstrap.widgets.TbButtonColumn',

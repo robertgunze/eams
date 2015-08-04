@@ -54,6 +54,7 @@ $this->menu=array(
             <th colspan="4">Annual Performance</th>
             <th>Achievement</th>
             <th>Comments</th>
+            <th></th>
         </tr>
         <tr>
             <th></th>
@@ -65,6 +66,7 @@ $this->menu=array(
             <th>2016/17</th>
             <th>2017/18</th>
             <th>Percentage(%)</th>
+            <th></th>
             <th></th>
         </tr>
     </thead>
@@ -99,6 +101,7 @@ $this->menu=array(
                 <?php endforeach;?>
                 <td><?php echo $percentageChange; ?></td>
                 <td contenteditable="true"></td> 
+                <td><?php echo Chtml::link('View Report',$this->createUrl('/eamsFramework/viewSP',array('id'=>$model->id)));?></td>
                 
         </tr>
      <?php endforeach;?>

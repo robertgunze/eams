@@ -207,6 +207,16 @@ class EacDecision extends CActiveRecord
 
 		return $thread;
 	}
+        
+        public function getResponsibleMdas(){
+            $mdas = $this->responsibleMdas();
+            $list = array();
+            foreach($mdas as $mda){
+                $list[] = "<span class ='label label-info' >".$mda->description."(".$mda->abbrev.")"."</span>";
+            }
+            
+            return implode('', $list);
+        }
 
 	public static function getDecisionsApproachingDeadline(){
             return self::model()->count('datediff(deadline,now()) < 7');

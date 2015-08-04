@@ -80,7 +80,7 @@
                                 array('label'=>'MEAC Strategic Plan','icon'=>TbHtml::ICON_CALENDAR, 'url'=>array('#'),'visible'=>!Yii::app()->user->isGuest&&!Yii::app()->user->is_mda,
                                         'items'=>array(
                                         array('label'=>'National EAC Outcomes', 'url'=>array('/eamsFramework/EACOutcomesAdmin'),'visible'=>!Yii::app()->user->isGuest),
-                                        array('label'=>'MEAC Strategic Plan', 'url'=>array('/eamsFramework/admin'),'visible'=>!Yii::app()->user->isGuest),
+                                        array('label'=>'MEAC Strategic Plan', 'url'=>array('/eamsFramework/spadmin'),'visible'=>!Yii::app()->user->isGuest),
                                         array('label'=>'Indicators Facts Sheet','url'=>array('/eamsFacts/indicatorReporting'),'visible'=>!Yii::app()->user->isGuest),
                                        
                                         )
