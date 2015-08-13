@@ -29,16 +29,20 @@ $this->menu=array(
     'data'=>$model,
     'attributes'=>array(
 		//'id',
-		'framework_description',
+                array(
+                    'name'=>'framework_description',
+                    'label'=>'Description',
+                    'value'=>$model->framework_description
+                ),
                 array(
                     'name'=>'type_id',
                     'value'=>$model->type->description
                 ),
-                array(
-                    'name'=>'parent_id',
-                    'value'=>  isset($model->parent)?$model->parent->description:'Not Set'
-                ),
-		'guid',
+//                array(
+//                    'name'=>'parent_id',
+//                    'value'=>  isset($model->parent)?$model->parent->description:'Not Set'
+//                ),
+		//'guid',
 	),
 )); ?>
 
@@ -88,14 +92,35 @@ $this->menu=array(
                         <td ></td>
                         <td ></td>
                        <?php else:?>
-                       <?php foreach($mapping->eamsFacts as $fact):?> 
-                        <?php $percentageChange = 40 ; ?>
+                       <?php foreach($mapping->eamsFacts as $key=>$fact):?>
+                        <?php $deltaSign = $percentageChange = ""; ?>
+                        <?php if($key > 0 ):?>
+                          <?php if(($mapping->eamsFacts[$key-1]->indicator_value > 0)):?>
+                           <?php $percentageChange =  $percentageChange = number_format(100/($mapping->eamsFacts[$key-1]->indicator_value) * ($mapping->eamsFacts[$key]->indicator_value - $mapping->eamsFacts[$key-1]->indicator_value),2) ; ?>
+                          <?php else:?>
+                            <?php $percentageChange = 'N/A'?>
+                          <?php endif;?>
+                        <?php elseif($key==0):?>
+                            <?php $percentageChange = 0?>
+                        <?php endif;?>
+                        <?php if($percentageChange > 0):?>
                         <?php $deltaSign = TbHtml::icon(TbHtml::ICON_ARROW_UP);?>
+                        <?php elseif($percentageChange < 0): ?>
+                        <?php $deltaSign = TbHtml::icon(TbHtml::ICON_ARROW_DOWN);?>
+                        <?php endif;?>
+                        
                         <?php $deltaLabel = TbHtml::labelTb($percentageChange.'% '.$deltaSign, array('color' => TbHtml::LABEL_COLOR_INFO));  ?>
                         
-                        <td id="<?php echo $fact->id?>"><?php echo $fact->indicator_value."  ".$deltaLabel; ?></td>
-                            <?php if($mapping->eamsFacts[0]->indicator_value != 0):?>
-                            <?php $percentageChange = number_format(100/($mapping->eamsFacts[0]->indicator_value) * ($mapping->eamsFacts[count($mapping->eamsFacts)-1]->indicator_value - $mapping->eamsFacts[0]->indicator_value),2) .'%'?>
+                        <td id="<?php echo $fact->id?>" style="width:110px"><?php echo $fact->indicator_value."  ".$deltaLabel; ?></td>
+                            <?php if($mapping->eamsFacts[0]->indicator_value > 0):?>
+                            <?php $percentageChange = number_format(100/($mapping->eamsFacts[0]->indicator_value) * ($mapping->eamsFacts[count($mapping->eamsFacts)-1]->indicator_value - $mapping->eamsFacts[0]->indicator_value),2) ?>
+                              <?php if($percentageChange > 0):?>
+                                <?php $deltaSign = TbHtml::icon(TbHtml::ICON_ARROW_UP);?>
+                              <?php else: ?>
+                                <?php $deltaSign = TbHtml::icon(TbHtml::ICON_ARROW_DOWN);?>
+                              <?php endif;?>
+                            <?php $deltaLabel = TbHtml::labelTb($percentageChange.'% '.$deltaSign, array('color' => TbHtml::LABEL_COLOR_INFO));  ?>
+                        
                             <?php else:?>
                             <?php $percentageChange = 'N/A'?>
                             <?php endif;?>
@@ -103,7 +128,7 @@ $this->menu=array(
                        <?php endif;?>
                           
                 <?php endforeach;?>
-                <td><?php echo $percentageChange; ?></td>
+                <td><?php echo $deltaLabel; ?></td>
                 <td ></td> 
                 
         </tr>

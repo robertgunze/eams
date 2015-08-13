@@ -221,6 +221,7 @@ class EacDecision extends CActiveRecord
 	public static function getDecisionsApproachingDeadline(){
             return self::model()->count('datediff(deadline,now()) < 7');
 	}
+       
 
 	/**
 	 * Returns the static model of the specified AR class.

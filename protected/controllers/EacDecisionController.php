@@ -165,10 +165,11 @@ class EacDecisionController extends Controller
 	/**
 	 * Manages all models.
 	 */
-	public function actionAdmin($format="")
+	public function actionAdmin($format="",$status = "")
 	{
 		$model=new EacDecision('search');
 		$model->unsetAttributes();  // clear any default values
+                $model->implementation_status_id = $status;
 		if (isset($_GET['EacDecision'])) {
 			$model->attributes=$_GET['EacDecision'];
 		}

@@ -16,22 +16,22 @@ $this->breadcrumbs = array(
                 <td>
                     <div style="width:95%;height:100%" class="btn btn-success">
                         <div>Number of fully implemented decisions </div>
-                        <h2><?php echo EacDecision::getDecisionsApproachingDeadline(); ?></h2>
-                        <p><a>(View all&nbsp;<span class="icon-arrow-right">&nbsp;</span>)</a></p>
+                        <h2><?php echo EacDecision::model()->count('implementation_status_id =:status', array(':status'=>3)); ?></h2>
+                        <p><a href="<?php echo $this->createUrl('/eacDecision/admin',array('status'=>3))?>">(View all&nbsp;<span class="icon-arrow-right">&nbsp;</span>)</a></p>
                     </div>
                 </td>
                 <td>
                     <div style="width:95%;height:100%"  class="btn btn-warning">
                         <div>Number of partially implemented decisions</div>
-                        <h2><?php echo EacDecision::model()->count(); ?></h2>
-                        <p><a href="<?php ?>">(View all&nbsp;<span class="icon-arrow-right">&nbsp;</span>)</a></p>
+                        <h2><?php echo EacDecision::model()->count('implementation_status_id =:status', array(':status'=>2)); ?></h2>
+                        <p><a href="<?php echo $this->createUrl('/eacDecision/admin',array('status'=>2))?>">(View all&nbsp;<span class="icon-arrow-right">&nbsp;</span>)</a></p>
                     </div>
                 </td>
                 <td>
                     <div style="width:95%;height:100%"  class="btn btn-danger">
                         <div>Number of pending decisions</div>
-                        <h2><?php echo User::model()->count('is_mda=:is_mda', array(':is_mda' => 1)); ?></h2>
-                        <p><a>(View all&nbsp;<span class="icon-arrow-right">&nbsp;</span>)</a></p>
+                        <h2><?php echo  EacDecision::model()->count() - EacDecision::model()->count('implementation_status_id =:status', array(':status'=>2))- EacDecision::model()->count('implementation_status_id =:status', array(':status'=>3)) ?></h2>
+                        <p><a href="<?php echo $this->createUrl('/eacDecision/admin',array('status'=>1))?>">(View all&nbsp;<span class="icon-arrow-right">&nbsp;</span>)</a></p>
                     </div>
                 </td>
             </tr>

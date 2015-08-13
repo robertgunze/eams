@@ -29,16 +29,20 @@ $this->menu=array(
     'data'=>$model,
     'attributes'=>array(
 		//'id',
-		'framework_description',
+		 array(
+                    'name'=>'framework_description',
+                    'label'=>'Description',
+                    'value'=>$model->framework_description
+                ),
                 array(
                     'name'=>'type_id',
                     'value'=>$model->type->description
                 ),
-                array(
-                    'name'=>'parent_id',
-                    'value'=>  isset($model->parent)?$model->parent->description:'Not Set'
-                ),
-		'guid',
+//                array(
+//                    'name'=>'parent_id',
+//                    'value'=>  isset($model->parent)?$model->parent->description:'Not Set'
+//                ),
+		//'guid',
 	),
 )); ?>
 
@@ -91,7 +95,7 @@ $this->menu=array(
                        <?php foreach($mapping->eamsFacts as $fact):?> 
                         <td contenteditable="true" id="<?php echo $fact->id?>"><?php echo $fact->indicator_value; ?></td>
                             <?php if($mapping->eamsFacts[0]->indicator_value != 0):?>
-                            <?php $percentageChange = 100/($mapping->eamsFacts[0]->indicator_value) * ($mapping->eamsFacts[count($mapping->eamsFacts)-1]->indicator_value - $mapping->eamsFacts[0]->indicator_value).'%'?>
+                            <?php $percentageChange = number_format(100/($mapping->eamsFacts[0]->indicator_value) * ($mapping->eamsFacts[count($mapping->eamsFacts)-1]->indicator_value - $mapping->eamsFacts[0]->indicator_value),2).'%'?>
                             <?php else:?>
                             <?php $percentageChange = 'N/A'?>
                             <?php endif;?>
