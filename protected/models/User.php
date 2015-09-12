@@ -111,16 +111,15 @@ class User extends CActiveRecord
 		$criteria->compare('sex',$this->sex,true);
 		$criteria->compare('email',$this->email,true);
 		$criteria->compare('phone',$this->phone,true);
-        $criteria->compare('mda_id',$this->mda_id);
-        $criteria->compare('meac_office_id',$this->meac_office_id);
-        $criteria->compare('is_mda',$this->is_mda);
+                $criteria->compare('mda_id',$this->mda_id);
+                $criteria->compare('meac_office_id',$this->meac_office_id);
+                $criteria->compare('is_mda',$this->is_mda);
 		$criteria->compare('active',$this->active);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
 	}
-        
         
         public function hashPassword($password){
             

@@ -162,3 +162,19 @@ div.wide.form .buttons, div.wide.form .hint, div.wide.form .errorMessage
 	clear: left;
 	padding-left: 110px;
 }
+
+.grid-view{
+    max-width:100%;
+    overflow-x:scroll;
+}
+.grid-view table{
+    width: 100%;
+   
+}
+
+#sp_treegrid{
+    margin-left: 0%;
+    width:100%;
+    height:600px;
+    
+}

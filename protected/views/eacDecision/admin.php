@@ -27,7 +27,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-
+<div>
 <?php echo TbHtml::pageHeader('', 'Manage EAC Decisions'); ?>
 <div class="form-actions"> 
     <?php echo CHtml::link('Toggle Advanced Search', '#', array('class' => 'search-button btn', 'style' => 'float:right')); ?>
@@ -39,7 +39,6 @@ $('.search-form form').submit(function(){
     ));
     ?>
 </div><!-- search-form -->
-
 
 <?php
  echo TbHtml::buttonDropdown('Export Data To', array(
@@ -65,65 +64,47 @@ $this->widget('bootstrap.widgets.TbGridView', array(
         'decision_reference',
         'decision_date',
         'description',
-        'budgetary_implications',
+        //'budgetary_implications',
         'time_frame',
         'performance_indicators',
         //'responsibility_center',
-        'meeting_no',
+        //'meeting_no',
         array(
-            'class' => 'editable.EditableColumn',
-            'name' => 'responsible_mda_id',
-            'headerHtmlOptions' => array('style' => 'width: 100px'),
-            'filter' => TbHtml::listData(Mda::model()->findAll(), "id", "description"),
-            'editable' => array(
-                'type' => 'select',
-                'url' => $this->createUrl('eacDecision/ajaxUpdate'),
-                'source' => TbHtml::listData(Mda::model()->findAll(), 'id', 'description'),
-                'placement' => 'right',
-                'emptytext' => '<p class="btn btn-success">Select responsible MDA</p>'
-            )
+            'type' => 'html',
+            'header'=>'Responsible MDA(s)',
+            'value'=>'$data->getResponsibleMdas()'
         ),
-//                array(
-//                    'name'=>'sectoral_council_id',
-//                    'value'=>'$data->sectoral_council_id',
-//                    'filter'=>TbHtml::listData(EacLookup::model()->findAll('type=:type',array(':type'=>  EacLookup::SECTORAL_COUNCIL)),"id","description"),
-//                ),
-        //'implementation_status_id',
-
-        /*
-        array(
-            'class' => 'editable.EditableColumn',
-            'name' => 'implementation_status_id',
-            'headerHtmlOptions' => array('style' => 'width: 100px;'),
-            'filter' => TbHtml::listData(EacLookup::model()->findAll('type=:type', array(':type' => EacLookup::IMPLEMENTATION_STATUS)), "id", "description"),
-            'editable' => array(
-                'type' => 'select',
-                'url' => $this->createUrl('eacDecision/ajaxUpdate'),
-                'source' => TbHtml::listData(EacLookup::model()->findAll('type=:type', array(':type' => EacLookup::IMPLEMENTATION_STATUS)), 'id', 'description'),
-                'placement' => 'right',
-                'emptytext' => '<p class="btn btn-success">Update Status</p>'
-            )
-        ),
-        */
 
         array(
             'type'=>'html',
-            'header'=>'Feedback',
+            'header'=>'Progress Updates',
             'value'=>'$data->getStatusLogs()'
             ),
         array(
             'type' => 'html',
             'header' => 'Status',
             'name' => 'implementation_status_id',
-            'value' => 'TbHtml::labelTb("&nbsp;&nbsp;", array("color" =>"{$data->getStatusColor($data)}"));'
+            'value' => 'TbHtml::labelTb("&nbsp;&nbsp;", array("style"=>"width:100%;height:100%","color" =>"{$data->getStatusColor($data)}"));'
         ),
-//		'date_created',
-//		'create_user_id',
-//		'date_updated',
-//		'update_user_id',
+        array(
+            'class' => 'editable.EditableColumn',
+            'header'=>'Responsible MDA(s)',
+            'name' => 'responsible_mda_id',
+            'headerHtmlOptions' => array('style' => 'width: 100px'),
+            'filter' => TbHtml::listData(Mda::model()->findAll(), "id", "description"),
+            'editable' => array(
+                'type' => 'checklist',
+                'url' => $this->createUrl('eacDecision/ajaxUpdate'),
+                'source' => TbHtml::listData(Mda::model()->findAll(), 'id', 'description'),
+                'placement' => 'right',
+                'emptytext' => '<p class="btn btn-success">Select responsible MDA</p>'
+            )
+        ),
         array(
             'class' => 'bootstrap.widgets.TbButtonColumn',
         ),
     ),
 ));
 ?>
+
+</div>
