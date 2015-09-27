@@ -101,10 +101,30 @@ class EacDecisionController extends Controller
 			'model'=>$model,
 		));
 	}
+
+	public function unsetMdas($decision_id,$currentMdas = array()){
+         //select all mdas not in currentMdas
+		$excludedMdas = Mda::model()->findAll(array(
+			'condition'=>'id NOT IN (:mdas)',
+			'params'=>array(':mdas'=>implode(',',$currentMdas))));
+		foreach ($excludedMdas as $key => $mda) {
+			$mapping = MdaDecisionMapping::model()->find('decision_id=:id AND mda_id=:mda', 
+                    array(
+                        ':id'=>$decision_id,
+                        ':mda'=>$mda->id
+                    ));
+			if($mapping){
+			  $mapping->delete();
+			}
+			
+		}
+
+	}
         
     public function actionAjaxUpdate(){
         $mdas = $_POST['value'];
         //print_r($mdas);exit;
+        $this->unsetMdas($_POST['pk'],$mdas);
         foreach($mdas as $mda){
             $mapping = new MdaDecisionMapping();
             $mapping->decision_id = $_POST['pk'];
