@@ -62,7 +62,8 @@ class EacDecision extends CActiveRecord
 		return array(
                     'status'=>array(self::BELONGS_TO,'EacLookup','implementation_status_id'),
                     'statusLogs'=>array(self::HAS_MANY,'EacStatusLog','decision_id'),
-                    'responsibleMda'=>array(self::BELONGS_TO,'Mda','responsible_mda_id')
+                    'responsibleMda'=>array(self::BELONGS_TO,'Mda','responsible_mda_id'),
+                    'responsibleMdas'=>array(self::MANY_MANY,'Mda','tbl_mda_decision_mapping(mda_id,decision_id)'),
 		);
 	}
 
@@ -191,22 +192,36 @@ class EacDecision extends CActiveRecord
 	}
 
 	public function getStatusLogs(){
+                $logs = $this->statusLogs;
 		$thread = "";
 		$thread.= "<div>";
-		foreach ($this->statusLogs as $key => $log) {
-			$thread.="<p>".$log->status_narrative;
-			$thread.="<br /><span><b><i>--".$log->createUser->first_name." ".$log->createUser->middle_name." ".$log->createUser->last_name."</i></b>";
-			$thread.= "</p>";
-		}
+                if($logs){
+                    $logs = array(end($logs));
+                    foreach ($logs as $key => $log) {
+                            $thread.="<p>".$log->status_narrative;
+                            $thread.="<br /><span><b><i>--".$log->createUser->first_name." ".$log->createUser->middle_name." ".$log->createUser->last_name."</i></b>";
+                            $thread.= "</p>";
+                    }
+                }
 		$thread.= "</div>";
 
 		return $thread;
 	}
+        
+        public function getResponsibleMdas(){
+            $mdas = $this->responsibleMdas();
+            $list = array();
+            foreach($mdas as $mda){
+                $list[] = "<span class ='label label-info' >".$mda->description."(".$mda->abbrev.")"."</span>";
+            }
+            
+            return implode('', $list);
+        }
 
 	public static function getDecisionsApproachingDeadline(){
-
-      return self::model()->count('datediff(deadline,now()) < 7');
+            return self::model()->count('datediff(deadline,now()) < 7');
 	}
+       
 
 	/**
 	 * Returns the static model of the specified AR class.

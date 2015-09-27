@@ -29,7 +29,7 @@ class EamsFrameworkController extends Controller {
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('create', 'update','loadParents','EACOutcomesAdmin'),
+                'actions' => array('create', 'update','loadParents','EACOutcomesAdmin','SPAdmin','LoadSPFramework','ViewSP'),
                 'users' => array('@'),
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -48,6 +48,12 @@ class EamsFrameworkController extends Controller {
      */
     public function actionView($id) {
         $this->render('view', array(
+            'model' => $this->loadModel($id),
+        ));
+    }
+    
+     public function actionViewSP($id) {
+        $this->render('view_sp_report', array(
             'model' => $this->loadModel($id),
         ));
     }
@@ -140,6 +146,48 @@ class EamsFrameworkController extends Controller {
             'model' => $model,
             'parent_id' => $parent_id
         ));
+    }
+    
+     /**
+     * Manages all models.
+     */
+    public function actionSPAdmin() {
+        $model = new EamsFramework('search');
+        $model->unsetAttributes();  // clear any default values
+        if (isset($_GET['EamsFramework'])) {
+            $model->attributes = $_GET['EamsFramework'];
+        }
+
+        $this->render('sp_admin', array(
+            'model' => $model,
+        ));
+    }
+    
+    public function actionLoadSPFramework(){
+        $models = EamsFramework::model()->findAll();
+        $treedata = array(
+            'total'=>EamsFramework::model()->count(),
+            'rows'=>array(),
+            'footer'=>array('name'=>'SP Items','items'=>EamsFramework::model()->count(),'iconCls'=>'icon-sum')
+        );
+        foreach($models as $model){
+            $treedata['rows'][] = array(
+                'id'=>$model->id,
+                'name'=> CHtml::link(
+                        $model->framework_description,
+                        $this->createUrl('eamsFramework/view',array('id'=>$model->id)),
+                            array(
+                                'target'=>'_blank'
+                            )
+                        ),
+                'type'=>$model->type->description,
+                '_parentId'=>$model->parent_id, 
+                'state'=>'closed'
+                
+            );
+        }
+        
+        echo CJSON::encode($treedata);
     }
     
     /**

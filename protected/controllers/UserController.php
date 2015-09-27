@@ -32,7 +32,7 @@ class UserController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','PasswordChange','AjaxUpdate'),
+				'actions'=>array('create','update','PasswordChange','AjaxUpdate','mdas'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -184,6 +184,19 @@ class UserController extends Controller
 			'model'=>$model,
 		));
 	}
+        
+        public function actionMdas(){
+                $model=new User('search');
+		$model->unsetAttributes();  // clear any default values
+		if (isset($_GET['User'])) {
+			$model->attributes=$_GET['User'];
+		}
+                 
+                $model->is_mda = true;
+		$this->render('mda_admin',array(
+			'model'=>$model,
+		));
+        }
 
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
