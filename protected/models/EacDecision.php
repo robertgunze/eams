@@ -170,9 +170,13 @@ class EacDecision extends CActiveRecord
 		$criteria->compare('meeting_no',$this->meeting_no);
 		$criteria->compare('sectoral_council_id',$this->sectoral_council_id);
 		if(Yii::app()->user->is_mda){
-           $criteria->compare('responsible_mda_id',Yii::app()->user->mda_id);
+           #$criteria->compare('responsible_mda_id',Yii::app()->user->mda_id);
+           $criteria->addInCondition('id',$this->getDecisionIdsFromResponsibleMdaMappings(Yii::app()->user->mda_id));
+		
         }
-        $criteria->compare('responsible_mda_id',$this->responsible_mda_id);
+        #$criteria->compare('responsible_mda_id',$this->responsible_mda_id);
+        if($this->responsible_mda_id != NULL)
+        $criteria->addInCondition('id',$this->getDecisionIdsFromResponsibleMdaMappings($this->responsible_mda_id));
 		$criteria->compare('implementation_status_id',$this->implementation_status_id);
 		$criteria->compare('date_created',$this->date_created,true);
 		$criteria->compare('create_user_id',$this->create_user_id);
@@ -182,6 +186,16 @@ class EacDecision extends CActiveRecord
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
+	}
+
+	public function getDecisionIdsFromResponsibleMdaMappings($mda){
+        $mappings = MdaDecisionMapping::model()->findAll('mda_id =:mda',array('mda'=>$mda));
+        $decisions = array();
+        foreach ($mappings as $key => $value) {
+        	$decisions[] = $value->decision_id;
+        }
+
+        return $decisions;
 	}
 
 	public function decisionExists(){
