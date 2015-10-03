@@ -92,11 +92,8 @@ return array(
 			'connectionString' => 'mysql:host=localhost;dbname=eams_country_db',
 			'emulatePrepare' => true,
 			'username' => 'root',
-<<<<<<< HEAD
 			'password' => 'meac_db@2015',
-=======
-			'password' => 'pass',
->>>>>>> 8ab2be5ef8fb5cb8460857cc30ffaadcda22d2b1=> 'utf8',
+			'charset'=> 'utf8',
 		),
                 
                 'authManager'=>array(
