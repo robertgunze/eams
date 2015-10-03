@@ -132,7 +132,8 @@
             <table id="tbl_logos">
                  <tr>
                      <td><?php echo TbHtml::imageRounded(Yii::app()->request->baseUrl.'/images/logo.png', '',array('width'=>80,'height'=>80))?></td>
-                     <td><?php echo TbHtml::pageHeader('', Yii::t('strings',CHtml::encode(Yii::app()->name)))?></td>
+                     <td><center><?php echo TbHtml::pageHeader('', Yii::t('strings',CHtml::encode(Yii::app()->name)))?></center></td>
+                     <td><?php echo TbHtml::imageRounded(Yii::app()->request->baseUrl.'/images/tmea.png', '',array('width'=>100,'height'=>100))?></td>
                      <td><?php echo TbHtml::imageRounded(Yii::app()->request->baseUrl.'/images/eac_logo.png', '',array('width'=>100,'height'=>100))?></td>
                  </tr>
              </table>
