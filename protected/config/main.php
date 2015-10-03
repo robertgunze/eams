@@ -92,7 +92,7 @@ return array(
 			'connectionString' => 'mysql:host=localhost;dbname=eams_country_db',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => 'drobyg3',
+			'password' => 'meac_db@2015',
 			'charset' => 'utf8',
 		),
                 
