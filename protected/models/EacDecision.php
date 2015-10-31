@@ -198,6 +198,16 @@ class EacDecision extends CActiveRecord
         return $decisions;
 	}
 
+	public function getAssignedMdasIds(){
+		$mdas = $this->responsibleMdas;
+		$ids = [];
+		foreach ($mdas as $mda) {
+			$ids[] = $mda->id;
+		}
+
+		return $ids;
+	}
+
 	public function decisionExists(){
 		if(self::model()->exists('eams_central_id=:id',array(':id'=>$this->eams_central_id))){
 			return true;
@@ -223,7 +233,7 @@ class EacDecision extends CActiveRecord
 	}
         
         public function getResponsibleMdas(){
-            $mdas = $this->responsibleMdas();
+            $mdas = $this->responsibleMdas;
             $list = array();
             foreach($mdas as $mda){
                 $list[] = "<span class ='label label-info' >".$mda->description."(".$mda->abbrev.")"."</span>";

@@ -75,15 +75,26 @@ class EacStatusLogController extends Controller
                         $model->date_created = date('Y-m-d H:i:s');
                         $model->date_updated = date('Y-m-d H:i:s');
 			if ($model->save()) {
-                                if($decision){
-                                    $decision->implementation_status_id = $model->status_id;
-                                    $decision->save();
-                                }
+                if($decision){
+                    $decision->implementation_status_id = $model->status_id;
+                    $decision->save();
+                }
                 $criteria = new CDbCriteria;
-                $criteria->addColumnCondition(array('is_mda'=>0,'mda_id'=>$decision->responsible_mda_id),'OR');
+                $criteria->addColumnCondition(array('is_mda'=>0),'OR');
+                $mdas = $decision->getAssignedMdasIds();
+                $criteria->addInCondition('mda_id',$mdas);
                 $recipients = User::getNotificationSubscribers($criteria);
+                $loggedInUser =User::model()->findByPk(Yii::app()->user->user_id);
+                $from = "";
+                if(Yii::app()->user->is_mda){
+                	$mda = $loggedInUser->mda;
+                	$from = $mda->description;
+                }else{
+                	$meacOffice = $loggedInUser->meacOffice;
+                	$from = $meacOffice->description;
+                }
                 $message = "Decision {$decision->decision_reference}-({$decision->description}) has been updated by ".Yii::app()->user->getState('loggedInUser').
-                        " from {$decision->responsibleMda->description}<br />";
+                        " from {$from}<br />";
                 $message.= $model->status_narrative."<br />";
                 $message.="For more information click ".TbHtml::link("here",Yii::app()->getBaseUrl(true)."/index.php?r=eacDecision/view&id={$decision->id}");
                 $this->notify($recipients,'Decision Update',$message);
