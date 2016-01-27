@@ -10,7 +10,7 @@ Yii::setPathOfAlias('editable', dirname(__FILE__).'/../extensions/x-editable');
 
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>"UNITED REPUBLIC OF TANZANIA EAST AFRICAN INTEGRATION MONITORING SYSTEM",
+	'name'=>"United Republic of Tanzania East African Integration Monitoring System",
 
 	// preloading 'log' component
 	'preload'=>array('log'),

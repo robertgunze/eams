@@ -131,24 +131,27 @@
         <div class="brand" style="margin-left: 5%;margin-right:5%;">
             <table id="tbl_logos">
                  <tr>
-                     <td><?php echo TbHtml::imageRounded(Yii::app()->request->baseUrl.'/images/logo.png', '',array('width'=>80,'height'=>80))?></td>
+                     <td><?php echo TbHtml::imageRounded(Yii::app()->request->baseUrl.'/images/logo.png', '',array('width'=>80,'height'=>80,'class'=>'logo'))?></td>
                      <td>
                      <center>
                       <?php echo TbHtml::pageHeader('', 
-                         Yii::t('strings', substr(CHtml::encode(Yii::app()->name),0,27)."<br />".substr(CHtml::encode(Yii::app()->name),28) ) 
+                         Yii::t('strings', substr(CHtml::encode(Yii::app()->name),0,27)."<br />".substr(CHtml::encode(Yii::app()->name),28),['style'=>'font-size:40px;']) 
                         );
                       ?>
                      </center></td>
-                     <td><?php echo TbHtml::imageRounded(Yii::app()->request->baseUrl.'/images/tmea.png', '',array('width'=>100,'height'=>100))?></td>
-                     <td><?php echo TbHtml::imageRounded(Yii::app()->request->baseUrl.'/images/eac_logo.png', '',array('width'=>100,'height'=>100))?></td>
+                     <td><?php echo TbHtml::imageRounded(Yii::app()->request->baseUrl.'/images/tmea.png', '',array('width'=>100,'height'=>100,'class'=>'tmea'))?></td>
+                     <td><?php echo TbHtml::imageRounded(Yii::app()->request->baseUrl.'/images/eac_logo.png', '',array('width'=>100,'height'=>100,'class'=>'eac'))?></td>
                  </tr>
              </table>
         </div>
 	<?php if(isset($this->breadcrumbs)):?>
         
-               <?php $this->widget('bootstrap.widgets.TbBreadcrumb', array(
-                                'links' => $this->breadcrumbs,        
-               )); ?><!-- breadcrumbs -->
+               <?php 
+               // $this->widget('bootstrap.widgets.TbBreadcrumb', array(
+               //                  'links' => $this->breadcrumbs,        
+               // )); 
+
+               ?><!-- breadcrumbs -->
 	<?php endif?>
         
         <?php foreach(Yii::app()->user->getFlashes() as $key => $message) : ?>

@@ -17,11 +17,14 @@ $this->menu=array(
 	array('label'=>'Manage EamsFramework', 'url'=>array('admin')),
 );
 ?>
+<h1 id="report-header1" style="display:none">Ministry of East African Cooperation</h1>
+
 <?php echo TbHtml::pageHeader('', 'View Eams Framework #'.$model->id); ?>
 <?php echo CHtml::link('Add Indicator', $this->createUrl('indicator/create',array('framework_id'=>$model->id)), array('class' => 'btn btn-success')); ?>
-&nbsp;&nbsp;<a class="print-button" href="javascript:window.print()" rel="nofollow"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/print.gif" /></a>
+&nbsp;&nbsp;<a class="print-button" href="javascript:printReport()" rel="nofollow"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/print.gif" /></a>
 
 <br><br/>
+<h3 id="report-header2" style="display:none">Annual Performance Report</h3>
 <?php $this->widget('zii.widgets.CDetailView',array(
     'htmlOptions' => array(
         'class' => 'table table-striped table-condensed table-hover',
@@ -116,6 +119,15 @@ $this->menu=array(
 </table>
 
 <script>
+
+function printReport(){
+    $('#report-header1').css("display","block");
+    $('#report-header2').css("display","block");
+    window.print();
+    $('#report-header1').css("display","none");
+    $('#report-header2').css("display","none");
+    return false;
+}
     
 $('body').on('focus', '[contenteditable]', function() {
     var $this = $(this);

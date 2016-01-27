@@ -235,8 +235,10 @@ class EacDecision extends CActiveRecord
         public function getResponsibleMdas(){
             $mdas = $this->responsibleMdas;
             $list = array();
+            $index = 1;
             foreach($mdas as $mda){
-                $list[] = "<span class ='label label-info' >".$mda->description."(".$mda->abbrev.")"."</span>";
+                $list[] = "<p><span class='mda_label' style='color:#0095C9' ><strong>".$index.". ".$mda->description."(".$mda->abbrev.")"."</strong></span></p>";
+            	$index++;
             }
             
             return implode('', $list);
