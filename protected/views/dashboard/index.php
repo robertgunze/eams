@@ -7,7 +7,7 @@ $this->breadcrumbs = array(
 );
 ?>
 
-<?php echo TbHtml::pageHeader('', 'Dashboard / Data Visualization'); ?>
+<?php echo TbHtml::pageHeader('', 'Dashboard'); ?>
 
 <div class="well">
     <div style="width:100%">

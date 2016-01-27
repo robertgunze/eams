@@ -56,3 +56,21 @@ table, th, td{
 #tbl_logos h1 small {
     display: none
 }
+
+.tmea{
+  display: none;
+}
+
+.eac{
+  margin-left: 550px;
+}
+
+.logo{
+  margin-left: 0px;
+}
+
+#report-header1{
+  margin-top:-80px;
+  font-size:30px;
+  margin-left: 120px;
+}

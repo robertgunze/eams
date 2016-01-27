@@ -1,0 +1,643 @@
+2016/01/23 17:37:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /var/www/html/eams/protected/controllers/EamsFactsController.php:196
+Stack trace:
+#0 /var/www/html/eams/protected/controllers/EamsFactsController.php(119): EamsFactsController->loadModel('undefined')
+#1 [internal function]: EamsFactsController->actionAsyncUpdate('undefined', '4')
+#2 /var/www/html/eams/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(EamsFactsController), Array)
+#3 /var/www/html/eams/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(EamsFactsController), Object(ReflectionMethod), Array)
+#4 /var/www/html/eams/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/html/eams/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /var/www/html/eams/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/html/eams/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/html/eams/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/html/eams/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/html/eams/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/html/eams/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/html/eams/framework/web/CWebApplication.php(282): CController->run('AsyncUpdate')
+#13 /var/www/html/eams/framework/web/CWebApplication.php(141): CWebApplication->runController('eamsFacts/Async...')
+#14 /var/www/html/eams/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/html/eams/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/eams/index.php?r=eamsFacts/AsyncUpdate&fact_id=undefined&value=4
+HTTP_REFERER=http://localhost/eams/index.php?r=eamsFramework/view&id=1
+---
+2016/01/23 17:38:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /var/www/html/eams/protected/controllers/EamsFactsController.php:196
+Stack trace:
+#0 /var/www/html/eams/protected/controllers/EamsFactsController.php(119): EamsFactsController->loadModel('undefined')
+#1 [internal function]: EamsFactsController->actionAsyncUpdate('undefined', '')
+#2 /var/www/html/eams/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(EamsFactsController), Array)
+#3 /var/www/html/eams/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(EamsFactsController), Object(ReflectionMethod), Array)
+#4 /var/www/html/eams/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/html/eams/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /var/www/html/eams/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/html/eams/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/html/eams/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/html/eams/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/html/eams/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/html/eams/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/html/eams/framework/web/CWebApplication.php(282): CController->run('AsyncUpdate')
+#13 /var/www/html/eams/framework/web/CWebApplication.php(141): CWebApplication->runController('eamsFacts/Async...')
+#14 /var/www/html/eams/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/html/eams/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/eams/index.php?r=eamsFacts/AsyncUpdate&fact_id=undefined&value=
+HTTP_REFERER=http://localhost/eams/index.php?r=eamsFramework/view&id=1
+---
+2016/01/23 17:38:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /var/www/html/eams/protected/controllers/EamsFactsController.php:196
+Stack trace:
+#0 /var/www/html/eams/protected/controllers/EamsFactsController.php(119): EamsFactsController->loadModel('undefined')
+#1 [internal function]: EamsFactsController->actionAsyncUpdate('undefined', '3')
+#2 /var/www/html/eams/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(EamsFactsController), Array)
+#3 /var/www/html/eams/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(EamsFactsController), Object(ReflectionMethod), Array)
+#4 /var/www/html/eams/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/html/eams/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /var/www/html/eams/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/html/eams/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/html/eams/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/html/eams/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/html/eams/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/html/eams/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/html/eams/framework/web/CWebApplication.php(282): CController->run('AsyncUpdate')
+#13 /var/www/html/eams/framework/web/CWebApplication.php(141): CWebApplication->runController('eamsFacts/Async...')
+#14 /var/www/html/eams/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/html/eams/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/eams/index.php?r=eamsFacts/AsyncUpdate&fact_id=undefined&value=3
+HTTP_REFERER=http://localhost/eams/index.php?r=eamsFramework/view&id=1
+---
+2016/01/23 17:38:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /var/www/html/eams/protected/controllers/EamsFactsController.php:196
+Stack trace:
+#0 /var/www/html/eams/protected/controllers/EamsFactsController.php(119): EamsFactsController->loadModel('undefined')
+#1 [internal function]: EamsFactsController->actionAsyncUpdate('undefined', '')
+#2 /var/www/html/eams/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(EamsFactsController), Array)
+#3 /var/www/html/eams/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(EamsFactsController), Object(ReflectionMethod), Array)
+#4 /var/www/html/eams/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/html/eams/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /var/www/html/eams/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/html/eams/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/html/eams/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/html/eams/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/html/eams/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/html/eams/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/html/eams/framework/web/CWebApplication.php(282): CController->run('AsyncUpdate')
+#13 /var/www/html/eams/framework/web/CWebApplication.php(141): CWebApplication->runController('eamsFacts/Async...')
+#14 /var/www/html/eams/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/html/eams/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/eams/index.php?r=eamsFacts/AsyncUpdate&fact_id=undefined&value=
+HTTP_REFERER=http://localhost/eams/index.php?r=eamsFramework/view&id=1
+---
+2016/01/23 20:25:21 [error] [php] Undefined variable: deltaLabel (/var/www/html/eams/protected/views/eamsFramework/view_sp_report.php:131)
+Stack trace:
+#0 /var/www/html/eams/framework/web/CController.php(869): EamsFrameworkController->renderFile()
+#1 /var/www/html/eams/framework/web/CController.php(782): EamsFrameworkController->renderPartial()
+#2 /var/www/html/eams/protected/controllers/EamsFrameworkController.php(58): EamsFrameworkController->render()
+#3 unknown(0): EamsFrameworkController->actionViewSP()
+#4 /var/www/html/eams/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#5 /var/www/html/eams/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 /var/www/html/eams/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /var/www/html/eams/framework/web/filters/CFilterChain.php(133): EamsFrameworkController->runAction()
+#8 /var/www/html/eams/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /var/www/html/eams/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#10 /var/www/html/eams/framework/web/filters/CInlineFilter.php(58): EamsFrameworkController->filterAccessControl()
+#11 /var/www/html/eams/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#12 /var/www/html/eams/framework/web/CController.php(291): CFilterChain->run()
+#13 /var/www/html/eams/framework/web/CController.php(265): EamsFrameworkController->runActionWithFilters()
+#14 /var/www/html/eams/framework/web/CWebApplication.php(282): EamsFrameworkController->run()
+#15 /var/www/html/eams/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /var/www/html/eams/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /var/www/html/eams/index.php(13): CWebApplication->run()
+REQUEST_URI=/eams/index.php?r=eamsFramework/viewSP&id=11
+in /var/www/html/eams/protected/views/eamsFramework/view_sp_report.php (131)
+in /var/www/html/eams/protected/controllers/EamsFrameworkController.php (58)
+in /var/www/html/eams/index.php (13)
+2016/01/23 20:25:36 [error] [php] Undefined variable: deltaLabel (/var/www/html/eams/protected/views/eamsFramework/view_sp_report.php:131)
+Stack trace:
+#0 /var/www/html/eams/framework/web/CController.php(869): EamsFrameworkController->renderFile()
+#1 /var/www/html/eams/framework/web/CController.php(782): EamsFrameworkController->renderPartial()
+#2 /var/www/html/eams/protected/controllers/EamsFrameworkController.php(58): EamsFrameworkController->render()
+#3 unknown(0): EamsFrameworkController->actionViewSP()
+#4 /var/www/html/eams/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#5 /var/www/html/eams/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 /var/www/html/eams/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /var/www/html/eams/framework/web/filters/CFilterChain.php(133): EamsFrameworkController->runAction()
+#8 /var/www/html/eams/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /var/www/html/eams/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#10 /var/www/html/eams/framework/web/filters/CInlineFilter.php(58): EamsFrameworkController->filterAccessControl()
+#11 /var/www/html/eams/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#12 /var/www/html/eams/framework/web/CController.php(291): CFilterChain->run()
+#13 /var/www/html/eams/framework/web/CController.php(265): EamsFrameworkController->runActionWithFilters()
+#14 /var/www/html/eams/framework/web/CWebApplication.php(282): EamsFrameworkController->run()
+#15 /var/www/html/eams/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /var/www/html/eams/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /var/www/html/eams/index.php(13): CWebApplication->run()
+REQUEST_URI=/eams/index.php?r=eamsFramework/viewSP&id=11
+in /var/www/html/eams/protected/views/eamsFramework/view_sp_report.php (131)
+in /var/www/html/eams/protected/controllers/EamsFrameworkController.php (58)
+in /var/www/html/eams/index.php (13)
+2016/01/23 20:25:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /var/www/html/eams/protected/controllers/EamsFactsController.php:196
+Stack trace:
+#0 /var/www/html/eams/protected/controllers/EamsFactsController.php(119): EamsFactsController->loadModel('undefined')
+#1 [internal function]: EamsFactsController->actionAsyncUpdate('undefined', '4')
+#2 /var/www/html/eams/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(EamsFactsController), Array)
+#3 /var/www/html/eams/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(EamsFactsController), Object(ReflectionMethod), Array)
+#4 /var/www/html/eams/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/html/eams/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /var/www/html/eams/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/html/eams/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/html/eams/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/html/eams/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/html/eams/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/html/eams/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/html/eams/framework/web/CWebApplication.php(282): CController->run('AsyncUpdate')
+#13 /var/www/html/eams/framework/web/CWebApplication.php(141): CWebApplication->runController('eamsFacts/Async...')
+#14 /var/www/html/eams/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/html/eams/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/eams/index.php?r=eamsFacts/AsyncUpdate&fact_id=undefined&value=4
+HTTP_REFERER=http://localhost/eams/index.php?r=eamsFramework/view&id=11
+---
+2016/01/23 20:25:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /var/www/html/eams/protected/controllers/EamsFactsController.php:196
+Stack trace:
+#0 /var/www/html/eams/protected/controllers/EamsFactsController.php(119): EamsFactsController->loadModel('undefined')
+#1 [internal function]: EamsFactsController->actionAsyncUpdate('undefined', '4')
+#2 /var/www/html/eams/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(EamsFactsController), Array)
+#3 /var/www/html/eams/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(EamsFactsController), Object(ReflectionMethod), Array)
+#4 /var/www/html/eams/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/html/eams/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /var/www/html/eams/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/html/eams/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/html/eams/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/html/eams/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/html/eams/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/html/eams/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/html/eams/framework/web/CWebApplication.php(282): CController->run('AsyncUpdate')
+#13 /var/www/html/eams/framework/web/CWebApplication.php(141): CWebApplication->runController('eamsFacts/Async...')
+#14 /var/www/html/eams/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/html/eams/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/eams/index.php?r=eamsFacts/AsyncUpdate&fact_id=undefined&value=4
+HTTP_REFERER=http://localhost/eams/index.php?r=eamsFramework/view&id=11
+---
+2016/01/23 20:25:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /var/www/html/eams/protected/controllers/EamsFactsController.php:196
+Stack trace:
+#0 /var/www/html/eams/protected/controllers/EamsFactsController.php(119): EamsFactsController->loadModel('undefined')
+#1 [internal function]: EamsFactsController->actionAsyncUpdate('undefined', '4')
+#2 /var/www/html/eams/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(EamsFactsController), Array)
+#3 /var/www/html/eams/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(EamsFactsController), Object(ReflectionMethod), Array)
+#4 /var/www/html/eams/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/html/eams/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /var/www/html/eams/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/html/eams/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/html/eams/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/html/eams/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/html/eams/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/html/eams/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/html/eams/framework/web/CWebApplication.php(282): CController->run('AsyncUpdate')
+#13 /var/www/html/eams/framework/web/CWebApplication.php(141): CWebApplication->runController('eamsFacts/Async...')
+#14 /var/www/html/eams/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/html/eams/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/eams/index.php?r=eamsFacts/AsyncUpdate&fact_id=undefined&value=4
+HTTP_REFERER=http://localhost/eams/index.php?r=eamsFramework/view&id=11
+---
+2016/01/23 20:25:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /var/www/html/eams/protected/controllers/EamsFactsController.php:196
+Stack trace:
+#0 /var/www/html/eams/protected/controllers/EamsFactsController.php(119): EamsFactsController->loadModel('undefined')
+#1 [internal function]: EamsFactsController->actionAsyncUpdate('undefined', '4')
+#2 /var/www/html/eams/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(EamsFactsController), Array)
+#3 /var/www/html/eams/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(EamsFactsController), Object(ReflectionMethod), Array)
+#4 /var/www/html/eams/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/html/eams/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /var/www/html/eams/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/html/eams/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/html/eams/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/html/eams/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/html/eams/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/html/eams/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/html/eams/framework/web/CWebApplication.php(282): CController->run('AsyncUpdate')
+#13 /var/www/html/eams/framework/web/CWebApplication.php(141): CWebApplication->runController('eamsFacts/Async...')
+#14 /var/www/html/eams/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/html/eams/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/eams/index.php?r=eamsFacts/AsyncUpdate&fact_id=undefined&value=4
+HTTP_REFERER=http://localhost/eams/index.php?r=eamsFramework/view&id=11
+---
+2016/01/23 20:25:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /var/www/html/eams/protected/controllers/EamsFactsController.php:196
+Stack trace:
+#0 /var/www/html/eams/protected/controllers/EamsFactsController.php(119): EamsFactsController->loadModel('undefined')
+#1 [internal function]: EamsFactsController->actionAsyncUpdate('undefined', '4')
+#2 /var/www/html/eams/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(EamsFactsController), Array)
+#3 /var/www/html/eams/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(EamsFactsController), Object(ReflectionMethod), Array)
+#4 /var/www/html/eams/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/html/eams/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /var/www/html/eams/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/html/eams/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/html/eams/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/html/eams/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/html/eams/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/html/eams/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/html/eams/framework/web/CWebApplication.php(282): CController->run('AsyncUpdate')
+#13 /var/www/html/eams/framework/web/CWebApplication.php(141): CWebApplication->runController('eamsFacts/Async...')
+#14 /var/www/html/eams/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/html/eams/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/eams/index.php?r=eamsFacts/AsyncUpdate&fact_id=undefined&value=4
+HTTP_REFERER=http://localhost/eams/index.php?r=eamsFramework/view&id=11
+---
+2016/01/23 20:25:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /var/www/html/eams/protected/controllers/EamsFactsController.php:196
+Stack trace:
+#0 /var/www/html/eams/protected/controllers/EamsFactsController.php(119): EamsFactsController->loadModel('undefined')
+#1 [internal function]: EamsFactsController->actionAsyncUpdate('undefined', '4')
+#2 /var/www/html/eams/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(EamsFactsController), Array)
+#3 /var/www/html/eams/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(EamsFactsController), Object(ReflectionMethod), Array)
+#4 /var/www/html/eams/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/html/eams/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /var/www/html/eams/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/html/eams/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/html/eams/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/html/eams/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/html/eams/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/html/eams/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/html/eams/framework/web/CWebApplication.php(282): CController->run('AsyncUpdate')
+#13 /var/www/html/eams/framework/web/CWebApplication.php(141): CWebApplication->runController('eamsFacts/Async...')
+#14 /var/www/html/eams/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/html/eams/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/eams/index.php?r=eamsFacts/AsyncUpdate&fact_id=undefined&value=4
+HTTP_REFERER=http://localhost/eams/index.php?r=eamsFramework/view&id=11
+---
+2016/01/23 20:25:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /var/www/html/eams/protected/controllers/EamsFactsController.php:196
+Stack trace:
+#0 /var/www/html/eams/protected/controllers/EamsFactsController.php(119): EamsFactsController->loadModel('undefined')
+#1 [internal function]: EamsFactsController->actionAsyncUpdate('undefined', '4')
+#2 /var/www/html/eams/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(EamsFactsController), Array)
+#3 /var/www/html/eams/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(EamsFactsController), Object(ReflectionMethod), Array)
+#4 /var/www/html/eams/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/html/eams/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /var/www/html/eams/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/html/eams/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/html/eams/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/html/eams/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/html/eams/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/html/eams/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/html/eams/framework/web/CWebApplication.php(282): CController->run('AsyncUpdate')
+#13 /var/www/html/eams/framework/web/CWebApplication.php(141): CWebApplication->runController('eamsFacts/Async...')
+#14 /var/www/html/eams/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/html/eams/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/eams/index.php?r=eamsFacts/AsyncUpdate&fact_id=undefined&value=4
+HTTP_REFERER=http://localhost/eams/index.php?r=eamsFramework/view&id=11
+---
+2016/01/23 20:25:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /var/www/html/eams/protected/controllers/EamsFactsController.php:196
+Stack trace:
+#0 /var/www/html/eams/protected/controllers/EamsFactsController.php(119): EamsFactsController->loadModel('undefined')
+#1 [internal function]: EamsFactsController->actionAsyncUpdate('undefined', '4')
+#2 /var/www/html/eams/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(EamsFactsController), Array)
+#3 /var/www/html/eams/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(EamsFactsController), Object(ReflectionMethod), Array)
+#4 /var/www/html/eams/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/html/eams/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /var/www/html/eams/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/html/eams/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/html/eams/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/html/eams/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/html/eams/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/html/eams/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/html/eams/framework/web/CWebApplication.php(282): CController->run('AsyncUpdate')
+#13 /var/www/html/eams/framework/web/CWebApplication.php(141): CWebApplication->runController('eamsFacts/Async...')
+#14 /var/www/html/eams/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/html/eams/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/eams/index.php?r=eamsFacts/AsyncUpdate&fact_id=undefined&value=4
+HTTP_REFERER=http://localhost/eams/index.php?r=eamsFramework/view&id=11
+---
+2016/01/23 20:25:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /var/www/html/eams/protected/controllers/EamsFactsController.php:196
+Stack trace:
+#0 /var/www/html/eams/protected/controllers/EamsFactsController.php(119): EamsFactsController->loadModel('undefined')
+#1 [internal function]: EamsFactsController->actionAsyncUpdate('undefined', '4')
+#2 /var/www/html/eams/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(EamsFactsController), Array)
+#3 /var/www/html/eams/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(EamsFactsController), Object(ReflectionMethod), Array)
+#4 /var/www/html/eams/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/html/eams/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /var/www/html/eams/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/html/eams/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/html/eams/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/html/eams/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/html/eams/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/html/eams/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/html/eams/framework/web/CWebApplication.php(282): CController->run('AsyncUpdate')
+#13 /var/www/html/eams/framework/web/CWebApplication.php(141): CWebApplication->runController('eamsFacts/Async...')
+#14 /var/www/html/eams/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/html/eams/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/eams/index.php?r=eamsFacts/AsyncUpdate&fact_id=undefined&value=4
+HTTP_REFERER=http://localhost/eams/index.php?r=eamsFramework/view&id=11
+---
+2016/01/23 20:25:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /var/www/html/eams/protected/controllers/EamsFactsController.php:196
+Stack trace:
+#0 /var/www/html/eams/protected/controllers/EamsFactsController.php(119): EamsFactsController->loadModel('undefined')
+#1 [internal function]: EamsFactsController->actionAsyncUpdate('undefined', '44')
+#2 /var/www/html/eams/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(EamsFactsController), Array)
+#3 /var/www/html/eams/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(EamsFactsController), Object(ReflectionMethod), Array)
+#4 /var/www/html/eams/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/html/eams/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /var/www/html/eams/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/html/eams/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/html/eams/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/html/eams/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/html/eams/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/html/eams/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/html/eams/framework/web/CWebApplication.php(282): CController->run('AsyncUpdate')
+#13 /var/www/html/eams/framework/web/CWebApplication.php(141): CWebApplication->runController('eamsFacts/Async...')
+#14 /var/www/html/eams/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/html/eams/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/eams/index.php?r=eamsFacts/AsyncUpdate&fact_id=undefined&value=44
+HTTP_REFERER=http://localhost/eams/index.php?r=eamsFramework/view&id=11
+---
+2016/01/23 20:25:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /var/www/html/eams/protected/controllers/EamsFactsController.php:196
+Stack trace:
+#0 /var/www/html/eams/protected/controllers/EamsFactsController.php(119): EamsFactsController->loadModel('undefined')
+#1 [internal function]: EamsFactsController->actionAsyncUpdate('undefined', '4')
+#2 /var/www/html/eams/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(EamsFactsController), Array)
+#3 /var/www/html/eams/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(EamsFactsController), Object(ReflectionMethod), Array)
+#4 /var/www/html/eams/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/html/eams/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /var/www/html/eams/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/html/eams/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/html/eams/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/html/eams/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/html/eams/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/html/eams/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/html/eams/framework/web/CWebApplication.php(282): CController->run('AsyncUpdate')
+#13 /var/www/html/eams/framework/web/CWebApplication.php(141): CWebApplication->runController('eamsFacts/Async...')
+#14 /var/www/html/eams/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/html/eams/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/eams/index.php?r=eamsFacts/AsyncUpdate&fact_id=undefined&value=4
+HTTP_REFERER=http://localhost/eams/index.php?r=eamsFramework/view&id=11
+---
+2016/01/23 20:25:51 [error] [php] Undefined variable: deltaLabel (/var/www/html/eams/protected/views/eamsFramework/view_sp_report.php:131)
+Stack trace:
+#0 /var/www/html/eams/framework/web/CController.php(869): EamsFrameworkController->renderFile()
+#1 /var/www/html/eams/framework/web/CController.php(782): EamsFrameworkController->renderPartial()
+#2 /var/www/html/eams/protected/controllers/EamsFrameworkController.php(58): EamsFrameworkController->render()
+#3 unknown(0): EamsFrameworkController->actionViewSP()
+#4 /var/www/html/eams/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#5 /var/www/html/eams/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 /var/www/html/eams/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /var/www/html/eams/framework/web/filters/CFilterChain.php(133): EamsFrameworkController->runAction()
+#8 /var/www/html/eams/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /var/www/html/eams/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#10 /var/www/html/eams/framework/web/filters/CInlineFilter.php(58): EamsFrameworkController->filterAccessControl()
+#11 /var/www/html/eams/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#12 /var/www/html/eams/framework/web/CController.php(291): CFilterChain->run()
+#13 /var/www/html/eams/framework/web/CController.php(265): EamsFrameworkController->runActionWithFilters()
+#14 /var/www/html/eams/framework/web/CWebApplication.php(282): EamsFrameworkController->run()
+#15 /var/www/html/eams/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /var/www/html/eams/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /var/www/html/eams/index.php(13): CWebApplication->run()
+REQUEST_URI=/eams/index.php?r=eamsFramework/viewSP&id=11
+in /var/www/html/eams/protected/views/eamsFramework/view_sp_report.php (131)
+in /var/www/html/eams/protected/controllers/EamsFrameworkController.php (58)
+in /var/www/html/eams/index.php (13)
+2016/01/23 20:48:35 [error] [php] Undefined variable: deltaLabel (/var/www/html/eams/protected/views/eamsFramework/view_sp_report.php:131)
+Stack trace:
+#0 /var/www/html/eams/framework/web/CController.php(869): EamsFrameworkController->renderFile()
+#1 /var/www/html/eams/framework/web/CController.php(782): EamsFrameworkController->renderPartial()
+#2 /var/www/html/eams/protected/controllers/EamsFrameworkController.php(58): EamsFrameworkController->render()
+#3 unknown(0): EamsFrameworkController->actionViewSP()
+#4 /var/www/html/eams/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#5 /var/www/html/eams/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 /var/www/html/eams/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /var/www/html/eams/framework/web/filters/CFilterChain.php(133): EamsFrameworkController->runAction()
+#8 /var/www/html/eams/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /var/www/html/eams/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#10 /var/www/html/eams/framework/web/filters/CInlineFilter.php(58): EamsFrameworkController->filterAccessControl()
+#11 /var/www/html/eams/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#12 /var/www/html/eams/framework/web/CController.php(291): CFilterChain->run()
+#13 /var/www/html/eams/framework/web/CController.php(265): EamsFrameworkController->runActionWithFilters()
+#14 /var/www/html/eams/framework/web/CWebApplication.php(282): EamsFrameworkController->run()
+#15 /var/www/html/eams/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /var/www/html/eams/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /var/www/html/eams/index.php(13): CWebApplication->run()
+REQUEST_URI=/eams/index.php?r=eamsFramework/viewSP&id=43
+in /var/www/html/eams/protected/views/eamsFramework/view_sp_report.php (131)
+in /var/www/html/eams/protected/controllers/EamsFrameworkController.php (58)
+in /var/www/html/eams/index.php (13)
+2016/01/23 21:38:11 [error] [php] Undefined variable: deltaLabel (/var/www/html/eams/protected/views/eamsFramework/view_sp_report.php:131)
+Stack trace:
+#0 /var/www/html/eams/framework/web/CController.php(869): EamsFrameworkController->renderFile()
+#1 /var/www/html/eams/framework/web/CController.php(782): EamsFrameworkController->renderPartial()
+#2 /var/www/html/eams/protected/controllers/EamsFrameworkController.php(58): EamsFrameworkController->render()
+#3 unknown(0): EamsFrameworkController->actionViewSP()
+#4 /var/www/html/eams/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#5 /var/www/html/eams/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 /var/www/html/eams/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /var/www/html/eams/framework/web/filters/CFilterChain.php(133): EamsFrameworkController->runAction()
+#8 /var/www/html/eams/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /var/www/html/eams/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#10 /var/www/html/eams/framework/web/filters/CInlineFilter.php(58): EamsFrameworkController->filterAccessControl()
+#11 /var/www/html/eams/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#12 /var/www/html/eams/framework/web/CController.php(291): CFilterChain->run()
+#13 /var/www/html/eams/framework/web/CController.php(265): EamsFrameworkController->runActionWithFilters()
+#14 /var/www/html/eams/framework/web/CWebApplication.php(282): EamsFrameworkController->run()
+#15 /var/www/html/eams/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /var/www/html/eams/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /var/www/html/eams/index.php(13): CWebApplication->run()
+REQUEST_URI=/eams/index.php?r=eamsFramework/viewSP&id=43
+in /var/www/html/eams/protected/views/eamsFramework/view_sp_report.php (131)
+in /var/www/html/eams/protected/controllers/EamsFrameworkController.php (58)
+in /var/www/html/eams/index.php (13)
+2016/01/23 21:38:17 [error] [php] Undefined variable: deltaLabel (/var/www/html/eams/protected/views/eamsFramework/view_sp_report.php:131)
+Stack trace:
+#0 /var/www/html/eams/framework/web/CController.php(869): EamsFrameworkController->renderFile()
+#1 /var/www/html/eams/framework/web/CController.php(782): EamsFrameworkController->renderPartial()
+#2 /var/www/html/eams/protected/controllers/EamsFrameworkController.php(58): EamsFrameworkController->render()
+#3 unknown(0): EamsFrameworkController->actionViewSP()
+#4 /var/www/html/eams/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#5 /var/www/html/eams/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 /var/www/html/eams/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /var/www/html/eams/framework/web/filters/CFilterChain.php(133): EamsFrameworkController->runAction()
+#8 /var/www/html/eams/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /var/www/html/eams/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#10 /var/www/html/eams/framework/web/filters/CInlineFilter.php(58): EamsFrameworkController->filterAccessControl()
+#11 /var/www/html/eams/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#12 /var/www/html/eams/framework/web/CController.php(291): CFilterChain->run()
+#13 /var/www/html/eams/framework/web/CController.php(265): EamsFrameworkController->runActionWithFilters()
+#14 /var/www/html/eams/framework/web/CWebApplication.php(282): EamsFrameworkController->run()
+#15 /var/www/html/eams/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /var/www/html/eams/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /var/www/html/eams/index.php(13): CWebApplication->run()
+REQUEST_URI=/eams/index.php?r=eamsFramework/viewSP&id=43
+in /var/www/html/eams/protected/views/eamsFramework/view_sp_report.php (131)
+in /var/www/html/eams/protected/controllers/EamsFrameworkController.php (58)
+in /var/www/html/eams/index.php (13)
+2016/01/23 21:38:41 [error] [php] Undefined variable: deltaLabel (/var/www/html/eams/protected/views/eamsFramework/view_sp_report.php:131)
+Stack trace:
+#0 /var/www/html/eams/framework/web/CController.php(869): EamsFrameworkController->renderFile()
+#1 /var/www/html/eams/framework/web/CController.php(782): EamsFrameworkController->renderPartial()
+#2 /var/www/html/eams/protected/controllers/EamsFrameworkController.php(58): EamsFrameworkController->render()
+#3 unknown(0): EamsFrameworkController->actionViewSP()
+#4 /var/www/html/eams/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#5 /var/www/html/eams/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 /var/www/html/eams/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /var/www/html/eams/framework/web/filters/CFilterChain.php(133): EamsFrameworkController->runAction()
+#8 /var/www/html/eams/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /var/www/html/eams/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#10 /var/www/html/eams/framework/web/filters/CInlineFilter.php(58): EamsFrameworkController->filterAccessControl()
+#11 /var/www/html/eams/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#12 /var/www/html/eams/framework/web/CController.php(291): CFilterChain->run()
+#13 /var/www/html/eams/framework/web/CController.php(265): EamsFrameworkController->runActionWithFilters()
+#14 /var/www/html/eams/framework/web/CWebApplication.php(282): EamsFrameworkController->run()
+#15 /var/www/html/eams/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /var/www/html/eams/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /var/www/html/eams/index.php(13): CWebApplication->run()
+REQUEST_URI=/eams/index.php?r=eamsFramework/viewSP&id=43
+in /var/www/html/eams/protected/views/eamsFramework/view_sp_report.php (131)
+in /var/www/html/eams/protected/controllers/EamsFrameworkController.php (58)
+in /var/www/html/eams/index.php (13)
+2016/01/23 21:39:14 [error] [php] Undefined variable: deltaLabel (/var/www/html/eams/protected/views/eamsFramework/view_sp_report.php:131)
+Stack trace:
+#0 /var/www/html/eams/framework/web/CController.php(869): EamsFrameworkController->renderFile()
+#1 /var/www/html/eams/framework/web/CController.php(782): EamsFrameworkController->renderPartial()
+#2 /var/www/html/eams/protected/controllers/EamsFrameworkController.php(58): EamsFrameworkController->render()
+#3 unknown(0): EamsFrameworkController->actionViewSP()
+#4 /var/www/html/eams/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#5 /var/www/html/eams/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 /var/www/html/eams/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /var/www/html/eams/framework/web/filters/CFilterChain.php(133): EamsFrameworkController->runAction()
+#8 /var/www/html/eams/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /var/www/html/eams/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#10 /var/www/html/eams/framework/web/filters/CInlineFilter.php(58): EamsFrameworkController->filterAccessControl()
+#11 /var/www/html/eams/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#12 /var/www/html/eams/framework/web/CController.php(291): CFilterChain->run()
+#13 /var/www/html/eams/framework/web/CController.php(265): EamsFrameworkController->runActionWithFilters()
+#14 /var/www/html/eams/framework/web/CWebApplication.php(282): EamsFrameworkController->run()
+#15 /var/www/html/eams/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /var/www/html/eams/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /var/www/html/eams/index.php(13): CWebApplication->run()
+REQUEST_URI=/eams/index.php?r=eamsFramework/viewSP&id=43
+in /var/www/html/eams/protected/views/eamsFramework/view_sp_report.php (131)
+in /var/www/html/eams/protected/controllers/EamsFrameworkController.php (58)
+in /var/www/html/eams/index.php (13)
+2016/01/24 17:01:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /var/www/html/eams/protected/controllers/EamsFactsController.php:196
+Stack trace:
+#0 /var/www/html/eams/protected/controllers/EamsFactsController.php(119): EamsFactsController->loadModel('undefined')
+#1 [internal function]: EamsFactsController->actionAsyncUpdate('undefined', '5')
+#2 /var/www/html/eams/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(EamsFactsController), Array)
+#3 /var/www/html/eams/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(EamsFactsController), Object(ReflectionMethod), Array)
+#4 /var/www/html/eams/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/html/eams/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /var/www/html/eams/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/html/eams/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/html/eams/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/html/eams/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/html/eams/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/html/eams/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/html/eams/framework/web/CWebApplication.php(282): CController->run('AsyncUpdate')
+#13 /var/www/html/eams/framework/web/CWebApplication.php(141): CWebApplication->runController('eamsFacts/Async...')
+#14 /var/www/html/eams/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/html/eams/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/eams/index.php?r=eamsFacts/AsyncUpdate&fact_id=undefined&value=5
+HTTP_REFERER=http://localhost/eams/index.php?r=eamsFramework/view&id=11
+---
+2016/01/24 17:01:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /var/www/html/eams/protected/controllers/EamsFactsController.php:196
+Stack trace:
+#0 /var/www/html/eams/protected/controllers/EamsFactsController.php(119): EamsFactsController->loadModel('undefined')
+#1 [internal function]: EamsFactsController->actionAsyncUpdate('undefined', '')
+#2 /var/www/html/eams/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(EamsFactsController), Array)
+#3 /var/www/html/eams/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(EamsFactsController), Object(ReflectionMethod), Array)
+#4 /var/www/html/eams/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/html/eams/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /var/www/html/eams/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/html/eams/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/html/eams/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/html/eams/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/html/eams/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/html/eams/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/html/eams/framework/web/CWebApplication.php(282): CController->run('AsyncUpdate')
+#13 /var/www/html/eams/framework/web/CWebApplication.php(141): CWebApplication->runController('eamsFacts/Async...')
+#14 /var/www/html/eams/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/html/eams/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/eams/index.php?r=eamsFacts/AsyncUpdate&fact_id=undefined&value=
+HTTP_REFERER=http://localhost/eams/index.php?r=eamsFramework/view&id=11
+---
+2016/01/24 17:20:04 [error] [exception.CException] exception 'CException' with message 'Property "TbDataColumn.options" is not defined.' in /var/www/html/eams/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/html/eams/framework/YiiBase.php(220): CComponent->__set('options', Array)
+#1 /var/www/html/eams/framework/zii/widgets/grid/CGridView.php(388): YiiBase::createComponent(Array, Object(TbGridView))
+#2 /var/www/html/eams/protected/extensions/bootstrap/widgets/TbGridView.php(81): CGridView->initColumns()
+#3 /var/www/html/eams/framework/zii/widgets/grid/CGridView.php(359): TbGridView->initColumns()
+#4 /var/www/html/eams/protected/extensions/bootstrap/widgets/TbGridView.php(50): CGridView->init()
+#5 /var/www/html/eams/framework/web/CBaseController.php(147): TbGridView->init()
+#6 /var/www/html/eams/framework/web/CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#7 /var/www/html/eams/protected/views/eacDecision/admin.php(113): CBaseController->widget('bootstrap.widge...', Array)
+#8 /var/www/html/eams/framework/web/CBaseController.php(126): require('/var/www/html/e...')
+#9 /var/www/html/eams/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/e...', Array, true)
+#10 /var/www/html/eams/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/e...', Array, true)
+#11 /var/www/html/eams/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#12 /var/www/html/eams/protected/controllers/EacDecisionController.php(256): CController->render('admin', Array)
+#13 [internal function]: EacDecisionController->actionAdmin('', '')
+#14 /var/www/html/eams/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(EacDecisionController), Array)
+#15 /var/www/html/eams/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(EacDecisionController), Object(ReflectionMethod), Array)
+#16 /var/www/html/eams/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#17 /var/www/html/eams/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 /var/www/html/eams/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /var/www/html/eams/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 /var/www/html/eams/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 /var/www/html/eams/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 /var/www/html/eams/framework/web/CController.php(291): CFilterChain->run()
+#23 /var/www/html/eams/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 /var/www/html/eams/framework/web/CWebApplication.php(282): CController->run('admin')
+#25 /var/www/html/eams/framework/web/CWebApplication.php(141): CWebApplication->runController('eacDecision/adm...')
+#26 /var/www/html/eams/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#27 /var/www/html/eams/index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/eams/index.php?r=eacDecision/admin
+HTTP_REFERER=http://localhost/eams/index.php?r=eamsFramework/spadmin
+---
+2016/01/24 17:49:21 [error] [exception.CException] exception 'CException' with message 'Property "TbDataColumn.head" is not defined.' in /var/www/html/eams/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/html/eams/framework/YiiBase.php(220): CComponent->__set('head', 'Performance Ind...')
+#1 /var/www/html/eams/framework/zii/widgets/grid/CGridView.php(388): YiiBase::createComponent(Array, Object(TbGridView))
+#2 /var/www/html/eams/protected/extensions/bootstrap/widgets/TbGridView.php(81): CGridView->initColumns()
+#3 /var/www/html/eams/framework/zii/widgets/grid/CGridView.php(359): TbGridView->initColumns()
+#4 /var/www/html/eams/protected/extensions/bootstrap/widgets/TbGridView.php(50): CGridView->init()
+#5 /var/www/html/eams/framework/web/CBaseController.php(147): TbGridView->init()
+#6 /var/www/html/eams/framework/web/CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#7 /var/www/html/eams/protected/views/eacDecision/admin.php(121): CBaseController->widget('bootstrap.widge...', Array)
+#8 /var/www/html/eams/framework/web/CBaseController.php(126): require('/var/www/html/e...')
+#9 /var/www/html/eams/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/e...', Array, true)
+#10 /var/www/html/eams/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/e...', Array, true)
+#11 /var/www/html/eams/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#12 /var/www/html/eams/protected/controllers/EacDecisionController.php(256): CController->render('admin', Array)
+#13 [internal function]: EacDecisionController->actionAdmin('', '')
+#14 /var/www/html/eams/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(EacDecisionController), Array)
+#15 /var/www/html/eams/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(EacDecisionController), Object(ReflectionMethod), Array)
+#16 /var/www/html/eams/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#17 /var/www/html/eams/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 /var/www/html/eams/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /var/www/html/eams/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 /var/www/html/eams/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 /var/www/html/eams/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 /var/www/html/eams/framework/web/CController.php(291): CFilterChain->run()
+#23 /var/www/html/eams/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 /var/www/html/eams/framework/web/CWebApplication.php(282): CController->run('admin')
+#25 /var/www/html/eams/framework/web/CWebApplication.php(141): CWebApplication->runController('eacDecision/adm...')
+#26 /var/www/html/eams/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#27 /var/www/html/eams/index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/eams/index.php?r=eacDecision/admin
+HTTP_REFERER=http://localhost/eams/index.php?r=indicator/admin
+---
+2016/01/24 17:56:47 [warning] [application] Failed to set unsafe attribute "decision_reference" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (94)
+in /var/www/html/eams/index.php (13)
+2016/01/24 17:56:47 [warning] [application] Failed to set unsafe attribute "responsibility_center" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (94)
+in /var/www/html/eams/index.php (13)
+2016/01/24 17:56:47 [warning] [application] Failed to set unsafe attribute "date_updated" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (94)
+in /var/www/html/eams/index.php (13)

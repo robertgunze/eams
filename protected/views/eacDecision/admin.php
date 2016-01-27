@@ -63,22 +63,36 @@ $this->widget('bootstrap.widgets.TbGridView', array(
         //'eams_central_id',
         'decision_reference',
         'decision_date',
-        'description',
+        //'description',
+        array(
+            'type' => 'html',
+            'header'=>'Description',
+            'value'=>'$data->description',
+            'htmlOptions'=>array('width'=>'400px'),
+            ),
         //'budgetary_implications',
         'time_frame',
-        'performance_indicators',
+        //'performance_indicators',
+        array(
+            'type'=>'html',
+            'header'=>'Performance Indicators',
+            'value'=>'$data->performance_indicators',
+            'htmlOptions'=>array('width'=>'150px'),
+            ),
         //'responsibility_center',
         //'meeting_no',
         array(
             'type' => 'html',
             'header'=>'Responsible MDA(s)',
-            'value'=>'$data->getResponsibleMdas()'
+            'value'=>'$data->getResponsibleMdas()',
+            'htmlOptions'=>array('width'=>'40px'),
         ),
 
         array(
             'type'=>'html',
             'header'=>'Progress Updates',
-            'value'=>'$data->getStatusLogs()'
+            'value'=>'$data->getStatusLogs()',
+            'htmlOptions'=>array('width'=>'200px'),
             ),
         array(
             'type' => 'html',
@@ -88,7 +102,7 @@ $this->widget('bootstrap.widgets.TbGridView', array(
         ),
         array(
             'class' => 'editable.EditableColumn',
-            'header'=>'Responsible MDA(s)',
+            'header'=>'',
             'name' => 'responsible_mda_id',
             'headerHtmlOptions' => array('style' => 'width: 100px'),
             'filter' => TbHtml::listData(Mda::model()->findAll(), "id", "description"),
