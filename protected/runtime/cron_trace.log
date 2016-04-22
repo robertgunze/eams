@@ -5242,3 +5242,508 @@ in /var/www/eams/cron.php (13)
 in /var/www/eams/protected/commands/IndicatorReportingCommand.php (52)
 in /var/www/eams/protected/commands/IndicatorReportingCommand.php (35)
 in /var/www/eams/cron.php (13)
+2016/04/14 16:07:13 [trace] [system.CModule] Loading "log" application component
+2016/04/14 16:07:30 [trace] [system.CModule] Loading "log" application component
+2016/04/14 16:07:33 [trace] [system.CModule] Loading "log" application component
+2016/04/14 16:07:35 [trace] [system.CModule] Loading "log" application component
+2016/04/14 16:07:38 [trace] [system.CModule] Loading "log" application component
+2016/04/14 16:09:15 [trace] [system.CModule] Loading "log" application component
+2016/04/14 16:09:18 [trace] [system.CModule] Loading "log" application component
+2016/04/14 16:09:20 [trace] [system.CModule] Loading "log" application component
+2016/04/14 16:09:22 [trace] [system.CModule] Loading "log" application component
+2016/04/14 16:09:25 [trace] [system.CModule] Loading "log" application component
+2016/04/14 16:09:59 [trace] [system.CModule] Loading "log" application component
+2016/04/14 16:10:02 [trace] [system.CModule] Loading "log" application component
+2016/04/14 16:10:04 [trace] [system.CModule] Loading "log" application component
+2016/04/14 16:10:06 [trace] [system.CModule] Loading "log" application component
+2016/04/14 16:10:22 [trace] [system.CModule] Loading "log" application component
+2016/04/14 16:12:16 [trace] [system.CModule] Loading "log" application component
+2016/04/14 16:12:16 [trace] [system.db.ar.CActiveRecord] Mda.findAll()
+2016/04/14 16:12:16 [trace] [system.CModule] Loading "db" application component
+2016/04/14 16:12:16 [trace] [system.db.CDbConnection] Opening DB connection
+2016/04/14 16:12:16 [trace] [system.CModule] Loading "errorHandler" application component
+2016/04/14 16:12:53 [trace] [system.CModule] Loading "log" application component
+2016/04/14 16:12:53 [trace] [system.db.ar.CActiveRecord] Mda.findAll()
+2016/04/14 16:12:53 [trace] [system.CModule] Loading "db" application component
+2016/04/14 16:12:53 [trace] [system.db.CDbConnection] Opening DB connection
+2016/04/14 16:12:53 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_mda`
+2016/04/14 16:12:53 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_mda`
+2016/04/14 16:12:53 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda` `t`
+2016/04/14 16:12:53 [trace] [system.db.ar.CActiveRecord] User.find()
+2016/04/14 16:12:53 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_user`
+2016/04/14 16:12:53 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_user`
+2016/04/14 16:12:53 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_user` `t` WHERE is_mda = :is_mda AND mda_id = :mda_id LIMIT 1
+2016/04/14 16:12:53 [trace] [system.db.ar.CActiveRecord] MdaDecisionMapping.findAll()
+2016/04/14 16:12:53 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_mda_decision_mapping`
+2016/04/14 16:12:53 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_mda_decision_mapping`
+2016/04/14 16:12:53 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda_decision_mapping` `t` WHERE mda_id =:mda
+2016/04/14 16:12:53 [trace] [system.db.ar.CActiveRecord] EacDecision.find()
+2016/04/14 16:12:53 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_eac_decision`
+2016/04/14 16:12:53 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_eac_decision`
+2016/04/14 16:12:53 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_eac_decision` `t` WHERE (0=1) AND (datediff(deadline,now()) < 14 OR datediff(deadline,now()) < 7 OR datediff(deadline,now()) < 3) LIMIT 1
+2016/04/14 16:12:53 [trace] [system.CModule] Loading "errorHandler" application component
+2016/04/14 16:13:15 [trace] [system.CModule] Loading "log" application component
+2016/04/14 16:13:15 [trace] [system.db.ar.CActiveRecord] Mda.findAll()
+2016/04/14 16:13:15 [trace] [system.CModule] Loading "db" application component
+2016/04/14 16:13:15 [trace] [system.db.CDbConnection] Opening DB connection
+2016/04/14 16:13:15 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_mda`
+2016/04/14 16:13:15 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_mda`
+2016/04/14 16:13:15 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda` `t`
+2016/04/14 16:13:15 [trace] [system.db.ar.CActiveRecord] User.find()
+2016/04/14 16:13:15 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_user`
+2016/04/14 16:13:15 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_user`
+2016/04/14 16:13:15 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_user` `t` WHERE is_mda = :is_mda AND mda_id = :mda_id LIMIT 1
+2016/04/14 16:13:15 [trace] [system.db.ar.CActiveRecord] MdaDecisionMapping.findAll()
+2016/04/14 16:13:15 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_mda_decision_mapping`
+2016/04/14 16:13:15 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_mda_decision_mapping`
+2016/04/14 16:13:15 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda_decision_mapping` `t` WHERE mda_id =:mda
+2016/04/14 16:13:15 [trace] [system.db.ar.CActiveRecord] EacDecision.find()
+2016/04/14 16:13:15 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_eac_decision`
+2016/04/14 16:13:15 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_eac_decision`
+2016/04/14 16:13:15 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_eac_decision` `t` WHERE (0=1) AND (datediff(deadline,now()) < 14 OR datediff(deadline,now()) < 7 OR datediff(deadline,now()) < 3) LIMIT 1
+2016/04/14 16:13:15 [trace] [system.CModule] Loading "errorHandler" application component
+2016/04/14 16:15:49 [trace] [system.CModule] Loading "log" application component
+2016/04/14 16:15:49 [trace] [system.db.ar.CActiveRecord] Mda.findAll()
+2016/04/14 16:15:49 [trace] [system.CModule] Loading "db" application component
+2016/04/14 16:15:49 [trace] [system.db.CDbConnection] Opening DB connection
+2016/04/14 16:15:49 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_mda`
+2016/04/14 16:15:49 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_mda`
+2016/04/14 16:15:49 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda` `t`
+2016/04/14 16:15:49 [trace] [system.db.ar.CActiveRecord] User.find()
+2016/04/14 16:15:49 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_user`
+2016/04/14 16:15:49 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_user`
+2016/04/14 16:15:49 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_user` `t` WHERE is_mda = :is_mda AND mda_id = :mda_id LIMIT 1
+2016/04/14 16:15:49 [trace] [system.db.ar.CActiveRecord] MdaDecisionMapping.findAll()
+2016/04/14 16:15:49 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_mda_decision_mapping`
+2016/04/14 16:15:49 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_mda_decision_mapping`
+2016/04/14 16:15:49 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda_decision_mapping` `t` WHERE mda_id =:mda
+2016/04/14 16:15:49 [trace] [system.db.ar.CActiveRecord] EacDecision.find()
+2016/04/14 16:15:49 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_eac_decision`
+2016/04/14 16:15:49 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_eac_decision`
+2016/04/14 16:15:49 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_eac_decision` `t` WHERE (0=1) AND (datediff(deadline,now()) IN (:ycp0, :ycp1, :ycp2)) LIMIT 1
+2016/04/14 16:15:49 [trace] [system.CModule] Loading "errorHandler" application component
+2016/04/14 16:16:01 [trace] [system.CModule] Loading "log" application component
+2016/04/14 16:16:01 [trace] [system.db.ar.CActiveRecord] Mda.findAll()
+2016/04/14 16:16:01 [trace] [system.CModule] Loading "db" application component
+2016/04/14 16:16:01 [trace] [system.db.CDbConnection] Opening DB connection
+2016/04/14 16:16:01 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_mda`
+2016/04/14 16:16:01 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_mda`
+2016/04/14 16:16:01 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda` `t`
+2016/04/14 16:16:01 [trace] [system.db.ar.CActiveRecord] User.find()
+2016/04/14 16:16:01 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_user`
+2016/04/14 16:16:01 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_user`
+2016/04/14 16:16:01 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_user` `t` WHERE is_mda = :is_mda AND mda_id = :mda_id LIMIT 1
+2016/04/14 16:16:01 [trace] [system.db.ar.CActiveRecord] MdaDecisionMapping.findAll()
+2016/04/14 16:16:01 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_mda_decision_mapping`
+2016/04/14 16:16:01 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_mda_decision_mapping`
+2016/04/14 16:16:01 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda_decision_mapping` `t` WHERE mda_id =:mda
+2016/04/14 16:16:01 [trace] [system.db.ar.CActiveRecord] EacDecision.find()
+2016/04/14 16:16:01 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_eac_decision`
+2016/04/14 16:16:01 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_eac_decision`
+2016/04/14 16:16:01 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_eac_decision` `t` WHERE (0=1) AND (datediff(deadline,now()) IN (:ycp0, :ycp1, :ycp2)) LIMIT 1
+2016/04/14 16:16:01 [trace] [system.CModule] Loading "errorHandler" application component
+2016/04/14 16:16:31 [trace] [system.CModule] Loading "log" application component
+2016/04/14 16:16:31 [trace] [system.db.ar.CActiveRecord] Mda.findAll()
+2016/04/14 16:16:31 [trace] [system.CModule] Loading "db" application component
+2016/04/14 16:16:31 [trace] [system.db.CDbConnection] Opening DB connection
+2016/04/14 16:16:31 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_mda`
+2016/04/14 16:16:31 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_mda`
+2016/04/14 16:16:31 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda` `t`
+2016/04/14 16:16:31 [trace] [system.db.ar.CActiveRecord] User.find()
+2016/04/14 16:16:31 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_user`
+2016/04/14 16:16:31 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_user`
+2016/04/14 16:16:31 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_user` `t` WHERE is_mda = :is_mda AND mda_id = :mda_id LIMIT 1
+2016/04/14 16:16:31 [trace] [system.db.ar.CActiveRecord] MdaDecisionMapping.findAll()
+2016/04/14 16:16:31 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_mda_decision_mapping`
+2016/04/14 16:16:31 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_mda_decision_mapping`
+2016/04/14 16:16:31 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda_decision_mapping` `t` WHERE mda_id =:mda
+2016/04/14 16:16:31 [trace] [system.db.ar.CActiveRecord] EacDecision.find()
+2016/04/14 16:16:31 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_eac_decision`
+2016/04/14 16:16:31 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_eac_decision`
+2016/04/14 16:16:31 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_eac_decision` `t` WHERE (0=1) AND (datediff(deadline,now()) IN (:ycp0, :ycp1, :ycp2)) LIMIT 1
+2016/04/14 16:16:31 [trace] [system.CModule] Loading "errorHandler" application component
+2016/04/14 16:16:51 [trace] [system.CModule] Loading "log" application component
+2016/04/14 16:16:51 [trace] [system.db.ar.CActiveRecord] Mda.findAll()
+2016/04/14 16:16:51 [trace] [system.CModule] Loading "db" application component
+2016/04/14 16:16:51 [trace] [system.db.CDbConnection] Opening DB connection
+2016/04/14 16:16:51 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_mda`
+2016/04/14 16:16:51 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_mda`
+2016/04/14 16:16:51 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda` `t`
+2016/04/14 16:16:51 [trace] [system.db.ar.CActiveRecord] User.find()
+2016/04/14 16:16:51 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_user`
+2016/04/14 16:16:51 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_user`
+2016/04/14 16:16:51 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_user` `t` WHERE is_mda = :is_mda AND mda_id = :mda_id LIMIT 1
+2016/04/14 16:16:51 [trace] [system.db.ar.CActiveRecord] MdaDecisionMapping.findAll()
+2016/04/14 16:16:51 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_mda_decision_mapping`
+2016/04/14 16:16:51 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_mda_decision_mapping`
+2016/04/14 16:16:51 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda_decision_mapping` `t` WHERE mda_id =:mda
+2016/04/14 16:16:51 [trace] [system.db.ar.CActiveRecord] EacDecision.find()
+2016/04/14 16:16:51 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_eac_decision`
+2016/04/14 16:16:51 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_eac_decision`
+2016/04/14 16:16:51 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_eac_decision` `t` WHERE (0=1) AND (datediff(deadline,now()) IN (:ycp0, :ycp1, :ycp2)) LIMIT 1
+2016/04/14 16:16:54 [trace] [system.CModule] Loading "log" application component
+2016/04/14 16:16:54 [trace] [system.db.ar.CActiveRecord] Mda.findAll()
+2016/04/14 16:16:54 [trace] [system.CModule] Loading "db" application component
+2016/04/14 16:16:54 [trace] [system.db.CDbConnection] Opening DB connection
+2016/04/14 16:16:54 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_mda`
+2016/04/14 16:16:54 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_mda`
+2016/04/14 16:16:54 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda` `t`
+2016/04/14 16:16:54 [trace] [system.db.ar.CActiveRecord] User.find()
+2016/04/14 16:16:54 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_user`
+2016/04/14 16:16:54 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_user`
+2016/04/14 16:16:54 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_user` `t` WHERE is_mda = :is_mda AND mda_id = :mda_id LIMIT 1
+2016/04/14 16:16:54 [trace] [system.db.ar.CActiveRecord] MdaDecisionMapping.findAll()
+2016/04/14 16:16:54 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_mda_decision_mapping`
+2016/04/14 16:16:54 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_mda_decision_mapping`
+2016/04/14 16:16:54 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda_decision_mapping` `t` WHERE mda_id =:mda
+2016/04/14 16:16:54 [trace] [system.db.ar.CActiveRecord] EacDecision.find()
+2016/04/14 16:16:54 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_eac_decision`
+2016/04/14 16:16:54 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_eac_decision`
+2016/04/14 16:16:54 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_eac_decision` `t` WHERE (0=1) AND (datediff(deadline,now()) IN (:ycp0, :ycp1, :ycp2)) LIMIT 1
+2016/04/14 16:17:07 [trace] [system.CModule] Loading "log" application component
+2016/04/14 16:17:07 [trace] [system.db.ar.CActiveRecord] Mda.findAll()
+2016/04/14 16:17:07 [trace] [system.CModule] Loading "db" application component
+2016/04/14 16:17:07 [trace] [system.db.CDbConnection] Opening DB connection
+2016/04/14 16:17:07 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_mda`
+2016/04/14 16:17:07 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_mda`
+2016/04/14 16:17:07 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda` `t`
+2016/04/14 16:17:07 [trace] [system.db.ar.CActiveRecord] User.find()
+2016/04/14 16:17:07 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_user`
+2016/04/14 16:17:07 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_user`
+2016/04/14 16:17:07 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_user` `t` WHERE is_mda = :is_mda AND mda_id = :mda_id LIMIT 1
+2016/04/14 16:17:07 [trace] [system.db.ar.CActiveRecord] MdaDecisionMapping.findAll()
+2016/04/14 16:17:07 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_mda_decision_mapping`
+2016/04/14 16:17:07 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_mda_decision_mapping`
+2016/04/14 16:17:07 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda_decision_mapping` `t` WHERE mda_id =:mda
+2016/04/14 16:17:07 [trace] [system.db.ar.CActiveRecord] EacDecision.find()
+2016/04/14 16:17:07 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_eac_decision`
+2016/04/14 16:17:07 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_eac_decision`
+2016/04/14 16:17:07 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_eac_decision` `t` WHERE (0=1) AND (datediff(deadline,now()) IN (:ycp0, :ycp1, :ycp2)) LIMIT 1
+2016/04/14 16:17:38 [trace] [system.CModule] Loading "log" application component
+2016/04/14 16:17:38 [trace] [system.db.ar.CActiveRecord] Mda.findAll()
+2016/04/14 16:17:38 [trace] [system.CModule] Loading "db" application component
+2016/04/14 16:17:38 [trace] [system.db.CDbConnection] Opening DB connection
+2016/04/14 16:17:38 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_mda`
+2016/04/14 16:17:38 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_mda`
+2016/04/14 16:17:38 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda` `t`
+2016/04/14 16:17:38 [trace] [system.db.ar.CActiveRecord] User.find()
+2016/04/14 16:17:38 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_user`
+2016/04/14 16:17:38 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_user`
+2016/04/14 16:17:38 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_user` `t` WHERE is_mda = :is_mda AND mda_id = :mda_id LIMIT 1
+2016/04/14 16:17:38 [trace] [system.db.ar.CActiveRecord] MdaDecisionMapping.findAll()
+2016/04/14 16:17:38 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_mda_decision_mapping`
+2016/04/14 16:17:38 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_mda_decision_mapping`
+2016/04/14 16:17:38 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda_decision_mapping` `t` WHERE mda_id =:mda
+2016/04/14 16:17:38 [trace] [system.db.ar.CActiveRecord] EacDecision.find()
+2016/04/14 16:17:38 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_eac_decision`
+2016/04/14 16:17:38 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_eac_decision`
+2016/04/14 16:17:38 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_eac_decision` `t` WHERE (0=1) AND (datediff(deadline,now()) IN (:ycp0, :ycp1, :ycp2)) LIMIT 1
+2016/04/14 16:17:38 [trace] [system.CModule] Loading "errorHandler" application component
+2016/04/14 16:17:43 [trace] [system.CModule] Loading "log" application component
+2016/04/14 16:17:43 [trace] [system.db.ar.CActiveRecord] Mda.findAll()
+2016/04/14 16:17:43 [trace] [system.CModule] Loading "db" application component
+2016/04/14 16:17:43 [trace] [system.db.CDbConnection] Opening DB connection
+2016/04/14 16:17:43 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_mda`
+2016/04/14 16:17:43 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_mda`
+2016/04/14 16:17:43 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda` `t`
+2016/04/14 16:17:43 [trace] [system.db.ar.CActiveRecord] User.find()
+2016/04/14 16:17:43 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_user`
+2016/04/14 16:17:43 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_user`
+2016/04/14 16:17:43 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_user` `t` WHERE is_mda = :is_mda AND mda_id = :mda_id LIMIT 1
+2016/04/14 16:17:43 [trace] [system.db.ar.CActiveRecord] MdaDecisionMapping.findAll()
+2016/04/14 16:17:43 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_mda_decision_mapping`
+2016/04/14 16:17:43 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_mda_decision_mapping`
+2016/04/14 16:17:43 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda_decision_mapping` `t` WHERE mda_id =:mda
+2016/04/14 16:17:43 [trace] [system.db.ar.CActiveRecord] EacDecision.find()
+2016/04/14 16:17:43 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_eac_decision`
+2016/04/14 16:17:43 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_eac_decision`
+2016/04/14 16:17:43 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_eac_decision` `t` WHERE (0=1) AND (datediff(deadline,now()) IN (:ycp0, :ycp1, :ycp2)) LIMIT 1
+2016/04/14 16:17:43 [trace] [system.CModule] Loading "errorHandler" application component
+2016/04/14 16:19:04 [trace] [system.CModule] Loading "log" application component
+2016/04/14 16:19:04 [trace] [system.db.ar.CActiveRecord] Mda.findAll()
+2016/04/14 16:19:04 [trace] [system.CModule] Loading "db" application component
+2016/04/14 16:19:04 [trace] [system.db.CDbConnection] Opening DB connection
+2016/04/14 16:19:04 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_mda`
+2016/04/14 16:19:04 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_mda`
+2016/04/14 16:19:04 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda` `t`
+2016/04/14 16:19:04 [trace] [system.db.ar.CActiveRecord] User.find()
+2016/04/14 16:19:04 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_user`
+2016/04/14 16:19:04 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_user`
+2016/04/14 16:19:04 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_user` `t` WHERE is_mda = :is_mda AND mda_id = :mda_id LIMIT 1
+2016/04/14 16:19:04 [trace] [system.db.ar.CActiveRecord] MdaDecisionMapping.findAll()
+2016/04/14 16:19:04 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_mda_decision_mapping`
+2016/04/14 16:19:04 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_mda_decision_mapping`
+2016/04/14 16:19:04 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda_decision_mapping` `t` WHERE mda_id =:mda
+2016/04/14 16:19:04 [trace] [system.db.ar.CActiveRecord] EacDecision.find()
+2016/04/14 16:19:04 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_eac_decision`
+2016/04/14 16:19:04 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_eac_decision`
+2016/04/14 16:19:04 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_eac_decision` `t` WHERE (0=1) AND (datediff(deadline,now()) IN (:ycp0, :ycp1, :ycp2)) LIMIT 1
+2016/04/14 16:19:04 [trace] [system.db.ar.CActiveRecord] User.find()
+2016/04/14 16:19:04 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_user` `t` WHERE is_mda = :is_mda AND mda_id = :mda_id LIMIT 1
+2016/04/14 16:19:04 [trace] [system.db.ar.CActiveRecord] MdaDecisionMapping.findAll()
+2016/04/14 16:19:04 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda_decision_mapping` `t` WHERE mda_id =:mda
+2016/04/14 16:19:04 [trace] [system.db.ar.CActiveRecord] EacDecision.find()
+2016/04/14 16:19:04 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_eac_decision` `t` WHERE (id IN (:ycp3, :ycp4)) AND (datediff(deadline,now()) IN (:ycp5, :ycp6, :ycp7)) LIMIT 1
+2016/04/14 16:19:04 [trace] [system.db.ar.CActiveRecord] User.find()
+2016/04/14 16:19:04 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_user` `t` WHERE is_mda = :is_mda AND mda_id = :mda_id LIMIT 1
+2016/04/14 16:19:04 [trace] [system.CModule] Loading "errorHandler" application component
+2016/04/14 16:20:01 [trace] [system.CModule] Loading "log" application component
+2016/04/14 16:20:01 [trace] [system.db.ar.CActiveRecord] Mda.findAll()
+2016/04/14 16:20:01 [trace] [system.CModule] Loading "db" application component
+2016/04/14 16:20:01 [trace] [system.db.CDbConnection] Opening DB connection
+2016/04/14 16:20:01 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_mda`
+2016/04/14 16:20:01 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_mda`
+2016/04/14 16:20:01 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda` `t`
+2016/04/14 16:20:01 [trace] [system.db.ar.CActiveRecord] User.find()
+2016/04/14 16:20:01 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_user`
+2016/04/14 16:20:01 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_user`
+2016/04/14 16:20:01 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_user` `t` WHERE is_mda = :is_mda AND mda_id = :mda_id LIMIT 1
+2016/04/14 16:20:01 [trace] [system.db.ar.CActiveRecord] MdaDecisionMapping.findAll()
+2016/04/14 16:20:01 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_mda_decision_mapping`
+2016/04/14 16:20:01 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_mda_decision_mapping`
+2016/04/14 16:20:01 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda_decision_mapping` `t` WHERE mda_id =:mda
+2016/04/14 16:20:01 [trace] [system.db.ar.CActiveRecord] EacDecision.find()
+2016/04/14 16:20:01 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_eac_decision`
+2016/04/14 16:20:01 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_eac_decision`
+2016/04/14 16:20:01 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_eac_decision` `t` WHERE (0=1) AND (datediff(deadline,now()) IN (:ycp0, :ycp1, :ycp2)) LIMIT 1
+2016/04/14 16:20:01 [trace] [system.db.ar.CActiveRecord] User.find()
+2016/04/14 16:20:01 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_user` `t` WHERE is_mda = :is_mda AND mda_id = :mda_id LIMIT 1
+2016/04/14 16:20:01 [trace] [system.db.ar.CActiveRecord] MdaDecisionMapping.findAll()
+2016/04/14 16:20:01 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda_decision_mapping` `t` WHERE mda_id =:mda
+2016/04/14 16:20:01 [trace] [system.db.ar.CActiveRecord] EacDecision.find()
+2016/04/14 16:20:01 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_eac_decision` `t` WHERE (id IN (:ycp3, :ycp4)) AND (datediff(deadline,now()) IN (:ycp5, :ycp6, :ycp7)) LIMIT 1
+2016/04/14 16:20:01 [trace] [system.db.ar.CActiveRecord] User.find()
+2016/04/14 16:20:01 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_user` `t` WHERE is_mda = :is_mda AND mda_id = :mda_id LIMIT 1
+2016/04/14 16:20:01 [trace] [system.db.ar.CActiveRecord] MdaDecisionMapping.findAll()
+2016/04/14 16:20:01 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda_decision_mapping` `t` WHERE mda_id =:mda
+2016/04/14 16:20:01 [trace] [system.db.ar.CActiveRecord] EacDecision.find()
+2016/04/14 16:20:01 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_eac_decision` `t` WHERE (id IN (:ycp8, :ycp9)) AND (datediff(deadline,now()) IN (:ycp10, :ycp11, :ycp12)) LIMIT 1
+2016/04/14 16:20:01 [trace] [system.db.ar.CActiveRecord] User.find()
+2016/04/14 16:20:01 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_user` `t` WHERE is_mda = :is_mda AND mda_id = :mda_id LIMIT 1
+2016/04/14 16:20:01 [trace] [system.db.ar.CActiveRecord] MdaDecisionMapping.findAll()
+2016/04/14 16:20:01 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda_decision_mapping` `t` WHERE mda_id =:mda
+2016/04/14 16:20:01 [trace] [system.db.ar.CActiveRecord] EacDecision.find()
+2016/04/14 16:20:01 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_eac_decision` `t` WHERE (0=1) AND (datediff(deadline,now()) IN (:ycp13, :ycp14, :ycp15)) LIMIT 1
+2016/04/14 16:20:01 [trace] [system.db.ar.CActiveRecord] User.find()
+2016/04/14 16:20:01 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_user` `t` WHERE is_mda = :is_mda AND mda_id = :mda_id LIMIT 1
+2016/04/14 16:20:01 [trace] [system.db.ar.CActiveRecord] MdaDecisionMapping.findAll()
+2016/04/14 16:20:01 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda_decision_mapping` `t` WHERE mda_id =:mda
+2016/04/14 16:20:01 [trace] [system.db.ar.CActiveRecord] EacDecision.find()
+2016/04/14 16:20:01 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_eac_decision` `t` WHERE (id=:ycp16) AND (datediff(deadline,now()) IN (:ycp17, :ycp18, :ycp19)) LIMIT 1
+2016/04/14 16:20:01 [trace] [system.db.ar.CActiveRecord] User.find()
+2016/04/14 16:20:01 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_user` `t` WHERE is_mda = :is_mda AND mda_id = :mda_id LIMIT 1
+2016/04/14 16:20:01 [trace] [system.db.ar.CActiveRecord] MdaDecisionMapping.findAll()
+2016/04/14 16:20:01 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda_decision_mapping` `t` WHERE mda_id =:mda
+2016/04/14 16:20:01 [trace] [system.db.ar.CActiveRecord] EacDecision.find()
+2016/04/14 16:20:01 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_eac_decision` `t` WHERE (id IN (:ycp20, :ycp21)) AND (datediff(deadline,now()) IN (:ycp22, :ycp23, :ycp24)) LIMIT 1
+2016/04/14 16:20:11 [trace] [system.CModule] Loading "log" application component
+2016/04/14 16:20:11 [trace] [system.db.ar.CActiveRecord] Mda.findAll()
+2016/04/14 16:20:11 [trace] [system.CModule] Loading "db" application component
+2016/04/14 16:20:11 [trace] [system.db.CDbConnection] Opening DB connection
+2016/04/14 16:20:11 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_mda`
+2016/04/14 16:20:11 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_mda`
+2016/04/14 16:20:11 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda` `t`
+2016/04/14 16:20:11 [trace] [system.db.ar.CActiveRecord] User.find()
+2016/04/14 16:20:11 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_user`
+2016/04/14 16:20:11 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_user`
+2016/04/14 16:20:11 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_user` `t` WHERE is_mda = :is_mda AND mda_id = :mda_id LIMIT 1
+2016/04/14 16:20:11 [trace] [system.db.ar.CActiveRecord] MdaDecisionMapping.findAll()
+2016/04/14 16:20:11 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_mda_decision_mapping`
+2016/04/14 16:20:11 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_mda_decision_mapping`
+2016/04/14 16:20:11 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda_decision_mapping` `t` WHERE mda_id =:mda
+2016/04/14 16:20:11 [trace] [system.db.ar.CActiveRecord] EacDecision.find()
+2016/04/14 16:20:11 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_eac_decision`
+2016/04/14 16:20:11 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_eac_decision`
+2016/04/14 16:20:11 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_eac_decision` `t` WHERE (0=1) AND (datediff(deadline,now()) IN (:ycp0, :ycp1, :ycp2)) LIMIT 1
+2016/04/14 16:20:11 [trace] [system.db.ar.CActiveRecord] User.find()
+2016/04/14 16:20:11 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_user` `t` WHERE is_mda = :is_mda AND mda_id = :mda_id LIMIT 1
+2016/04/14 16:20:11 [trace] [system.db.ar.CActiveRecord] MdaDecisionMapping.findAll()
+2016/04/14 16:20:11 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda_decision_mapping` `t` WHERE mda_id =:mda
+2016/04/14 16:20:11 [trace] [system.db.ar.CActiveRecord] EacDecision.find()
+2016/04/14 16:20:11 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_eac_decision` `t` WHERE (id IN (:ycp3, :ycp4)) AND (datediff(deadline,now()) IN (:ycp5, :ycp6, :ycp7)) LIMIT 1
+2016/04/14 16:20:11 [trace] [system.db.ar.CActiveRecord] User.find()
+2016/04/14 16:20:11 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_user` `t` WHERE is_mda = :is_mda AND mda_id = :mda_id LIMIT 1
+2016/04/14 16:20:11 [trace] [system.db.ar.CActiveRecord] MdaDecisionMapping.findAll()
+2016/04/14 16:20:11 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda_decision_mapping` `t` WHERE mda_id =:mda
+2016/04/14 16:20:11 [trace] [system.db.ar.CActiveRecord] EacDecision.find()
+2016/04/14 16:20:11 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_eac_decision` `t` WHERE (id IN (:ycp8, :ycp9)) AND (datediff(deadline,now()) IN (:ycp10, :ycp11, :ycp12)) LIMIT 1
+2016/04/14 16:20:11 [trace] [system.db.ar.CActiveRecord] User.find()
+2016/04/14 16:20:11 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_user` `t` WHERE is_mda = :is_mda AND mda_id = :mda_id LIMIT 1
+2016/04/14 16:20:11 [trace] [system.db.ar.CActiveRecord] MdaDecisionMapping.findAll()
+2016/04/14 16:20:11 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda_decision_mapping` `t` WHERE mda_id =:mda
+2016/04/14 16:20:11 [trace] [system.db.ar.CActiveRecord] EacDecision.find()
+2016/04/14 16:20:11 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_eac_decision` `t` WHERE (0=1) AND (datediff(deadline,now()) IN (:ycp13, :ycp14, :ycp15)) LIMIT 1
+2016/04/14 16:20:11 [trace] [system.db.ar.CActiveRecord] User.find()
+2016/04/14 16:20:11 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_user` `t` WHERE is_mda = :is_mda AND mda_id = :mda_id LIMIT 1
+2016/04/14 16:20:11 [trace] [system.db.ar.CActiveRecord] MdaDecisionMapping.findAll()
+2016/04/14 16:20:11 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda_decision_mapping` `t` WHERE mda_id =:mda
+2016/04/14 16:20:11 [trace] [system.db.ar.CActiveRecord] EacDecision.find()
+2016/04/14 16:20:11 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_eac_decision` `t` WHERE (id=:ycp16) AND (datediff(deadline,now()) IN (:ycp17, :ycp18, :ycp19)) LIMIT 1
+2016/04/14 16:20:11 [trace] [system.db.ar.CActiveRecord] User.find()
+2016/04/14 16:20:11 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_user` `t` WHERE is_mda = :is_mda AND mda_id = :mda_id LIMIT 1
+2016/04/14 16:20:11 [trace] [system.db.ar.CActiveRecord] MdaDecisionMapping.findAll()
+2016/04/14 16:20:11 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda_decision_mapping` `t` WHERE mda_id =:mda
+2016/04/14 16:20:11 [trace] [system.db.ar.CActiveRecord] EacDecision.find()
+2016/04/14 16:20:11 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_eac_decision` `t` WHERE (id IN (:ycp20, :ycp21)) AND (datediff(deadline,now()) IN (:ycp22, :ycp23, :ycp24)) LIMIT 1
+2016/04/14 16:20:14 [trace] [system.CModule] Loading "log" application component
+2016/04/14 16:20:14 [trace] [system.db.ar.CActiveRecord] Mda.findAll()
+2016/04/14 16:20:14 [trace] [system.CModule] Loading "db" application component
+2016/04/14 16:20:14 [trace] [system.db.CDbConnection] Opening DB connection
+2016/04/14 16:20:14 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_mda`
+2016/04/14 16:20:14 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_mda`
+2016/04/14 16:20:14 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda` `t`
+2016/04/14 16:20:14 [trace] [system.db.ar.CActiveRecord] User.find()
+2016/04/14 16:20:14 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_user`
+2016/04/14 16:20:14 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_user`
+2016/04/14 16:20:14 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_user` `t` WHERE is_mda = :is_mda AND mda_id = :mda_id LIMIT 1
+2016/04/14 16:20:14 [trace] [system.db.ar.CActiveRecord] MdaDecisionMapping.findAll()
+2016/04/14 16:20:14 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_mda_decision_mapping`
+2016/04/14 16:20:14 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_mda_decision_mapping`
+2016/04/14 16:20:14 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda_decision_mapping` `t` WHERE mda_id =:mda
+2016/04/14 16:20:14 [trace] [system.db.ar.CActiveRecord] EacDecision.find()
+2016/04/14 16:20:14 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_eac_decision`
+2016/04/14 16:20:14 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_eac_decision`
+2016/04/14 16:20:14 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_eac_decision` `t` WHERE (0=1) AND (datediff(deadline,now()) IN (:ycp0, :ycp1, :ycp2)) LIMIT 1
+2016/04/14 16:20:14 [trace] [system.db.ar.CActiveRecord] User.find()
+2016/04/14 16:20:14 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_user` `t` WHERE is_mda = :is_mda AND mda_id = :mda_id LIMIT 1
+2016/04/14 16:20:14 [trace] [system.db.ar.CActiveRecord] MdaDecisionMapping.findAll()
+2016/04/14 16:20:14 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda_decision_mapping` `t` WHERE mda_id =:mda
+2016/04/14 16:20:14 [trace] [system.db.ar.CActiveRecord] EacDecision.find()
+2016/04/14 16:20:14 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_eac_decision` `t` WHERE (id IN (:ycp3, :ycp4)) AND (datediff(deadline,now()) IN (:ycp5, :ycp6, :ycp7)) LIMIT 1
+2016/04/14 16:20:14 [trace] [system.db.ar.CActiveRecord] User.find()
+2016/04/14 16:20:14 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_user` `t` WHERE is_mda = :is_mda AND mda_id = :mda_id LIMIT 1
+2016/04/14 16:20:14 [trace] [system.db.ar.CActiveRecord] MdaDecisionMapping.findAll()
+2016/04/14 16:20:14 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda_decision_mapping` `t` WHERE mda_id =:mda
+2016/04/14 16:20:14 [trace] [system.db.ar.CActiveRecord] EacDecision.find()
+2016/04/14 16:20:14 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_eac_decision` `t` WHERE (id IN (:ycp8, :ycp9)) AND (datediff(deadline,now()) IN (:ycp10, :ycp11, :ycp12)) LIMIT 1
+2016/04/14 16:20:14 [trace] [system.db.ar.CActiveRecord] User.find()
+2016/04/14 16:20:14 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_user` `t` WHERE is_mda = :is_mda AND mda_id = :mda_id LIMIT 1
+2016/04/14 16:20:14 [trace] [system.db.ar.CActiveRecord] MdaDecisionMapping.findAll()
+2016/04/14 16:20:14 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda_decision_mapping` `t` WHERE mda_id =:mda
+2016/04/14 16:20:14 [trace] [system.db.ar.CActiveRecord] EacDecision.find()
+2016/04/14 16:20:14 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_eac_decision` `t` WHERE (0=1) AND (datediff(deadline,now()) IN (:ycp13, :ycp14, :ycp15)) LIMIT 1
+2016/04/14 16:20:14 [trace] [system.db.ar.CActiveRecord] User.find()
+2016/04/14 16:20:14 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_user` `t` WHERE is_mda = :is_mda AND mda_id = :mda_id LIMIT 1
+2016/04/14 16:20:14 [trace] [system.db.ar.CActiveRecord] MdaDecisionMapping.findAll()
+2016/04/14 16:20:14 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda_decision_mapping` `t` WHERE mda_id =:mda
+2016/04/14 16:20:14 [trace] [system.db.ar.CActiveRecord] EacDecision.find()
+2016/04/14 16:20:14 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_eac_decision` `t` WHERE (id=:ycp16) AND (datediff(deadline,now()) IN (:ycp17, :ycp18, :ycp19)) LIMIT 1
+2016/04/14 16:20:14 [trace] [system.db.ar.CActiveRecord] User.find()
+2016/04/14 16:20:14 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_user` `t` WHERE is_mda = :is_mda AND mda_id = :mda_id LIMIT 1
+2016/04/14 16:20:14 [trace] [system.db.ar.CActiveRecord] MdaDecisionMapping.findAll()
+2016/04/14 16:20:14 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda_decision_mapping` `t` WHERE mda_id =:mda
+2016/04/14 16:20:14 [trace] [system.db.ar.CActiveRecord] EacDecision.find()
+2016/04/14 16:20:14 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_eac_decision` `t` WHERE (id IN (:ycp20, :ycp21)) AND (datediff(deadline,now()) IN (:ycp22, :ycp23, :ycp24)) LIMIT 1
+2016/04/14 16:20:16 [trace] [system.CModule] Loading "log" application component
+2016/04/14 16:20:16 [trace] [system.db.ar.CActiveRecord] Mda.findAll()
+2016/04/14 16:20:16 [trace] [system.CModule] Loading "db" application component
+2016/04/14 16:20:16 [trace] [system.db.CDbConnection] Opening DB connection
+2016/04/14 16:20:16 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_mda`
+2016/04/14 16:20:16 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_mda`
+2016/04/14 16:20:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda` `t`
+2016/04/14 16:20:16 [trace] [system.db.ar.CActiveRecord] User.find()
+2016/04/14 16:20:16 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_user`
+2016/04/14 16:20:16 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_user`
+2016/04/14 16:20:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_user` `t` WHERE is_mda = :is_mda AND mda_id = :mda_id LIMIT 1
+2016/04/14 16:20:16 [trace] [system.db.ar.CActiveRecord] MdaDecisionMapping.findAll()
+2016/04/14 16:20:16 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_mda_decision_mapping`
+2016/04/14 16:20:16 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_mda_decision_mapping`
+2016/04/14 16:20:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda_decision_mapping` `t` WHERE mda_id =:mda
+2016/04/14 16:20:16 [trace] [system.db.ar.CActiveRecord] EacDecision.find()
+2016/04/14 16:20:16 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_eac_decision`
+2016/04/14 16:20:16 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_eac_decision`
+2016/04/14 16:20:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_eac_decision` `t` WHERE (0=1) AND (datediff(deadline,now()) IN (:ycp0, :ycp1, :ycp2)) LIMIT 1
+2016/04/14 16:20:16 [trace] [system.db.ar.CActiveRecord] User.find()
+2016/04/14 16:20:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_user` `t` WHERE is_mda = :is_mda AND mda_id = :mda_id LIMIT 1
+2016/04/14 16:20:16 [trace] [system.db.ar.CActiveRecord] MdaDecisionMapping.findAll()
+2016/04/14 16:20:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda_decision_mapping` `t` WHERE mda_id =:mda
+2016/04/14 16:20:16 [trace] [system.db.ar.CActiveRecord] EacDecision.find()
+2016/04/14 16:20:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_eac_decision` `t` WHERE (id IN (:ycp3, :ycp4)) AND (datediff(deadline,now()) IN (:ycp5, :ycp6, :ycp7)) LIMIT 1
+2016/04/14 16:20:16 [trace] [system.db.ar.CActiveRecord] User.find()
+2016/04/14 16:20:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_user` `t` WHERE is_mda = :is_mda AND mda_id = :mda_id LIMIT 1
+2016/04/14 16:20:16 [trace] [system.db.ar.CActiveRecord] MdaDecisionMapping.findAll()
+2016/04/14 16:20:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda_decision_mapping` `t` WHERE mda_id =:mda
+2016/04/14 16:20:16 [trace] [system.db.ar.CActiveRecord] EacDecision.find()
+2016/04/14 16:20:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_eac_decision` `t` WHERE (id IN (:ycp8, :ycp9)) AND (datediff(deadline,now()) IN (:ycp10, :ycp11, :ycp12)) LIMIT 1
+2016/04/14 16:20:16 [trace] [system.db.ar.CActiveRecord] User.find()
+2016/04/14 16:20:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_user` `t` WHERE is_mda = :is_mda AND mda_id = :mda_id LIMIT 1
+2016/04/14 16:20:16 [trace] [system.db.ar.CActiveRecord] MdaDecisionMapping.findAll()
+2016/04/14 16:20:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda_decision_mapping` `t` WHERE mda_id =:mda
+2016/04/14 16:20:16 [trace] [system.db.ar.CActiveRecord] EacDecision.find()
+2016/04/14 16:20:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_eac_decision` `t` WHERE (0=1) AND (datediff(deadline,now()) IN (:ycp13, :ycp14, :ycp15)) LIMIT 1
+2016/04/14 16:20:16 [trace] [system.db.ar.CActiveRecord] User.find()
+2016/04/14 16:20:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_user` `t` WHERE is_mda = :is_mda AND mda_id = :mda_id LIMIT 1
+2016/04/14 16:20:16 [trace] [system.db.ar.CActiveRecord] MdaDecisionMapping.findAll()
+2016/04/14 16:20:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda_decision_mapping` `t` WHERE mda_id =:mda
+2016/04/14 16:20:16 [trace] [system.db.ar.CActiveRecord] EacDecision.find()
+2016/04/14 16:20:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_eac_decision` `t` WHERE (id=:ycp16) AND (datediff(deadline,now()) IN (:ycp17, :ycp18, :ycp19)) LIMIT 1
+2016/04/14 16:20:16 [trace] [system.db.ar.CActiveRecord] User.find()
+2016/04/14 16:20:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_user` `t` WHERE is_mda = :is_mda AND mda_id = :mda_id LIMIT 1
+2016/04/14 16:20:16 [trace] [system.db.ar.CActiveRecord] MdaDecisionMapping.findAll()
+2016/04/14 16:20:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda_decision_mapping` `t` WHERE mda_id =:mda
+2016/04/14 16:20:16 [trace] [system.db.ar.CActiveRecord] EacDecision.find()
+2016/04/14 16:20:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_eac_decision` `t` WHERE (id IN (:ycp20, :ycp21)) AND (datediff(deadline,now()) IN (:ycp22, :ycp23, :ycp24)) LIMIT 1
+2016/04/14 16:20:19 [trace] [system.CModule] Loading "log" application component
+2016/04/14 16:20:19 [trace] [system.db.ar.CActiveRecord] Mda.findAll()
+2016/04/14 16:20:19 [trace] [system.CModule] Loading "db" application component
+2016/04/14 16:20:19 [trace] [system.db.CDbConnection] Opening DB connection
+2016/04/14 16:20:19 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_mda`
+2016/04/14 16:20:19 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_mda`
+2016/04/14 16:20:19 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda` `t`
+2016/04/14 16:20:19 [trace] [system.db.ar.CActiveRecord] User.find()
+2016/04/14 16:20:19 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_user`
+2016/04/14 16:20:19 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_user`
+2016/04/14 16:20:19 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_user` `t` WHERE is_mda = :is_mda AND mda_id = :mda_id LIMIT 1
+2016/04/14 16:20:19 [trace] [system.db.ar.CActiveRecord] MdaDecisionMapping.findAll()
+2016/04/14 16:20:19 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_mda_decision_mapping`
+2016/04/14 16:20:19 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_mda_decision_mapping`
+2016/04/14 16:20:19 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda_decision_mapping` `t` WHERE mda_id =:mda
+2016/04/14 16:20:19 [trace] [system.db.ar.CActiveRecord] EacDecision.find()
+2016/04/14 16:20:19 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_eac_decision`
+2016/04/14 16:20:19 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_eac_decision`
+2016/04/14 16:20:19 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_eac_decision` `t` WHERE (0=1) AND (datediff(deadline,now()) IN (:ycp0, :ycp1, :ycp2)) LIMIT 1
+2016/04/14 16:20:19 [trace] [system.db.ar.CActiveRecord] User.find()
+2016/04/14 16:20:19 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_user` `t` WHERE is_mda = :is_mda AND mda_id = :mda_id LIMIT 1
+2016/04/14 16:20:19 [trace] [system.db.ar.CActiveRecord] MdaDecisionMapping.findAll()
+2016/04/14 16:20:19 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda_decision_mapping` `t` WHERE mda_id =:mda
+2016/04/14 16:20:19 [trace] [system.db.ar.CActiveRecord] EacDecision.find()
+2016/04/14 16:20:19 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_eac_decision` `t` WHERE (id IN (:ycp3, :ycp4)) AND (datediff(deadline,now()) IN (:ycp5, :ycp6, :ycp7)) LIMIT 1
+2016/04/14 16:20:19 [trace] [system.db.ar.CActiveRecord] User.find()
+2016/04/14 16:20:19 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_user` `t` WHERE is_mda = :is_mda AND mda_id = :mda_id LIMIT 1
+2016/04/14 16:20:19 [trace] [system.db.ar.CActiveRecord] MdaDecisionMapping.findAll()
+2016/04/14 16:20:19 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda_decision_mapping` `t` WHERE mda_id =:mda
+2016/04/14 16:20:19 [trace] [system.db.ar.CActiveRecord] EacDecision.find()
+2016/04/14 16:20:19 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_eac_decision` `t` WHERE (id IN (:ycp8, :ycp9)) AND (datediff(deadline,now()) IN (:ycp10, :ycp11, :ycp12)) LIMIT 1
+2016/04/14 16:20:19 [trace] [system.db.ar.CActiveRecord] User.find()
+2016/04/14 16:20:19 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_user` `t` WHERE is_mda = :is_mda AND mda_id = :mda_id LIMIT 1
+2016/04/14 16:20:19 [trace] [system.db.ar.CActiveRecord] MdaDecisionMapping.findAll()
+2016/04/14 16:20:19 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda_decision_mapping` `t` WHERE mda_id =:mda
+2016/04/14 16:20:19 [trace] [system.db.ar.CActiveRecord] EacDecision.find()
+2016/04/14 16:20:19 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_eac_decision` `t` WHERE (0=1) AND (datediff(deadline,now()) IN (:ycp13, :ycp14, :ycp15)) LIMIT 1
+2016/04/14 16:20:19 [trace] [system.db.ar.CActiveRecord] User.find()
+2016/04/14 16:20:19 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_user` `t` WHERE is_mda = :is_mda AND mda_id = :mda_id LIMIT 1
+2016/04/14 16:20:19 [trace] [system.db.ar.CActiveRecord] MdaDecisionMapping.findAll()
+2016/04/14 16:20:19 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda_decision_mapping` `t` WHERE mda_id =:mda
+2016/04/14 16:20:19 [trace] [system.db.ar.CActiveRecord] EacDecision.find()
+2016/04/14 16:20:19 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_eac_decision` `t` WHERE (id=:ycp16) AND (datediff(deadline,now()) IN (:ycp17, :ycp18, :ycp19)) LIMIT 1
+2016/04/14 16:20:19 [trace] [system.db.ar.CActiveRecord] User.find()
+2016/04/14 16:20:19 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_user` `t` WHERE is_mda = :is_mda AND mda_id = :mda_id LIMIT 1
+2016/04/14 16:20:19 [trace] [system.db.ar.CActiveRecord] MdaDecisionMapping.findAll()
+2016/04/14 16:20:19 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda_decision_mapping` `t` WHERE mda_id =:mda
+2016/04/14 16:20:19 [trace] [system.db.ar.CActiveRecord] EacDecision.find()
+2016/04/14 16:20:19 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_eac_decision` `t` WHERE (id IN (:ycp20, :ycp21)) AND (datediff(deadline,now()) IN (:ycp22, :ycp23, :ycp24)) LIMIT 1
+2016/04/14 16:22:17 [trace] [system.CModule] Loading "log" application component
+2016/04/14 16:22:17 [trace] [system.db.ar.CActiveRecord] Mda.findAll()
+2016/04/14 16:22:17 [trace] [system.CModule] Loading "db" application component
+2016/04/14 16:22:17 [trace] [system.db.CDbConnection] Opening DB connection
+2016/04/14 16:22:17 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_mda`
+2016/04/14 16:22:17 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_mda`
+2016/04/14 16:22:17 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda` `t`
+2016/04/14 16:22:17 [trace] [system.db.ar.CActiveRecord] User.find()
+2016/04/14 16:22:17 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_user`
+2016/04/14 16:22:17 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_user`
+2016/04/14 16:22:17 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_user` `t` WHERE is_mda = :is_mda AND mda_id = :mda_id LIMIT 1
+2016/04/14 16:22:17 [trace] [system.db.ar.CActiveRecord] MdaDecisionMapping.findAll()
+2016/04/14 16:22:17 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_mda_decision_mapping`
+2016/04/14 16:22:17 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_mda_decision_mapping`
+2016/04/14 16:22:17 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_mda_decision_mapping` `t` WHERE mda_id =:mda

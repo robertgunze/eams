@@ -17,7 +17,7 @@ $this->menu=array(
 	array('label'=>'Manage EamsFramework', 'url'=>array('admin')),
 );
 ?>
-<h1 id="report-header1" style="display:none">Ministry of East African Cooperation</h1>
+<h1 id="report-header1" style="display:none">Ministry of Foreign Affairs, East African, Regional and International Cooperation</h1>
 
 <?php echo TbHtml::pageHeader('', 'View Eams Framework #'.$model->id); ?>
 <?php echo CHtml::link('Add Indicator', $this->createUrl('indicator/create',array('framework_id'=>$model->id)), array('class' => 'btn btn-success')); ?>

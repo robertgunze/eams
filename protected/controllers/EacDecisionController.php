@@ -107,6 +107,7 @@ class EacDecisionController extends Controller
 		$excludedMdas = Mda::model()->findAll(array(
 			'condition'=>'id NOT IN (:mdas)',
 			'params'=>array(':mdas'=>implode(',',$currentMdas))));
+		$removedMdas = [];
 		foreach ($excludedMdas as $key => $mda) {
 			$mapping = MdaDecisionMapping::model()->find('decision_id=:id AND mda_id=:mda', 
                     array(
@@ -115,16 +116,19 @@ class EacDecisionController extends Controller
                     ));
 			if($mapping){
 			  $mapping->delete();
+			  $removedMdas[] = $mda->id; 
 			}
 			
 		}
+
+		return $removedMdas;
 
 	}
         
     public function actionAjaxUpdate(){
         $mdas = $_POST['value'];
         //print_r($mdas);exit;
-        $this->unsetMdas($_POST['pk'],$mdas);
+        $removedMdas = $this->unsetMdas($_POST['pk'],$mdas);
         foreach($mdas as $mda){
             $mapping = new MdaDecisionMapping();
             $mapping->decision_id = $_POST['pk'];
@@ -145,7 +149,16 @@ class EacDecisionController extends Controller
         $criteria->addColumnCondition(array('is_mda'=>1));
         $criteria->addInCondition('mda_id', $mdas);
         $recipients = User::getNotificationSubscribers($criteria);
-        $message = "You have been assigned to report on decision ".$this->loadModel($_POST['pk'])->decision_reference." by the Ministry of East African Cooperation - (MEAC)<br />";
+        $message = "You have been assigned to report on decision ".$this->loadModel($_POST['pk'])->decision_reference." by the  Ministry of Foreign Affairs, East African, Regional and International Cooperation.<br />";
+        $message.="For more information click ".TbHtml::link("here",Yii::app()->getBaseUrl(true)."/index.php?r=eacDecision/view&id={$_POST['pk']}");
+        $this->notify($recipients,'Decision Update',$message);
+
+        //Notify removed mdas
+        $criteria = new CDbCriteria;
+        $criteria->addColumnCondition(array('is_mda'=>1));
+        $criteria->addInCondition('mda_id', $removedMdas);
+        $recipients = User::getNotificationSubscribers($criteria);
+        $message = "You have been unsubscribed to report on decision ".$this->loadModel($_POST['pk'])->decision_reference." by the  Ministry of Foreign Affairs, East African, Regional and International Cooperation.<br />";
         $message.="For more information click ".TbHtml::link("here",Yii::app()->getBaseUrl(true)."/index.php?r=eacDecision/view&id={$_POST['pk']}");
         $this->notify($recipients,'Decision Update',$message);
        
@@ -185,11 +198,12 @@ class EacDecisionController extends Controller
 	/**
 	 * Manages all models.
 	 */
-	public function actionAdmin($format="",$status = "")
+	public function actionAdmin($format="",$status = "",$deadline = NULL)
 	{
 		$model=new EacDecision('search');
 		$model->unsetAttributes();  // clear any default values
                 $model->implementation_status_id = $status;
+                $model->deadline = $deadline;
 		if (isset($_GET['EacDecision'])) {
 			$model->attributes=$_GET['EacDecision'];
 		}

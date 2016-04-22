@@ -22,7 +22,7 @@
 				animate: true,
 				collapsible: true,
 				fitColumns: true,
-				url: 'http://localhost/eams/index.php?r=eamsFramework/LoadSPFramework',
+				url: '/index.php?r=eamsFramework/LoadSPFramework',
 				method: 'get',
 				idField: 'id',
 				treeField: 'name',

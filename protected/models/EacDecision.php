@@ -110,11 +110,14 @@ class EacDecision extends CActiveRecord
             
             if($model){
                 if($model->color=='#468847'){
-                    return TbHtml::LABEL_COLOR_SUCCESS;
+                    //return TbHtml::LABEL_COLOR_SUCCESS;
+                    return 'green';
                 }if($model->color=='#D24842'){
-                    return TbHtml::LABEL_COLOR_IMPORTANT;
+                    //return TbHtml::LABEL_COLOR_IMPORTANT;
+                    return 'red';
                 }if($model->color=='#F89406'){
-                    return TbHtml::LABEL_COLOR_WARNING;
+                    //return TbHtml::LABEL_COLOR_WARNING;
+                    return 'yellow';
                 }
                 
             }
@@ -160,7 +163,7 @@ class EacDecision extends CActiveRecord
 		$criteria->compare('id',$this->id);
 		$criteria->compare('eams_central_id',$this->eams_central_id);
 		$criteria->compare('decision_reference',$this->decision_reference,true);
-                $criteria->compare('decision_source_id',$this->decision_source_id);
+        $criteria->compare('decision_source_id',$this->decision_source_id);
 		$criteria->compare('decision_date',$this->decision_date);
 		$criteria->compare('description',$this->description,true);
 		$criteria->compare('budgetary_implications',$this->budgetary_implications,true);
@@ -182,6 +185,11 @@ class EacDecision extends CActiveRecord
 		$criteria->compare('create_user_id',$this->create_user_id);
 		$criteria->compare('date_updated',$this->date_updated,true);
 		$criteria->compare('update_user_id',$this->update_user_id);
+
+		//deadline
+		if($this->deadline != NULL){
+           $criteria->addCondition('datediff(deadline,now()) < 14');
+		}
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -216,17 +224,17 @@ class EacDecision extends CActiveRecord
 	}
 
 	public function getStatusLogs(){
-                $logs = $this->statusLogs;
+        $logs = $this->statusLogs;
 		$thread = "";
 		$thread.= "<div>";
-                if($logs){
-                    $logs = array(end($logs));
-                    foreach ($logs as $key => $log) {
-                            $thread.="<p>".$log->status_narrative;
-                            $thread.="<br /><span><b><i>--".$log->createUser->first_name." ".$log->createUser->middle_name." ".$log->createUser->last_name."</i></b>";
-                            $thread.= "</p>";
-                    }
-                }
+        if($logs){
+            $logs = array(end($logs));
+            foreach ($logs as $key => $log) {
+                    $thread.="<p>".$log->status_narrative;
+                    $thread.="<br /><span><b><i>--".$log->createUser->first_name." ".$log->createUser->middle_name." ".$log->createUser->last_name."</i></b>";
+                    $thread.= "</p>";
+            }
+        }
 		$thread.= "</div>";
 
 		return $thread;
@@ -245,7 +253,7 @@ class EacDecision extends CActiveRecord
         }
 
 	public static function getDecisionsApproachingDeadline(){
-            return self::model()->count('datediff(deadline,now()) < 7');
+            return self::model()->count('datediff(deadline,now()) < 14');
 	}
        
 

@@ -130,6 +130,18 @@ class ExportController extends Controller{
             spl_autoload_register(array('YiiBase','autoload'));
             
     }
+
+    public function actionExportToEamsCentral(){
+        $targetDir = Yii::getPathOfAlias('webroot').'/uploads/exports/';
+          
+        $fields = [
+           'file'=>'@/tmp/message',//@ symbolizes a file field
+        ];
+
+        copy('/tmp/message',$targetDir.'message');
+
+        $this->httpPost('http://localhost/sample_remote_post.php',$fields); 
+    }
 }
 
 ?>
