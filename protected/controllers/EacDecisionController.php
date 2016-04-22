@@ -145,7 +145,7 @@ class EacDecisionController extends Controller
         $criteria->addColumnCondition(array('is_mda'=>1));
         $criteria->addInCondition('mda_id', $mdas);
         $recipients = User::getNotificationSubscribers($criteria);
-        $message = "You have been assigned to report on decision ".$this->loadModel($_POST['pk'])->decision_reference." by the Ministry of East African Cooperation - (MEAC)<br />";
+        $message = "You have been assigned to report on decision ".$this->loadModel($_POST['pk'])->decision_reference." by the  Ministry of Foreign Affairs, East African, Regional and International Cooperation.<br />";
         $message.="For more information click ".TbHtml::link("here",Yii::app()->getBaseUrl(true)."/index.php?r=eacDecision/view&id={$_POST['pk']}");
         $this->notify($recipients,'Decision Update',$message);
        
@@ -185,11 +185,12 @@ class EacDecisionController extends Controller
 	/**
 	 * Manages all models.
 	 */
-	public function actionAdmin($format="",$status = "")
+	public function actionAdmin($format="",$status = "",$deadline = NULL)
 	{
 		$model=new EacDecision('search');
 		$model->unsetAttributes();  // clear any default values
                 $model->implementation_status_id = $status;
+		$model->deadline = $deadline;
 		if (isset($_GET['EacDecision'])) {
 			$model->attributes=$_GET['EacDecision'];
 		}

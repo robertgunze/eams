@@ -110,11 +110,14 @@ class EacDecision extends CActiveRecord
             
             if($model){
                 if($model->color=='#468847'){
-                    return TbHtml::LABEL_COLOR_SUCCESS;
+                    #return TbHtml::LABEL_COLOR_SUCCESS;
+		    return 'green';
                 }if($model->color=='#D24842'){
-                    return TbHtml::LABEL_COLOR_IMPORTANT;
+                    #return TbHtml::LABEL_COLOR_IMPORTANT;
+		    return 'red';
                 }if($model->color=='#F89406'){
-                    return TbHtml::LABEL_COLOR_WARNING;
+                    #return TbHtml::LABEL_COLOR_WARNING;
+		    return 'yellow';
                 }
                 
             }
@@ -183,6 +186,11 @@ class EacDecision extends CActiveRecord
 		$criteria->compare('date_updated',$this->date_updated,true);
 		$criteria->compare('update_user_id',$this->update_user_id);
 
+		//deadline
+		if($this->deadline != NULL){
+                  $criteria->addCondition('datediff(deadline,now()) < 14');
+		}
+
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
@@ -245,7 +253,7 @@ class EacDecision extends CActiveRecord
         }
 
 	public static function getDecisionsApproachingDeadline(){
-            return self::model()->count('datediff(deadline,now()) < 7');
+            return self::model()->count('datediff(deadline,now()) < 14');
 	}
        
 

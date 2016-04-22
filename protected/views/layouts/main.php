@@ -47,7 +47,7 @@
                                        'items'=>array(
                                            array('label'=>'Decisions','icon'=>TbHtml::ICON_LIST_ALT, 'url'=>array('/eacDecision/admin'),'visible'=>!Yii::app()->user->isGuest),
                                 
-                                           array('label'=>'Import/Export','icon'=>TbHtml::ICON_SHARE,'url'=>array('#'),'visible'=>!Yii::app()->user->isGuest,
+                                           array('label'=>'Import/Export','icon'=>TbHtml::ICON_SHARE,'url'=>array('#'),'visible'=>!Yii::app()->user->isGuest&&!Yii::app()->user->is_mda,
                                                     'items'=>array(
                                                         array('label'=>'Import', 'url'=>array('#'),'visible'=>!Yii::app()->user->isGuest,
                                                                   'items'=>array(
@@ -65,7 +65,7 @@
                                       
                                        ),
                                     ),
-                                 array('label'=>'Common Market', 'icon'=>TbHtml:: ICON_INFO_SIGN ,'url'=>array('#'),'visible'=>!Yii::app()->user->isGuest,
+                                 array('label'=>'Common Market', 'icon'=>TbHtml:: ICON_INFO_SIGN ,'url'=>array('#'),'visible'=>!Yii::app()->user->isGuest&&!Yii::app()->user->is_mda,
                                              'items'=>array(
                                                   array('label'=>'Indicator Updates', 'url'=>array('/eacFacts/admin'),'visible'=>!Yii::app()->user->isGuest),
                                                   array('label'=>'Import', 'url'=>array('/import/importCommonMarket'),'visible'=>!Yii::app()->user->isGuest),
@@ -165,7 +165,7 @@
                 Currently logged in as: <i><?php echo Yii::app()->user->getState('loggedInUser');?></i> Current date: <?php echo date('Y-m-d @ H:i:s')?>	
                 <br />
             <?php endif;?>
-		Copyright &copy; <?php echo date('Y'); ?> by Ministry of East African Cooperation.
+		Copyright &copy; <?php echo date('Y'); ?> by  Ministry of Foreign Affairs, East African, Regional and International Cooperation.
 		All Rights Reserved.<br/>
                <?php //echo Yii::powered(); ?>
 	</div><!-- footer -->

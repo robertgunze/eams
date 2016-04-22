@@ -40,7 +40,7 @@ $this->breadcrumbs = array(
                     <div style="width:95%;height:100%"  class="btn btn-danger">
                         <div>Number of Decisions Approaching Deadline</div>
                         <h2><?php echo EacDecision::getDecisionsApproachingDeadline(); ?></h2>
-                        <p><a>(View all&nbsp;<span class="icon-arrow-right">&nbsp;</span>)</a></p>
+                        <p><a href="<?php echo $this->createUrl('/eacDecision/admin',array('deadline'=>1))?>">(View all&nbsp;<span class="icon-arrow-right">&nbsp;</span>)</a></p>
                     </div>
                 </td>
                 <td>

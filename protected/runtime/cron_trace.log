@@ -5242,3 +5242,6 @@ in /var/www/eams/cron.php (13)
 in /var/www/eams/protected/commands/IndicatorReportingCommand.php (52)
 in /var/www/eams/protected/commands/IndicatorReportingCommand.php (35)
 in /var/www/eams/cron.php (13)
+2016/04/14 14:30:56 [trace] [system.CModule] Loading "log" application component
+2016/04/14 14:30:59 [trace] [system.CModule] Loading "log" application component
+2016/04/14 14:31:24 [trace] [system.CModule] Loading "log" application component

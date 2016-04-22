@@ -49,6 +49,9 @@ $('.search-form form').submit(function(){
     array('label' => 'CSV', 'url' => $this->createUrl('eacDecision/admin',array('format'=>'csv'))),
 ), array('split' => true,'color'=>TbHtml::BUTTON_COLOR_SUCCESS,'size'=>TbHtml::BUTTON_SIZE_SMALL)); 
 
+$displayable = (!Yii::app()->user->isGuest&&!Yii::app()->user->is_mda)==true ?'':'display:none';
+$allowableActions = (!Yii::app()->user->isGuest&&!Yii::app()->user->is_mda)==true ?'{view}{update}{delete}':'{view}';
+
 $this->widget('bootstrap.widgets.TbGridView', array(
     'id' => 'eac-decision-grid',
     'type' => TbHtml::GRID_TYPE_STRIPED,
@@ -98,13 +101,14 @@ $this->widget('bootstrap.widgets.TbGridView', array(
             'type' => 'html',
             'header' => 'Status',
             'name' => 'implementation_status_id',
-            'value' => 'TbHtml::labelTb("&nbsp;&nbsp;", array("style"=>"width:100%;height:100%","color" =>"{$data->getStatusColor($data)}"));'
+            'value' => 'TbHtml::labelTb("&nbsp;&nbsp;", array("style"=>"width:100%;height:100%;background-color:{$data->getStatusColor($data)}","color" =>"{$data->getStatusColor($data)}"));'
         ),
         array(
             'class' => 'editable.EditableColumn',
             'header'=>'',
+	    'htmlOptions' => array('style' =>$displayable),
             'name' => 'responsible_mda_id',
-            'headerHtmlOptions' => array('style' => 'width: 100px'),
+	    'headerHtmlOptions' => array('style' => 'width: 100px;'.$displayable),
             'filter' => TbHtml::listData(Mda::model()->findAll(), "id", "description"),
             'editable' => array(
                 'type' => 'checklist',
@@ -116,6 +120,7 @@ $this->widget('bootstrap.widgets.TbGridView', array(
         ),
         array(
             'class' => 'bootstrap.widgets.TbButtonColumn',
+            'template' => $allowableActions,
         ),
     ),
 ));
