@@ -58,5 +58,18 @@ class Controller extends CController
 	        	$mail->AddAddress($recipient);
 	        }
 	        return $mail->Send();
-    }
+        }
+
+        public function httpPost($url,$fields = NULL){
+        	$ch = curl_init($url);
+			  curl_setopt($ch, CURLOPT_POST, true);
+			if(is_array($fields)){
+			  curl_setopt($ch, CURLOPT_POSTFIELDS,$fields);
+			}
+			//$ch = curl_setopt($ch, CURLOPT_USERPWD, 'username:password');
+			$result = curl_exec($ch);
+			if ($result === FALSE) {
+			   die(curl_error($ch));
+			}
+        }
 }

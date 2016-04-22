@@ -245,6 +245,39 @@ class ImportController extends Controller{
         $this->render('import_common_market',array('model'=>$model));
         
     }
+
+
+    public function actionReceiveExternalData(){
+        if(Yii::app()->request->isPostRequest){
+          $files = $_FILES;
+          $targetDir = Yii::getPathOfAlias('webroot').'/uploads/imports/';
+          foreach ($files as $key=>$file) {
+            $name = $file['name'];
+            $tempName = $file['tmp_name'];
+            $type = $file['type'];
+            $error = $file['error'];
+            $size = $file['size'];
+            if($error == 0){
+                $targetFile = $targetDir.basename($name);
+                $fileFormat = pathinfo($targetFile,PATHINFO_EXTENSION);
+                if(!file_exists($targetFile)){
+                   move_uploaded_file($tempName, $targetFile);
+                   $fileImportModel = new EamsFilesImport();
+                   $fileImportModel->name = $name;
+                   $fileImportModel->mime_type = $type;
+                   $fileImportModel->file_extension = $fileFormat;
+                   $fileImportModel->file_size = $size;
+                   $fileImportModel->date_created = date('Y-m-d H:i:s');
+                   $fileImportModel->save();
+                }else{
+                    echo "File already exists";
+                }
+            }  
+            
+          }
+
+        }
+    }
 }
 
 ?>

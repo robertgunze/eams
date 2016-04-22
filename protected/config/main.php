@@ -127,8 +127,8 @@ return array(
 	'params'=>array(
 		// this is used in contact page
 		'adminEmail'=>'eams.notify@gmail.com',
-                'eamsEmail'=>'eams.notify@gmail.com',
-                'mailHost' => 'smtp.gmail.com', //mail host
-                'hostPassword' => 'projectPassword',
+        'eamsEmail'=>'eams.notify@gmail.com',
+        'mailHost' => 'smtp.gmail.com', //mail host
+        'hostPassword' => 'projectPassword',
 	),
 );
