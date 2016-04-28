@@ -131,6 +131,10 @@ class ImportController extends Controller{
         }
         $this->render('import_decisions',array('model'=>$model));
     }
+
+    public function actionSaveDecisions(){
+        print_r($_POST);
+    }
     
     public function actionImportCommonMarket(){
         
@@ -246,8 +250,17 @@ class ImportController extends Controller{
         
     }
 
+    public function actionSaveCommonMarket(){
+        if(isset($_POST['ids'])){
+            $ids = explode(',',$_POST['ids']);
+            $data = $_POST['data'];
+            print_r($ids);
+            print_r($data);
+        }
+    }
 
-    public function actionReceiveExternalData(){
+
+    public function actionReceiveExternalData($import_type=NULL){
         if(Yii::app()->request->isPostRequest){
           $files = $_FILES;
           $targetDir = Yii::getPathOfAlias('webroot').'/uploads/imports/';
@@ -264,6 +277,7 @@ class ImportController extends Controller{
                    move_uploaded_file($tempName, $targetFile);
                    $fileImportModel = new EamsFilesImport();
                    $fileImportModel->name = $name;
+                   $fileImportModel->import_key = $import_type;
                    $fileImportModel->mime_type = $type;
                    $fileImportModel->file_extension = $fileFormat;
                    $fileImportModel->file_size = $size;

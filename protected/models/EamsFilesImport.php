@@ -6,6 +6,7 @@
  * The followings are the available columns in table 'tbl_eams_files_import':
  * @property integer $id
  * @property string $name
+ * @property string $import_key
  * @property string $mime_type
  * @property string $file_extension
  * @property integer $file_size
@@ -37,7 +38,7 @@ class EamsFilesImport extends CActiveRecord
 			array('date_updated', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, name, mime_type, file_extension, file_size, date_created, date_updated', 'safe', 'on'=>'search'),
+			array('id, name, import_key,mime_type, file_extension, file_size, date_created, date_updated', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -60,6 +61,7 @@ class EamsFilesImport extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'name' => 'Name',
+			'import_key' => 'Import Key',
 			'mime_type' => 'Mime Type',
 			'file_extension' => 'File Extension',
 			'file_size' => 'File Size',
@@ -88,6 +90,7 @@ class EamsFilesImport extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('name',$this->name,true);
+		$criteria->compare('import_key',$this->import_key,true);
 		$criteria->compare('mime_type',$this->mime_type,true);
 		$criteria->compare('file_extension',$this->file_extension,true);
 		$criteria->compare('file_size',$this->file_size);

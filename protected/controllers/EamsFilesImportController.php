@@ -45,14 +45,103 @@ class EamsFilesImportController extends Controller
 		);
 	}
 
-	/**
-	 * Displays a particular model.
-	 * @param integer $id the ID of the model to be displayed
-	 */
-	public function actionView($id)
-	{   
-		$model = $this->loadModel($id);
+	public function loadCommonMarketDataFromFile($model){
 
+        $filename = Yii::getPathOfAlias('webroot').'/uploads/imports/'.$model->name;
+        spl_autoload_unregister(array('YiiBase','autoload'));
+        $phpExcelPath = Yii::getPathOfAlias('application.vendor.phpoffice');
+        include($phpExcelPath.DIRECTORY_SEPARATOR.'PHPExcel.php');
+                
+                    
+        $objPHPExcel = PHPExcel_IOFactory::load($filename);
+        $worksheet = $objPHPExcel->getSheet(0);
+        $objPHPExcel->getActiveSheet()->getStyle('C2')
+            ->getNumberFormat()
+            ->setFormatCode(
+                'mm-dd-yyyy'  // my own personal preferred format that isn't predefined
+            );
+        $headingColsCount = 0;
+        foreach($worksheet->getRowIterator() as $row){
+            $cellIterator = $row->getCellIterator();
+            $cellIterator->setIterateOnlyExistingCells(true);
+            foreach($cellIterator as $cell){
+                $cellContent = $cell->getValue();
+                $data[$cell->getRow()][$cell->getColumn()] = $cellContent;
+                if($headingColsCount < 15){
+                    if(preg_match('/^Protocol_ID$/i', $cellContent)){
+                        $headingRow = $cell->getRow();
+                        $protocolIdCol = $cell->getColumn();
+                        $headingColsCount++;
+                    }
+                    if(preg_match('/^Freedoms \/ Rights$/i', $cellContent)){
+                        $protocolDetailsCol = $cell->getColumn();
+                        $headingColsCount++;
+                    }
+                    if(preg_match('/^Protocol_Provision_ID$/i', $cellContent)){
+                        $protocolProvisionCol = $cell->getColumn();
+                        $headingColsCount++;
+                    }
+                    if(preg_match('/^Provision$/i', $cellContent)){
+                        $protocolProvisionDescCol = $cell->getColumn();
+                        $headingColsCount++;
+                    }
+                    if(preg_match('/^data_field_code$/i', $cellContent)){
+                        $dataFieldCodeCol = $cell->getColumn();
+                        $headingColsCount++;
+                    }
+                    if(preg_match('/^data_field_desc$/i', $cellContent)){
+                        $dataFieldDescCol = $cell->getColumn();
+                        $headingColsCount++;
+                    }
+                    if(preg_match('/^Indicator_ID$/i', $cellContent)){
+                        $indicatorIdCol = $cell->getColumn();
+                        $headingColsCount++;
+                    }
+                    if(preg_match('/^Indicator$/i', $cellContent)){
+                        $indicatorDescCol = $cell->getColumn();
+                        $headingColsCount++;
+                    }
+                    if(preg_match('/^Data Collection Guidelines$/i', $cellContent)){
+                        $dataColGuidelinesCol = $cell->getColumn();
+                        $headingColsCount++;
+                    }
+                }
+            }
+
+          }
+             
+                
+        unset($data[$headingRow]);
+        
+        spl_autoload_register(array('YiiBase','autoload'));
+        
+        $readData = [];
+        foreach($data as $dataItem){
+            $fact = [];
+            $fact['protocol_id'] = $dataItem[$protocolIdCol];
+            $fact['protocol_details'] = $dataItem[$protocolDetailsCol];
+            $fact['protocol_provision_id'] = $dataItem[$protocolProvisionCol];
+            $fact['protocol_provision_description'] = $dataItem[$protocolProvisionDescCol];
+            $fact['data_field_code'] = $dataItem[$dataFieldCodeCol];
+            $fact['data_field_desc'] = $dataItem[$dataFieldDescCol];
+            $fact['indicator_id'] = $dataItem[$indicatorIdCol];
+            $fact['indicator_description'] = $dataItem[$indicatorDescCol];
+            $fact['data_collection_guidelines'] = $dataItem[$dataColGuidelinesCol];
+            $fact['date_created'] = date('Y-m-d H:i:s');
+            $fact['create_user_id'] = Yii::app()->user->id;
+            $fact['date_updated'] = date('Y-m-d H:i:s');
+            $fact['update_user_id'] = Yii::app()->user->id;
+            $readData[] = $fact;
+            
+        }
+
+        return $readData;
+	}
+
+	public function loadDecisionDataFromFile($model){
+		//get decision source
+		$decisionSourceModel = EacLookup::model()->find('`key` = :key',[':key'=>$model->import_key]);	
+		//extract data fro file
 		spl_autoload_unregister(array('YiiBase', 'autoload'));
         $phpExcelPath = Yii::getPathOfAlias('application.vendor.phpoffice');
         include($phpExcelPath . DIRECTORY_SEPARATOR . 'PHPExcel.php');
@@ -72,43 +161,49 @@ class EamsFilesImportController extends Controller
             foreach ($cellIterator as $cell) {
                 $cellContent = $cell->getValue();
                 $data[$cell->getRow()][$cell->getColumn()] = $cellContent;
-                if ($headingColsCount < 9) {
-                    if (preg_match('/id/i', $cellContent)) {
+                if ($headingColsCount < 15) {
+                    if (preg_match('/^id$/i', $cellContent)) {
                         $headingRow = $cell->getRow();
                         $idCol = $cell->getColumn();
                         $headingColsCount++;
                     }
-                    if (preg_match('/Decision Reference/i', $cellContent)) {
+                    if (preg_match('/^Decision Reference$/i', $cellContent)) {
                         $decisionReferenceCol = $cell->getColumn();
                         $headingColsCount++;
                     }
-                    if (preg_match('/Decision Date/i', $cellContent)) {
+                    if (preg_match('/^Decision Date$/i', $cellContent)) {
                         $decisionDateCol = $cell->getColumn();
                         $headingColsCount++;
                     }
-                    if (preg_match('/Description/i', $cellContent)) {
+                    if (preg_match('/^Description$/i', $cellContent)) {
                         $descriptionCol = $cell->getColumn();
                         $headingColsCount++;
                     }
-                    if (preg_match('/BudgetaryImplications/i', $cellContent)) {
+                    if (preg_match('/^BudgetaryImplications$/i', $cellContent)) {
                         $budgetaryImplicationCol = $cell->getColumn();
                         $headingColsCount++;
                     }
-                    if (preg_match('/TimeFrame/i', $cellContent)) {
+                    if (preg_match('/^TimeFrame$/i', $cellContent)) {
                         $timeFrameCol = $cell->getColumn();
                         $headingColsCount++;
                     }
-                    if (preg_match('/Performance Indicators/i', $cellContent)) {
+                    if (preg_match('/^Performance Indicators$/i', $cellContent)) {
                         $performanceIndicatorsCols = $cell->getColumn();
                         $headingColsCount++;
                     }
-                    if (preg_match('/Responsibility Center/i', $cellContent)) {
+                    if (preg_match('/^Responsibility Center$/i', $cellContent)) {
                         $responsibilityCenterCols = $cell->getColumn();
                         $headingColsCount++;
                     }
-                    if (preg_match('/MeetingNo/i', $cellContent)) {
+                    if (preg_match('/^MeetingNo$/i', $cellContent)) {
                         $meetingNoCol = $cell->getColumn();
                         $headingColsCount++;
+                    }
+                    if($model->import_key === 'sc'){//sectoral council decisions
+                    	if (preg_match('/^sectoral_council_id$/i', $cellContent)) {
+	                        $sectoralCouncilIdCol = $cell->getColumn();
+	                        $headingColsCount++;
+                        }
                     }
                 }
             }
@@ -122,7 +217,8 @@ class EamsFilesImportController extends Controller
             $decision = [];
             $decision['eams_central_id'] = $dataItem[$idCol];
             $decision['decision_reference'] = $dataItem[$decisionReferenceCol];
-            $decision['decision_source_id'] = 1;//$model->decision_source;
+            $decision['decision_source_id'] = $decisionSourceModel->id;
+            $decision['sectoral_council_id'] = @$sectoralCouncilIdCol;//save null if not present
             $formattedDate = $this->excelDateToPhp($dataItem[$decisionDateCol]);
             $decision['decision_date'] = $formattedDate;
             $decision['description'] = $dataItem[$descriptionCol];
@@ -136,15 +232,36 @@ class EamsFilesImportController extends Controller
             $readData[] = $decision;
         }
 
-        $arrayDataProvider = new CArrayDataProvider($readData, array(
-        'id' => 'excelDatProvider',
-        'keyField' => 'eams_central_id',
-        'pagination' => array(
-        'pageSize' => 10,
-        ),
-        ));
+        return $readData;
+	}
 
-		$this->render('view',array(
+	/**
+	 * Displays a particular model.
+	 * @param integer $id the ID of the model to be displayed
+	 */
+	public function actionView($id)
+	{   
+		$model = $this->loadModel($id);
+
+		if($model->import_key === 'cm'){
+           $readData = $this->loadCommonMarketDataFromFile($model);
+           $view = 'cm_view';
+           $keyField = 'indicator_id';
+		}else{
+		   $readData = $this->loadDecisionDataFromFile($model);
+		   $view = 'view';
+		   $keyField = 'eams_central_id';
+		}
+
+        $arrayDataProvider = new CArrayDataProvider($readData, array(
+	        'id' => 'excelDatProvider',
+	        'keyField' =>$keyField,
+	        'pagination' => array(
+	        'pageSize' => 10,
+	        ),
+        ));
+      
+		$this->render($view,array(
 			'model'=>$model, 'arrayDataProvider' => $arrayDataProvider,
 		));
 	}

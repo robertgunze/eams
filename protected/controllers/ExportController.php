@@ -17,8 +17,16 @@ class ExportController extends Controller{
             if(!Yii::app()->user->checkAccess("Export Decisions")){
                 throw new CHttpException(403,'You are not authorized to access this feature');
             }
+
+            if(isset($_POST['export_key'])){
+              $export_key = $_POST['export_key'];
+            }else{
+                throw new CHttpException(404,'Invalid request'); 
+            }
+            //get decision source
+            $decisionSourceModel = EacLookup::model()->find('`key` = :key',[':key'=>$export_key]);   
         
-            $models = EacDecision::model()->findAll();
+            $models = EacDecision::model()->findAll('decision_source_id = :id',[':id'=>$decisionSourceModel->id]);
             spl_autoload_unregister(array('YiiBase','autoload'));
             $phpExcelPath = Yii::getPathOfAlias('application.vendor.phpoffice');
             include($phpExcelPath.DIRECTORY_SEPARATOR.'PHPExcel.php');
@@ -61,21 +69,35 @@ class ExportController extends Controller{
                         $rowCount++;
                 }
             
-            header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-            header('Content-Disposition: attachment;filename="template.xlsx"');
-            header('Cache-Control: max-age=0');
+            // header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+            // header('Content-Disposition: attachment;filename="template.xlsx"');
+            // header('Cache-Control: max-age=0');
             
             $objWriter = new PHPExcel_Writer_Excel2007($objPHPExcel);
-            $objWriter->save('php://output');
+            //$objWriter->save('php://output');
+            $targetDir = Yii::getPathOfAlias('webroot').'/uploads/exports/';
+            $filename = 'desicion_export_'.md5(time().uniqid('export',true)).'.xlsx';
+            $objWriter->save($targetDir.$filename);
             spl_autoload_register(array('YiiBase','autoload'));
+            
+            $fileExportModel = new EamsFilesExport();
+            $fileExportModel->name = $filename;
+            $fileExportModel->export_key = $export_key;
+            $fileExportModel->mime_type = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
+            $fileExportModel->file_extension = 'xlsx';
+            $fileExportModel->file_size = filesize($targetDir.$filename);
+            $fileExportModel->date_created = date('Y-m-d H:i:s');
+            $fileExportModel->save();
+
+            $this->sendFileToEamsCentral($fileExportModel);
             
     }
     
     public function  actionExportCommonMarket(){
             if(!Yii::app()->user->checkAccess("Export Decisions")){
                 throw new CHttpException(403,'You are not authorized to access this feature');
-            }
-        
+            } 
+            $export_key = 'cm';
             $models = EacFacts::model()->findAll();
             spl_autoload_unregister(array('YiiBase','autoload'));
             $phpExcelPath = Yii::getPathOfAlias('application.vendor.phpoffice');
@@ -121,26 +143,73 @@ class ExportController extends Controller{
                         $rowCount++;
                 }
             
-            header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-            header('Content-Disposition: attachment;filename="template.xlsx"');
-            header('Cache-Control: max-age=0');
+            // header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+            // header('Content-Disposition: attachment;filename="template.xlsx"');
+            // header('Cache-Control: max-age=0');
             
             $objWriter = new PHPExcel_Writer_Excel2007($objPHPExcel);
-            $objWriter->save('php://output');
+            $targetDir = Yii::getPathOfAlias('webroot').'/uploads/exports/';
+            $filename = 'common_market_export_'.md5(time().uniqid('export',true)).'.xlsx';
+            $objWriter->save($targetDir.$filename);
             spl_autoload_register(array('YiiBase','autoload'));
+
+            $fileExportModel = new EamsFilesExport();
+            $fileExportModel->name = $filename;
+            $fileExportModel->export_key = $export_key;
+            $fileExportModel->mime_type = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
+            $fileExportModel->file_extension = 'xlsx';
+            $fileExportModel->file_size = filesize($targetDir.$filename);
+            $fileExportModel->date_created = date('Y-m-d H:i:s');
+            $fileExportModel->save();
+
+            $this->sendFileToEamsCentral($fileExportModel);
             
     }
 
-    public function actionExportToEamsCentral(){
+    public function sendFileToEamsCentral($model){
         $targetDir = Yii::getPathOfAlias('webroot').'/uploads/exports/';
           
         $fields = [
-           'file'=>'@/tmp/message',//@ symbolizes a file field
+           'file'=>'@'.$targetDir.$model->name,//@ symbolizes a file field
         ];
 
-        copy('/tmp/message',$targetDir.'message');
+        switch ($model->export_key){
+            case 'dc':
+                $url = 'http://www.eamscentral.org/admin_import_tmp_depository/admin_import_tmp_dc.aspx';
+                break;
+            case 'exdc':
+                $url = 'http://www.eamscentral.org/admin_import_tmp_depository/admin_import_tmp_exdc.aspx';
+                
+                break;
+            case 'su':
+                $url = 'http://www.eamscentral.org/admin_import_tmp_depository/admin_import_tmp_su.aspx';
+                
+                break;
+            case 'exsu':
+                $url = 'http://www.eamscentral.org/admin_import_tmp_depository/admin_import_tmp_exsu.aspx';
+                
+                break;
+            case 'sc':
+                $url = 'http://www.eamscentral.org/admin_import_tmp_depository/admin_import_tmp_sc.aspx';
+                
+                break;
+            case 'cm':
+                $url = 'http://www.eamscentral.org/admin_import_tmp_depository/admin_import_tmp_cm.aspx';
+                break;
+            
+            default:
+                break;
+        }
 
-        $this->httpPost('http://localhost/sample_remote_post.php',$fields); 
+        try{
+            echo $url;
+            print_r($fields);
+            //$this->httpPost($url,$fields);
+        }catch(Exception $ex){
+            //update send status
+            echo "Operation unsuccessful";
+        }
+        
     }
 }
 

@@ -6,6 +6,7 @@
  * The followings are the available columns in table 'tbl_eac_lookup':
  * @property integer $id
  * @property integer $type
+ * @property string $key
  * @property string $description
  * @property integer $eams_central_id
  */
@@ -35,7 +36,7 @@ class EacLookup extends CActiveRecord
 			array('description', 'length', 'max'=>500),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, type, description, eams_central_id', 'safe', 'on'=>'search'),
+			array('id, type,key,description, eams_central_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -58,6 +59,7 @@ class EacLookup extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'type' => 'Type',
+			'key'=>'Key',
 			'description' => 'Description',
 			'eams_central_id' => 'Eams Central ID',
 		);
@@ -83,6 +85,7 @@ class EacLookup extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('type',$this->type);
+		$criteria->compare('key',$this->key);
 		$criteria->compare('description',$this->description,true);
 		$criteria->compare('eams_central_id',$this->eams_central_id);
 
