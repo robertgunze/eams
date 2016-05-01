@@ -32,7 +32,7 @@ class EamsFilesImportController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','archive'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -351,6 +351,7 @@ class EamsFilesImportController extends Controller
 	{
 		$model=new EamsFilesImport('search');
 		$model->unsetAttributes();  // clear any default values
+		$model->archived = 0; //not archived
 		if (isset($_GET['EamsFilesImport'])) {
 			$model->attributes=$_GET['EamsFilesImport'];
 		}
@@ -358,6 +359,17 @@ class EamsFilesImportController extends Controller
 		$this->render('admin',array(
 			'model'=>$model,
 		));
+	}
+
+	/**
+	 * Archive import files
+	 */
+	public function actionArchive($id){
+		$model = $this->loadModel($id);
+		$model->archived = true;
+		if($model->save()){
+		   $this->redirect(array('admin'));
+		}
 	}
 
 	/**

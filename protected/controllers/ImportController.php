@@ -132,9 +132,6 @@ class ImportController extends Controller{
         $this->render('import_decisions',array('model'=>$model));
     }
 
-    public function actionSaveDecisions(){
-        print_r($_POST);
-    }
     
     public function actionImportCommonMarket(){
         
@@ -251,11 +248,62 @@ class ImportController extends Controller{
     }
 
     public function actionSaveCommonMarket(){
-        if(isset($_POST['ids'])){
-            $ids = explode(',',$_POST['ids']);
-            $data = $_POST['data'];
-            print_r($ids);
-            print_r($data);
+
+        if(isset($_POST['data'])){
+            $data = json_decode($_POST['data']);
+            foreach ($data as $key=>$item) {
+                if(!EacFacts::model()->exists('indicator_id = :id',[':id'=>$item->indicator_id])){
+                    $fact = new EacFacts;
+                    $fact->protocol_id = $item->protocol_id;
+                    $fact->protocol_details = $item->protocol_details;
+                    $fact->protocol_provision_id = $item->protocol_provision_id;
+                    $fact->protocol_provision_description = $item->provision;
+                    $fact->data_field_code = $item->data_field_code;
+                    $fact->data_field_desc = "";
+                    $fact->indicator_id = $item->indicator_id;
+                    $fact->indicator_description = $item->indicator;
+                    $fact->data_collection_guidelines = $item->data_collection_guidelines;
+                    $fact->date_created = date('Y-m-d H:i:s');
+                    $fact->create_user_id = Yii::app()->user->id;
+                    $fact->date_updated = date('Y-m-d H:i:s');
+                    $fact->update_user_id = Yii::app()->user->id;
+                    $fact->save();
+                }//if
+            }//foreach
+        }
+    }
+
+    public function actionSaveDecisions(){
+        if(isset($_POST['data'])){
+            $data = json_decode($_POST['data']);
+            
+            $internalScId = NULL;
+            $eamsCentralScId = $data[0]->sectoral_council_id;
+            if(!empty($eamsCentralScId)){
+                $scModel = EacLookup::model()->find('eams_central_id=:id',[':id'=>$eamsCentralScId]);
+                $internalScId = $scModel->id;
+            }
+
+            foreach($data as $item){
+                $decision = new EacDecision();
+                $decision->eams_central_id = $item->eams_central_id;
+                $decision->decision_reference = $item->decision_reference;
+                $decision->decision_source_id = $item->decision_source_id;
+                $decision->sectoral_council_id = $internalScId;
+                $decision->decision_date = $item->decision_date;
+                $decision->description = $item->description;
+                $decision->budgetary_implications = $item->budgetary_implications;
+                $decision->time_frame = $item->time_frame;
+                $decision->performance_indicators = $item->performance_indicators;
+                $decision->responsibility_center = $item->responsibility_center;
+                $decision->meeting_no = $item->meeting_no;
+                $decision->date_created = date('Y-m-d H:i:s');
+                $decision->create_user_id = Yii::app()->user->id;
+                
+                if(!$decision->decisionExists()){
+                    $decision->save();
+                }//if
+           }//foreach
         }
     }
 

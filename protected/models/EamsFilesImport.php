@@ -10,6 +10,7 @@
  * @property string $mime_type
  * @property string $file_extension
  * @property integer $file_size
+ * @property integer $archived
  * @property string $date_created
  * @property string $date_updated
  */
@@ -38,7 +39,7 @@ class EamsFilesImport extends CActiveRecord
 			array('date_updated', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, name, import_key,mime_type, file_extension, file_size, date_created, date_updated', 'safe', 'on'=>'search'),
+			array('id, name, import_key,mime_type, file_extension, file_size,archived, date_created, date_updated', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -65,6 +66,7 @@ class EamsFilesImport extends CActiveRecord
 			'mime_type' => 'Mime Type',
 			'file_extension' => 'File Extension',
 			'file_size' => 'File Size',
+			'archived' => 'Archived',
 			'date_created' => 'Date Created',
 			'date_updated' => 'Date Updated',
 		);
@@ -94,6 +96,7 @@ class EamsFilesImport extends CActiveRecord
 		$criteria->compare('mime_type',$this->mime_type,true);
 		$criteria->compare('file_extension',$this->file_extension,true);
 		$criteria->compare('file_size',$this->file_size);
+		$criteria->compare('archived',$this->archived);
 		$criteria->compare('date_created',$this->date_created,true);
 		$criteria->compare('date_updated',$this->date_updated,true);
 

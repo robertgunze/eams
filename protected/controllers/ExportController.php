@@ -11,15 +11,32 @@
  * @author robert
  */
 class ExportController extends Controller{
-    //put your code here
     
-    public function  actionExportDecisions(){
+    public function actionAdmin(){
+        $model = new ExportModel();
+        
+        if(isset($_POST['ExportModel'])){
+           $model->attributes = $_POST['ExportModel'];
+           if($model->validate()){
+              $export_key = $model->export_type;
+              if($export_key != 'cm'){
+                 $this->exportDecisions($export_key);
+              }else{
+                 $this->exportCommonMarket();
+              }
+           }
+        }
+
+        $this->render('export_data',['model'=>$model]);
+    }
+    
+    public function  exportDecisions($export_key){
             if(!Yii::app()->user->checkAccess("Export Decisions")){
                 throw new CHttpException(403,'You are not authorized to access this feature');
             }
 
-            if(isset($_POST['export_key'])){
-              $export_key = $_POST['export_key'];
+            if(isset($export_key)){
+              $export_key = $export_key;
             }else{
                 throw new CHttpException(404,'Invalid request'); 
             }
@@ -79,7 +96,7 @@ class ExportController extends Controller{
             $filename = 'desicion_export_'.md5(time().uniqid('export',true)).'.xlsx';
             $objWriter->save($targetDir.$filename);
             spl_autoload_register(array('YiiBase','autoload'));
-            
+
             $fileExportModel = new EamsFilesExport();
             $fileExportModel->name = $filename;
             $fileExportModel->export_key = $export_key;
@@ -93,7 +110,7 @@ class ExportController extends Controller{
             
     }
     
-    public function  actionExportCommonMarket(){
+    public function  exportCommonMarket(){
             if(!Yii::app()->user->checkAccess("Export Decisions")){
                 throw new CHttpException(403,'You are not authorized to access this feature');
             } 

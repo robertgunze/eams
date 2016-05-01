@@ -38,13 +38,9 @@ $this->menu=array(
 
 <script type="text/javascript">
    payload = null;
-</script>
 
-<div class="payload" style="display:none"></div>
-<?php
-echo CHtml::ajaxLink("Save Selected",Yii::app()->createUrl('import/saveCommonMarket'), array(
-        "type" => "post",
-        "beforeSend"=>'function(){
+   $(document).ready(function(){
+         $('.btn-save-data').click(function(){
             var checkedRowId=$("#import-grid").yiiGridView("getChecked", "selectedIds");
             console.log(checkedRowId);
             var protocol_details =null;
@@ -57,15 +53,23 @@ echo CHtml::ajaxLink("Save Selected",Yii::app()->createUrl('import/saveCommonMar
             var data_field_code = null;
             
             var data = [];
+            var allChecked = false;
             $("#import-grid tr").each(function(i){
                 if("checked" == $(this).children(":nth-child(1)").find("input").attr("checked")){
+                    if(allChecked == false && "checked"==$("#selectedIds_all").attr("checked")){
+                        allChecked = true;
+                        return;//continue
+                    }
+
                     protocol_details=$(this).children(":nth-child(3)").text(); // 3rd column
                     provision=$(this).children(":nth-child(4)").text(); // 4th column
                     data_field_code=$(this).children(":nth-child(5)").text(); // 5th column
                     indicator_id = $(this).children(":nth-child(6)").text(); // 6th column
                     indicator = $(this).children(":nth-child(7)").text(); // 7th column
                     data_collection_guidelines = $(this).children(":nth-child(8)").text(); // 8th column;
-                   
+                    protocol_id = $(this).children(":nth-child(9)").text(); // 9th column
+                    protocol_provision_id = $(this).children(":nth-child(10)").text(); // 10th column
+
                     var row_data = {
                       "protocol_details":protocol_details,
                       "provision":provision,
@@ -85,23 +89,31 @@ echo CHtml::ajaxLink("Save Selected",Yii::app()->createUrl('import/saveCommonMar
        
             console.log(JSON.stringify(data));
             payload = JSON.stringify(data);
-            
-        }',
-        "data" => 'js:{ids : $.fn.yiiGridView.getChecked("import-grid","selectedIds").toString(),data : payload}',
-        "success" => 'js:function(data){ $.fn.yiiGridView.update("import-grid")  }' ),array(
-        'class' => 'btn btn-info'
-        )
-        );
-?>
 
+            var url = "<?php echo Yii::app()->createUrl('import/saveCommonMarket') ?>" +"&timestamp="+ new Date().getTime();
+            //console.log(url);
+            var data = {ids : $.fn.yiiGridView.getChecked("import-grid","selectedIds").toString(),data : payload };
+            $.post(url,data,function(response,status){
+                console.log(status);
+                if(status=="success"){
+                 $(".message").html('<div class="success alert alert-info fade in"> <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>Data saved successfully...</div>');
+                }else{
+                 $(".message").html('<div class="success alert alert-danger fade in"> <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>Could not save submitted data...</div>');
+                
+                }
+            });
+         });
+   });
+
+</script>
+
+<div class="message"></div>
+<div class="payload" style="display:none"></div>
+<?php echo CHtml::button('Save Selected',['id'=>'btn-save-data-top','class'=>'btn btn-info btn-save-data'])?>
  &nbsp;&nbsp; 
  <?php
- echo CHtml::ajaxLink("Archive File", $this->createUrl('report/getvalue'), array(
-        "type" => "post",
-        "data" => 'js:{ids : $.fn.yiiGridView.getChecked("import-grid","selectedIds").toString()}',
-        "success" => 'js:function(data){ $.fn.yiiGridView.update("import-grid") }' ),array(
-        'class' => 'btn btn-info'
-        )
+ echo CHtml::link("Archive File", $this->createUrl('archive',['id'=>$model->id]), array(
+        'class' => 'btn btn-info')
         );
  ?>
  <br /><br />
@@ -170,6 +182,18 @@ $this->widget('bootstrap.widgets.TbGridView', array(
             'type' => 'raw',
             'value' => 'CHtml::encode($data["data_collection_guidelines"])'
         ),
+        array(
+            'header' => 'Protocol ID',
+            'name' => 'protocol_id',
+            'type' => 'raw',
+            'value' => 'CHtml::encode($data["protocol_id"])'
+        ),
+        array(
+            'header' => 'Protocol Provision ID',
+            'name' => 'protocol_provision_id',
+            'type' => 'raw',
+            'value' => 'CHtml::encode($data["protocol_provision_id"])'
+        ),
         // array(
         //     'header' => 'Numeric Data',
         //     'name' => 'numeric_data',
@@ -183,12 +207,12 @@ $this->widget('bootstrap.widgets.TbGridView', array(
         //     'type' => 'raw',
         //     'value' => 'CHtml::encode($data["alphanumeric_data"])'
         // ),
-        array(
-            'header' => 'Date Created',
-            'name' => 'date_created',
-            'type' => 'raw',
-            'value' => 'CHtml::encode($data["date_created"])'
-        ),
+        // array(
+        //     'header' => 'Date Created',
+        //     'name' => 'date_created',
+        //     'type' => 'raw',
+        //     'value' => 'CHtml::encode($data["date_created"])'
+        // ),
         //'create_user_id',
         //'date_updated',
         //'update_user_id',
@@ -196,24 +220,12 @@ $this->widget('bootstrap.widgets.TbGridView', array(
 ));
 ?>
 
-<?php
-echo CHtml::ajaxLink("Save Selected", $this->createUrl('report/getvalue'), array(
-        "type" => "post",
-        "data" => 'js:{theIds : $.fn.yiiGridView.getChecked("import-grid","selectedIds").toString(),"status":$("#newStatus").val()}',
-        "success" => 'js:function(data){ $.fn.yiiGridView.update("import-grid")  }' ),array(
-        'class' => 'btn btn-info'
-        )
-        );
-?>
+<?php echo CHtml::button('Save Selected',['id'=>'btn-save-data-bottom','class'=>'btn btn-info btn-save-data'])?>
 
  &nbsp;&nbsp; 
  <?php
- echo CHtml::ajaxLink("Archive File", $this->createUrl('report/getvalue'), array(
-        "type" => "post",
-        "data" => 'js:{theIds : $.fn.yiiGridView.getChecked("import-grid","selectedIds").toString(),"status":$("#newStatus").val()}',
-        "success" => 'js:function(data){ $.fn.yiiGridView.update("import-grid")  }' ),array(
-        'class' => 'btn btn-info'
-        )
+ echo CHtml::link("Archive File", $this->createUrl('archive',['id'=>$model->id]), array(
+        'class' => 'btn btn-info')
         );
  ?>
 
