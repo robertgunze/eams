@@ -188,6 +188,7 @@ class ExportController extends Controller{
           
         $fields = [
            'file'=>'@'.$targetDir.$model->name,//@ symbolizes a file field
+           'filename'=>$model->name,
         ];
 
         switch ($model->export_key){
@@ -219,9 +220,9 @@ class ExportController extends Controller{
         }
 
         try{
-            echo $url;
-            print_r($fields);
-            //$this->httpPost($url,$fields);
+            //post data to eams central
+            echo $this->httpPost($url,$fields);
+
         }catch(Exception $ex){
             //update send status
             echo "Operation unsuccessful";

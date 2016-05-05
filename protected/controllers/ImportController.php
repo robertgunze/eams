@@ -321,7 +321,7 @@ class ImportController extends Controller{
             if($error == 0){
                 $targetFile = $targetDir.basename($name);
                 $fileFormat = pathinfo($targetFile,PATHINFO_EXTENSION);
-                if(!file_exists($targetFile)){
+                if(!file_exists($targetFile) && preg_match('/(xls|xlsx)/i', $fileFormat)){
                    move_uploaded_file($tempName, $targetFile);
                    $fileImportModel = new EamsFilesImport();
                    $fileImportModel->name = $name;
