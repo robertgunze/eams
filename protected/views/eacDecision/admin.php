@@ -30,7 +30,7 @@ $('.search-form form').submit(function(){
 <div>
 <?php echo TbHtml::pageHeader('', 'Manage EAC Decisions'); ?>
 <div class="form-actions"> 
-    <?php echo CHtml::link('Toggle Advanced Search', '#', array('class' => 'search-button btn', 'style' => 'float:right')); ?>
+    <?php echo CHtml::link('Toggle Search', '#', array('class' => 'search-button btn', 'style' => 'float:right')); ?>
 </div>
 <div class="search-form" style="display:block">
     <?php
@@ -50,7 +50,7 @@ $('.search-form form').submit(function(){
 ), array('split' => true,'color'=>TbHtml::BUTTON_COLOR_SUCCESS,'size'=>TbHtml::BUTTON_SIZE_SMALL)); 
 
 $displayable = (!Yii::app()->user->isGuest&&!Yii::app()->user->is_mda)==true ?'':'display:none';
-$allowableActions = (!Yii::app()->user->isGuest&&!Yii::app()->user->is_mda)==true ?'{view}{update}{delete}':'{view}';
+$allowableActions = (!Yii::app()->user->isGuest&&!Yii::app()->user->is_mda)==true ?'{view}':'{view}';
 
 $this->widget('bootstrap.widgets.TbGridView', array(
     'id' => 'eac-decision-grid',
