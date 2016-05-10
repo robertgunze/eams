@@ -185,9 +185,13 @@ class ExportController extends Controller{
 
     public function sendFileToEamsCentral($model){
         $targetDir = Yii::getPathOfAlias('webroot').'/uploads/exports/';
-          
+        
+        $cfile = new CURLFile($targetDir.$model->name);
+        $cfile->setMimeType($model->mime_type);
+        $cfile->setPostFilename($model->name);
         $fields = [
-           'file'=>'@'.$targetDir.$model->name,//@ symbolizes a file field
+           //'file'=>'@'.$targetDir.$model->name,//@ symbolizes a file field
+           'file'=>$cfile,
            'filename'=>$model->name,
         ];
 
