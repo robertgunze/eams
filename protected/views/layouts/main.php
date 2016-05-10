@@ -88,7 +88,12 @@
                                
                                  array('label'=>'Dashboard','icon'=>TbHtml::ICON_SIGNAL, 'url'=>array('/dashboard/index'),'visible'=>!Yii::app()->user->isGuest&&!Yii::app()->user->is_mda),
                                 
-                                
+                                  array('label' => 'Data Exchange', 'icon' => TbHtml::ICON_BRIEFCASE, 'url' => array('#'), 'visible' => !Yii::app()->user->isGuest && !Yii::app()->user->is_mda,
+                                    'items' => array(
+                                        array('label' => 'Import Data', 'url' => array('/eamsFilesImport/admin'), 'visible' => !Yii::app()->user->isGuest),
+                                        array('label' => 'Export Data', 'url' => array('/export/admin'), 'visible' => !Yii::app()->user->isGuest),
+                                    )
+                                ),
                                 array('label'=>'Settings','icon'=>TbHtml::ICON_WRENCH, 'url'=>array('#'),'visible'=>!Yii::app()->user->isGuest&&!Yii::app()->user->is_mda, 
                                     'items'=>array(
                                         array('label'=>'Users and Security', 'url'=>array('/user/admin'),'visible'=>!Yii::app()->user->isGuest,

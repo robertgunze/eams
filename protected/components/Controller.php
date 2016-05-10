@@ -61,8 +61,9 @@ class Controller extends CController
         }
 
         public function httpPost($url,$fields = NULL){
-        	$ch = curl_init($url);
+		$ch = curl_init($url);
 			  curl_setopt($ch, CURLOPT_POST, true);
+			  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 			if(is_array($fields)){
 			  curl_setopt($ch, CURLOPT_POSTFIELDS,$fields);
 			}
@@ -71,5 +72,8 @@ class Controller extends CController
 			if ($result === FALSE) {
 			   die(curl_error($ch));
 			}
+
+         		curl_close($ch);
+			return $result;
         }
 }

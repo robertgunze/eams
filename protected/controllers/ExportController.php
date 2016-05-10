@@ -26,7 +26,6 @@ class ExportController extends Controller{
               }
            }
         }
-
         $this->render('export_data',['model'=>$model]);
     }
     
@@ -186,8 +185,13 @@ class ExportController extends Controller{
     public function sendFileToEamsCentral($model){
         $targetDir = Yii::getPathOfAlias('webroot').'/uploads/exports/';
           
+	$cfile = new CURLFile($targetDir.$model->name);
+        $cfile->setMimeType($model->mime_type);
+        $cfile->setPostFilename($model->name);
         $fields = [
-           'file'=>'@'.$targetDir.$model->name,//@ symbolizes a file field
+           //'file'=>'@'.$targetDir.$model->name,//@ symbolizes a file field
+           'file'=>$cfile,
+           'filename'=>$model->name,
         ];
 
         switch ($model->export_key){
@@ -221,7 +225,8 @@ class ExportController extends Controller{
         try{
             echo $url;
             print_r($fields);
-            //$this->httpPost($url,$fields);
+	    $fields['url'] = $url;
+            echo $this->httpPost($url,$fields);
         }catch(Exception $ex){
             //update send status
             echo "Operation unsuccessful";
