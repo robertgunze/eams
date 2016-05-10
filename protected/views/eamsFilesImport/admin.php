@@ -41,11 +41,21 @@ $('.search-form form').submit(function(){
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
-		'id',
+		//'id',
+		array(
+            'header' => '#',
+            'value' => '$this->grid->dataProvider->pagination->currentPage * $this->grid->dataProvider->pagination->pageSize + ($row+1)',
+        ),
 		'name',
-		'mime_type',
-		'file_extension',
-		'file_size',
+		//'mime_type',
+		//'file_extension',
+		//'file_size',
+		array(
+          'header'=>'Status',
+          'name'=>'archived',
+          'value'=>'$data->archived ? "ARCHIVED":"PENDING"',
+          'filter' => TbHtml::listData([['id'=>0,'description'=>'PENDING'],['id'=>1,'description'=>'ARCHIVED']], "id", "description")
+		),
 		'date_created',
 		/*
 		'date_updated',

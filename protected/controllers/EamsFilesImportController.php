@@ -351,7 +351,7 @@ class EamsFilesImportController extends Controller
 	{
 		$model=new EamsFilesImport('search');
 		$model->unsetAttributes();  // clear any default values
-		$model->archived = 0; //not archived
+		//$model->archived = 0; //not archived
 		if (isset($_GET['EamsFilesImport'])) {
 			$model->attributes=$_GET['EamsFilesImport'];
 		}

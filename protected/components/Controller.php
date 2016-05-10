@@ -74,6 +74,7 @@ class Controller extends CController
 			}
 
          		curl_close($ch);
+
 			return $result;
         }
 }
