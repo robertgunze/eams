@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>MEAC Strategic Plan</title>
+	<title>Strategic Plan</title>
 	<link rel="stylesheet" type="text/css" href="../js/easyui/themes/default/easyui.css">
 	<link rel="stylesheet" type="text/css" href="../js/easyui/themes/icon.css">
 	<link rel="stylesheet" type="text/css" href="../js/easyui/demo/demo.css">
@@ -15,7 +15,7 @@
 		<a href="javascript:void(0)" class="easyui-linkbutton" onclick="save()">Save</a>
 		<a href="javascript:void(0)" class="easyui-linkbutton" onclick="cancel()">Cancel</a>
 	</div>
-	<table id="tg" class="easyui-treegrid" title="MEAC Strategic Plan" style="width:100%;height:400px"
+	<table id="tg" class="easyui-treegrid" title="Strategic Plan" style="width:100%;height:400px"
 			data-options="
 				iconCls: 'icon-ok',
 				rownumbers: true,

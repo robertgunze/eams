@@ -78,6 +78,7 @@ class EacStatusLogController extends Controller
                 if($decision){
                     $decision->implementation_status_id = $model->status_id;
                     $decision->save();
+                    Yii::app()->user->setFlash(TbHtml::ALERT_COLOR_SUCCESS,'Status updated successfully.');
                 }
                 $criteria = new CDbCriteria;
                 $criteria->addColumnCondition(array('is_mda'=>0),'OR');
