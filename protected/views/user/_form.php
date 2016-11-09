@@ -49,8 +49,8 @@ $('#User_is_mda').change(function(){
                         <?php echo $form->checkBoxControlGroup($model, 'is_mda'); ?>
                         <span class="hint"><i>Tick to select an MDA for the user account</i></span>
                     </td>
-                    <td id="meac_office_field"><?php echo $form->dropDownListControlGroup($model, 'meac_office_id', TbHtml::listData(MeacOffice::model()->findAll(),'id','description'),array('prompt'=>'--select--')); ?></td>
-                    <td id="mda_field" style="display:none"><?php echo $form->dropDownListControlGroup($model, 'mda_id', TbHtml::listData(Mda::model()->findAll(),'id','description'),array('prompt'=>'--select--')); ?></td>
+                    <td id="meac_office_field" style="<?php echo !$model->is_mda ? 'display:block':'display:none'?>"><?php echo $form->dropDownListControlGroup($model, 'meac_office_id', TbHtml::listData(MeacOffice::model()->findAll(),'id','description'),array('prompt'=>'--select--')); ?></td>
+                    <td id="mda_field" style="<?php echo $model->is_mda ? 'display:block':'display:none'?>"><?php echo $form->dropDownListControlGroup($model, 'mda_id', TbHtml::listData(Mda::model()->findAll(),'id','description'),array('prompt'=>'--select--')); ?></td>
                 </tr>
             </table>
             

@@ -2687,3 +2687,6 @@ Stack trace:
 REQUEST_URI=/eams/index.php?r=site/eacDecisionsadmin
 HTTP_REFERER=http://localhost/eams/index.php?r=site/index
 ---
+2016/11/09 15:25:47 [warning] [application] Failed to set unsafe attribute "phone" of "User".
+in /var/www/html/eams/protected/controllers/UserController.php (96)
+in /var/www/html/eams/index.php (13)
