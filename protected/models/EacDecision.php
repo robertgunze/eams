@@ -226,6 +226,11 @@ class EacDecision extends CActiveRecord
         return $decisions;
 	}
 
+	public function getPendingMdaDecisions ($mdaId = 0) {
+		$decisionIds = $this->getDecisionIdsFromResponsibleMdaMappings($mdaId);
+		return self::model()->findAll('id IN (:ids) AND implementation_status_id IS NULL',array(':ids'=>implode(',',$decisionIds)));
+	}
+
 	public function getAssignedMdasIds(){
 		$mdas = $this->responsibleMdas;
 		$ids = [];

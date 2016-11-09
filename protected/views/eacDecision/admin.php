@@ -88,7 +88,8 @@ $this->widget('bootstrap.widgets.TbGridView', array(
             'type' => 'html',
             'header'=>'Responsible MDA(s)',
             'value'=>'$data->getResponsibleMdas()',
-            'htmlOptions'=>array('width'=>'40px'),
+            'htmlOptions'=>array('width'=>'40px','style'=>$displayable),
+            'headerHtmlOptions' => array('style' => 'width: 40px;'.$displayable),
         ),
 
         array(

@@ -2658,3 +2658,32 @@ in /var/www/html/eams/index.php (13)
 2016/11/09 11:29:12 [warning] [application] Failed to set unsafe attribute "dateTo" of "EacDecision".
 in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
 in /var/www/html/eams/index.php (13)
+2016/11/09 13:15:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "eacDecisions/admin".' in /var/www/html/eams/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/eams/framework/web/CWebApplication.php(141): CWebApplication->runController('eacDecisions/ad...')
+#1 /var/www/html/eams/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/html/eams/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/eams/index.php?r=eacDecisions/admin
+HTTP_REFERER=http://localhost/eams/index.php?r=site/index
+---
+2016/11/09 13:16:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "eacDecisions/admin".' in /var/www/html/eams/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/eams/framework/web/CWebApplication.php(141): CWebApplication->runController('eacDecisions/ad...')
+#1 /var/www/html/eams/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/html/eams/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/eams/index.php?r=eacDecisions/admin
+HTTP_REFERER=http://localhost/eams/index.php?r=site/index
+---
+2016/11/09 13:35:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "eacDecisionsadmin".' in /var/www/html/eams/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/eams/framework/web/CController.php(270): CController->missingAction('eacDecisionsadm...')
+#1 /var/www/html/eams/framework/web/CWebApplication.php(282): CController->run('eacDecisionsadm...')
+#2 /var/www/html/eams/framework/web/CWebApplication.php(141): CWebApplication->runController('site/eacDecisio...')
+#3 /var/www/html/eams/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/html/eams/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/eams/index.php?r=site/eacDecisionsadmin
+HTTP_REFERER=http://localhost/eams/index.php?r=site/index
+---

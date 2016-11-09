@@ -34,6 +34,13 @@ class UserIdentity extends CUserIdentity
                             if($user->is_mda){
                                Yii::app()->user->setState('is_mda',true);
                                Yii::app()->user->setState('mda_id',$user->mda_id);
+                               $decisionModel = new EacDecision();
+                               $pendingDecisions = $decisionModel->getPendingMdaDecisions($user->mda_id);
+                               $pendingDecisionsCount = count($pendingDecisions);
+                               if ($pendingDecisionsCount > 0) {
+                                 Yii::app()->user->setState('pendingDecisions',$pendingDecisionsCount);
+                               }
+                               
                             }else{
                                 Yii::app()->user->setState('is_mda',false);
                             }

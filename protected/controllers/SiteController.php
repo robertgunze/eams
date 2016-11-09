@@ -54,7 +54,7 @@ class SiteController extends Controller
 	{
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php' 
-                $model = Page::model()->find('name=:name',array(':name'=>'home_page'));   
+		$model = Page::model()->find('name=:name',array(':name'=>'home_page'));   
 		$this->render('index',array('model'=>$model));
 	}
 
@@ -104,9 +104,10 @@ class SiteController extends Controller
 	 */
 	public function actionLogin()
 	{
-                if(!Yii::app()->user->isGuest){
-                    $this->redirect(array('site/index'));
-                }
+		if(!Yii::app()->user->isGuest){
+			$this->redirect(array('site/index'));
+		}
+
 		$model=new LoginForm;
 
 		// if it is ajax validation request
@@ -122,13 +123,21 @@ class SiteController extends Controller
 			$model->attributes=$_POST['LoginForm'];
 			// validate user input and redirect to the previous page if valid
 			if($model->validate() && $model->login()){
-                                $details = "Logged in successfully";
-                                Login::log(Login::SUCCESSFUL_LOGIN, $details);
+				$details = "Logged in successfully";
+				Login::log(Login::SUCCESSFUL_LOGIN, $details);
+
+				if ( Yii::app()->user->getState('pendingDecisions') > 0 ) {
+					//print_r(Yii::app()->user->getState('pending-decisions'));exit;
+					$pendingDecisionsCount = Yii::app()->user->getState('pendingDecisions');
+					$message = "You have {$pendingDecisionsCount} pending decision(s) to report on. ";
+					$message .= TbHtml::link('Go to Decisions',$this->createUrl('eacDecision/admin'),array('class'=>'btn btn-success'));
+					Yii::app()->user->setState('pending-decisions-message',$message);
+				}
 				$this->redirect(Yii::app()->user->returnUrl);
-                        }else{
-                            $details = "Login failed";
-                            Login::log(Login::FAILED_LOGIN, $details);
-                        }
+			}else{
+			    $details = "Login failed";
+			    Login::log(Login::FAILED_LOGIN, $details);
+			}
 		}
 		// display the login form
 		$this->render('login',array('model'=>$model));
