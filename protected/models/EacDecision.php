@@ -25,6 +25,8 @@
  */
 class EacDecision extends CActiveRecord
 {
+	public $dateFrom = '';
+	public $dateTo = '';
 	/**
 	 * @return string the associated database table name
 	 */
@@ -75,7 +77,7 @@ class EacDecision extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'eams_central_id' => 'Eams Central',
-                        'decision_source_id' => 'Decision Source',
+			'decision_source_id' => 'Decision Source',
 			'decision_reference' => 'Decision Reference',
 			'decision_date' => 'Decision Date',
 			'deadline' => 'Deadline',
@@ -87,7 +89,7 @@ class EacDecision extends CActiveRecord
 			'meeting_no' => 'Meeting No',
 			'sectoral_council_id' => 'Sectoral Council',
 			'implementation_status_id' => 'Implementation Status',
-                        'responsible_mda_id'=>'Responsible MDA',
+			'responsible_mda_id'=>'Responsible MDA',
 			'date_created' => 'Date Created',
 			'create_user_id' => 'Create User',
 			'date_updated' => 'Date Updated',
@@ -163,8 +165,8 @@ class EacDecision extends CActiveRecord
 		$criteria->compare('id',$this->id);
 		$criteria->compare('eams_central_id',$this->eams_central_id);
 		$criteria->compare('decision_reference',$this->decision_reference,true);
-                $criteria->compare('decision_source_id',$this->decision_source_id);
-		$criteria->compare('decision_date',$this->decision_date);
+		$criteria->compare('decision_source_id',$this->decision_source_id);
+		//$criteria->compare('decision_date',$this->decision_date);
 		$criteria->compare('description',$this->description,true);
 		$criteria->compare('budgetary_implications',$this->budgetary_implications,true);
 		$criteria->compare('time_frame',$this->time_frame,true);
@@ -172,6 +174,7 @@ class EacDecision extends CActiveRecord
 		$criteria->compare('responsibility_center',$this->responsibility_center,true);
 		$criteria->compare('meeting_no',$this->meeting_no);
 		$criteria->compare('sectoral_council_id',$this->sectoral_council_id);
+
 		if(Yii::app()->user->is_mda){
            #$criteria->compare('responsible_mda_id',Yii::app()->user->mda_id);
            $criteria->addInCondition('id',$this->getDecisionIdsFromResponsibleMdaMappings(Yii::app()->user->mda_id));
@@ -189,6 +192,23 @@ class EacDecision extends CActiveRecord
 		//deadline
 		if($this->deadline != NULL){
                   $criteria->addCondition('datediff(deadline,now()) < 14');
+		}
+
+		//date filters
+		if (!empty($this->dateFrom) && !empty($this->dateTo)) {
+			$criteria->addCondition('DATE(decision_date) >= :dateFrom AND DATE(decision_date) <= :dateTo');
+			$criteria->params['dateFrom'] = $this->dateFrom;
+			$criteria->params['dateTo'] = $this->dateTo;
+		}
+
+		if (!empty($this->dateFrom) && empty($this->dateTo)) {
+			$criteria->addCondition('DATE(decision_date) >= :dateFrom');
+			$criteria->params['dateFrom'] = $this->dateFrom;
+		}
+
+		if (empty($this->dateFrom) && !empty($this->dateTo)) {
+			$criteria->addCondition('DATE(decision_date) <= :dateTo');
+			$criteria->params['dateTo'] = $this->dateTo;
 		}
 
 		return new CActiveDataProvider($this, array(
