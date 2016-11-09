@@ -104,6 +104,7 @@ class EacDecisionController extends Controller
 
 	public function unsetMdas($decision_id,$currentMdas = array()){
          //select all mdas not in currentMdas
+		$excludedMdaIds = array();
 		$excludedMdas = Mda::model()->findAll(array(
 			'condition'=>'id NOT IN (:mdas)',
 			'params'=>array(':mdas'=>implode(',',$currentMdas))));
@@ -114,17 +115,38 @@ class EacDecisionController extends Controller
                         ':mda'=>$mda->id
                     ));
 			if($mapping){
-			  $mapping->delete();
+				$id = $mapping->mda_id;
+				$mapping->delete();
+				$excludedMdaIds[] = $id;
 			}
 			
 		}
 
+		return $excludedMdaIds;
+
+	}
+
+	public function notifyUnsubscribedMdas ($decisionId,$mdaIds = array()) {
+		//Notify subscribers
+        $criteria = new CDbCriteria;
+        $criteria->addColumnCondition(array('is_mda'=>1));
+        $criteria->addInCondition('mda_id', $mdaIds);
+        $recipients = User::getNotificationSubscribers($criteria);
+        $decision = $this->loadModel($decisionId);
+        $subject = "Unassigned to report on decision # ".$decision->decision_reference;
+        $message = "You have been unassigned to report on decision ".$decision->decision_reference." by the  ".Yii::app()->params['owner']."<br />";
+        $message.= "<b>Decision</b> <br />".$decision->description;
+        $this->notify($recipients,$subject,$message);
 	}
         
     public function actionAjaxUpdate(){
         $mdas = $_POST['value'];
         //print_r($mdas);exit;
-        $this->unsetMdas($_POST['pk'],$mdas);
+        $excludedMdaIds = $this->unsetMdas($_POST['pk'],$mdas);
+        if (!empty($excludedMdaIds)) {
+        	$this->notifyUnsubscribedMdas($_POST['pk'],$excludedMdaIds);
+        }
+
         foreach($mdas as $mda){
             $mapping = new MdaDecisionMapping();
             $mapping->decision_id = $_POST['pk'];
