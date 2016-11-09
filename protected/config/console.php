@@ -21,11 +21,7 @@ return array(
 			'connectionString' => 'mysql:host=localhost;dbname=eams_country_db',
 			'emulatePrepare' => true,
 			'username' => 'root',
-<<<<<<< HEAD
 			'password' => 'meac_db@2015',
-=======
-			'password' => 'pass',
->>>>>>> 806963d894912dc7752682d5cde4e8a909f3d8de
 			'charset' => 'utf8',
 		),
 		

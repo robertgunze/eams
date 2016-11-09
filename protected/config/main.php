@@ -92,7 +92,7 @@ return array(
 			'connectionString' => 'mysql:host=localhost;dbname=eams_country_db',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => 'pass',
+			'password' => 'meac_db@2015',
 			'charset'=> 'utf8',
 		),
                 
@@ -129,7 +129,7 @@ return array(
 		'adminEmail'=>'eams.notify@gmail.com',
         'eamsEmail'=>'eams.notify@gmail.com',
         'mailHost' => 'smtp.gmail.com', //mail host
-        'hostPassword' => 'projectPassword',
+        'hostPassword' => 'R&.HY8Yn})*sY/jv',
         'owner' => 'Ministry of Foreign Affairs and East African Cooperation.'
 	),
 );
