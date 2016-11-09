@@ -211,10 +211,12 @@ class EacDecisionController extends Controller
 	{
 		$model=new EacDecision('search');
 		$model->unsetAttributes();  // clear any default values
-                $model->implementation_status_id = $status;
+		$model->implementation_status_id = $status;
 		$model->deadline = $deadline;
 		if (isset($_GET['EacDecision'])) {
 			$model->attributes=$_GET['EacDecision'];
+			$model->dateFrom = $_GET['EacDecision']['dateFrom'];
+			$model->dateTo = $_GET['EacDecision']['dateTo'];
 		}
 
 		if($format == 'pdf'){

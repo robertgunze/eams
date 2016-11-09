@@ -2358,3 +2358,303 @@ Stack trace:
 REQUEST_URI=/eams/index.php?r=eamsFilesImport/view&id=9
 HTTP_REFERER=http://localhost/eams/index.php?r=eamsFilesImport/admin
 ---
+2016/11/09 10:49:07 [warning] [application] Failed to set unsafe attribute "dateFrom" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 10:49:07 [warning] [application] Failed to set unsafe attribute "dateTo" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 10:49:20 [warning] [application] Failed to set unsafe attribute "dateFrom" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 10:49:20 [warning] [application] Failed to set unsafe attribute "dateTo" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 10:49:25 [warning] [application] Failed to set unsafe attribute "dateFrom" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 10:49:25 [warning] [application] Failed to set unsafe attribute "dateTo" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 10:49:34 [warning] [application] Failed to set unsafe attribute "dateFrom" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 10:49:34 [warning] [application] Failed to set unsafe attribute "dateTo" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 10:49:39 [warning] [application] Failed to set unsafe attribute "dateFrom" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 10:49:39 [warning] [application] Failed to set unsafe attribute "dateTo" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 10:49:56 [warning] [application] Failed to set unsafe attribute "dateFrom" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 10:49:56 [warning] [application] Failed to set unsafe attribute "dateTo" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 10:49:58 [warning] [application] Failed to set unsafe attribute "dateFrom" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 10:49:58 [warning] [application] Failed to set unsafe attribute "dateTo" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 10:49:59 [warning] [application] Failed to set unsafe attribute "dateFrom" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 10:49:59 [warning] [application] Failed to set unsafe attribute "dateTo" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 10:50:09 [warning] [application] Failed to set unsafe attribute "dateFrom" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 10:50:09 [warning] [application] Failed to set unsafe attribute "dateTo" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 10:50:14 [warning] [application] Failed to set unsafe attribute "dateFrom" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 10:50:14 [warning] [application] Failed to set unsafe attribute "dateTo" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 10:53:05 [warning] [application] Failed to set unsafe attribute "dateFrom" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 10:53:05 [warning] [application] Failed to set unsafe attribute "dateTo" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 10:53:06 [warning] [application] Failed to set unsafe attribute "dateFrom" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 10:53:06 [warning] [application] Failed to set unsafe attribute "dateTo" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 10:53:07 [warning] [application] Failed to set unsafe attribute "dateFrom" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 10:53:07 [warning] [application] Failed to set unsafe attribute "dateTo" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 10:53:09 [warning] [application] Failed to set unsafe attribute "dateFrom" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 10:53:09 [warning] [application] Failed to set unsafe attribute "dateTo" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 10:53:10 [warning] [application] Failed to set unsafe attribute "dateFrom" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 10:53:10 [warning] [application] Failed to set unsafe attribute "dateTo" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 10:53:11 [warning] [application] Failed to set unsafe attribute "dateFrom" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 10:53:11 [warning] [application] Failed to set unsafe attribute "dateTo" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 10:53:11 [warning] [application] Failed to set unsafe attribute "dateFrom" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 10:53:11 [warning] [application] Failed to set unsafe attribute "dateTo" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 10:53:12 [warning] [application] Failed to set unsafe attribute "dateFrom" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 10:53:12 [warning] [application] Failed to set unsafe attribute "dateTo" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 10:54:14 [warning] [application] Failed to set unsafe attribute "dateFrom" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 10:54:14 [warning] [application] Failed to set unsafe attribute "dateTo" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 10:59:53 [warning] [application] Failed to set unsafe attribute "dateFrom" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 10:59:53 [warning] [application] Failed to set unsafe attribute "dateTo" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 11:00:21 [warning] [application] Failed to set unsafe attribute "dateFrom" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 11:00:21 [warning] [application] Failed to set unsafe attribute "dateTo" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 11:00:34 [warning] [application] Failed to set unsafe attribute "dateFrom" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 11:00:34 [warning] [application] Failed to set unsafe attribute "dateTo" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 11:00:41 [warning] [application] Failed to set unsafe attribute "dateFrom" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 11:00:41 [warning] [application] Failed to set unsafe attribute "dateTo" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 11:01:48 [warning] [application] Failed to set unsafe attribute "dateFrom" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 11:01:48 [warning] [application] Failed to set unsafe attribute "dateTo" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 11:03:59 [error] [php] Undefined index: EacDecision (/var/www/html/eams/protected/controllers/EacDecisionController.php:220)
+Stack trace:
+#0 /var/www/html/eams/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 /var/www/html/eams/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /var/www/html/eams/framework/web/filters/CFilterChain.php(133): EacDecisionController->runAction()
+#3 /var/www/html/eams/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#4 /var/www/html/eams/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#5 /var/www/html/eams/framework/web/filters/CInlineFilter.php(58): EacDecisionController->filterAccessControl()
+#6 /var/www/html/eams/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#7 /var/www/html/eams/framework/web/CController.php(291): CFilterChain->run()
+#8 /var/www/html/eams/framework/web/CController.php(265): EacDecisionController->runActionWithFilters()
+#9 /var/www/html/eams/framework/web/CWebApplication.php(282): EacDecisionController->run()
+#10 /var/www/html/eams/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#11 /var/www/html/eams/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#12 /var/www/html/eams/index.php(13): CWebApplication->run()
+REQUEST_URI=/eams/index.php?r=eacDecision/admin
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (220)
+in /var/www/html/eams/index.php (13)
+2016/11/09 11:04:55 [warning] [application] Failed to set unsafe attribute "dateFrom" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 11:04:55 [warning] [application] Failed to set unsafe attribute "dateTo" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 11:07:45 [warning] [application] Failed to set unsafe attribute "dateFrom" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 11:07:45 [warning] [application] Failed to set unsafe attribute "dateTo" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 11:08:04 [warning] [application] Failed to set unsafe attribute "dateFrom" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 11:08:04 [warning] [application] Failed to set unsafe attribute "dateTo" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 11:13:32 [warning] [application] Failed to set unsafe attribute "dateFrom" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 11:13:32 [warning] [application] Failed to set unsafe attribute "dateTo" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 11:14:59 [warning] [application] Failed to set unsafe attribute "dateFrom" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 11:14:59 [warning] [application] Failed to set unsafe attribute "dateTo" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 11:16:03 [warning] [application] Failed to set unsafe attribute "dateFrom" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 11:16:03 [warning] [application] Failed to set unsafe attribute "dateTo" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 11:17:40 [warning] [application] Failed to set unsafe attribute "dateFrom" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 11:17:40 [warning] [application] Failed to set unsafe attribute "dateTo" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 11:19:04 [warning] [application] Failed to set unsafe attribute "dateFrom" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 11:19:04 [warning] [application] Failed to set unsafe attribute "dateTo" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 11:19:23 [warning] [application] Failed to set unsafe attribute "dateFrom" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 11:19:23 [warning] [application] Failed to set unsafe attribute "dateTo" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 11:20:37 [warning] [application] Failed to set unsafe attribute "dateFrom" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 11:20:37 [warning] [application] Failed to set unsafe attribute "dateTo" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 11:20:50 [warning] [application] Failed to set unsafe attribute "dateFrom" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 11:20:50 [warning] [application] Failed to set unsafe attribute "dateTo" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 11:21:47 [warning] [application] Failed to set unsafe attribute "dateFrom" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 11:21:47 [warning] [application] Failed to set unsafe attribute "dateTo" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 11:22:01 [warning] [application] Failed to set unsafe attribute "dateFrom" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 11:22:01 [warning] [application] Failed to set unsafe attribute "dateTo" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 11:23:02 [warning] [application] Failed to set unsafe attribute "dateFrom" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 11:23:02 [warning] [application] Failed to set unsafe attribute "dateTo" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 11:23:16 [warning] [application] Failed to set unsafe attribute "dateFrom" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 11:23:16 [warning] [application] Failed to set unsafe attribute "dateTo" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 11:25:39 [warning] [application] Failed to set unsafe attribute "dateFrom" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 11:25:39 [warning] [application] Failed to set unsafe attribute "dateTo" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 11:25:49 [warning] [application] Failed to set unsafe attribute "dateFrom" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 11:25:49 [warning] [application] Failed to set unsafe attribute "dateTo" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 11:26:58 [warning] [application] Failed to set unsafe attribute "dateFrom" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 11:26:58 [warning] [application] Failed to set unsafe attribute "dateTo" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 11:28:26 [warning] [application] Failed to set unsafe attribute "dateFrom" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 11:28:26 [warning] [application] Failed to set unsafe attribute "dateTo" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 11:28:29 [warning] [application] Failed to set unsafe attribute "dateFrom" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 11:28:29 [warning] [application] Failed to set unsafe attribute "dateTo" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 11:28:35 [warning] [application] Failed to set unsafe attribute "dateFrom" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 11:28:35 [warning] [application] Failed to set unsafe attribute "dateTo" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 11:29:03 [warning] [application] Failed to set unsafe attribute "dateFrom" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 11:29:03 [warning] [application] Failed to set unsafe attribute "dateTo" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 11:29:12 [warning] [application] Failed to set unsafe attribute "dateFrom" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)
+2016/11/09 11:29:12 [warning] [application] Failed to set unsafe attribute "dateTo" of "EacDecision".
+in /var/www/html/eams/protected/controllers/EacDecisionController.php (217)
+in /var/www/html/eams/index.php (13)

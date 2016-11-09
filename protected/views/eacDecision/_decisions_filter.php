@@ -5,7 +5,6 @@
 ?>
 
 <div class="form">
-
     <?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm', array(
 	'action'=>Yii::app()->createUrl($this->route),
 	'method'=>'get',
@@ -21,10 +20,10 @@
                       ); ?>
             </td>
             <td><?php echo $form->textFieldControlGroup($model,'decision_reference',array('maxlength'=>100)); ?></td>
-            <td><?php echo TbHtml::label('Decision Date', 'decision_date'); ?>
+            <td><?php echo TbHtml::label('Date From', 'dateFrom'); ?>
                 <?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
                                                  'model'=>$model,
-                                                 'attribute'=>'decision_date',
+                                                 'attribute'=>'dateFrom',
                                                  'options'=>array(
                                                      'showAnim'=>'fold',
                                                      'showOn'=>'both',//focus,button,both
@@ -41,7 +40,7 @@
                                                  ),
                                              ));  
                           ?>
-              <?php echo TbHtml::error($model,'decision_date'); ?>
+              <?php echo TbHtml::error($model,'dateFrom'); ?>
             </td>
             <td><?php echo $form->textFieldControlGroup($model,'responsibility_center',array('maxlength'=>5000)); ?></td>
         </tr>
@@ -57,10 +56,10 @@
                     array(
                         'empty'=>'--select--'
                     )); ?></td>
-              <td><?php echo TbHtml::label('Date Created', 'date_created'); ?>
+              <td><?php echo TbHtml::label('Date To', 'dateTo'); ?>
                 <?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
                                                  'model'=>$model,
-                                                 'attribute'=>'date_created',
+                                                 'attribute'=>'dateTo',
                                                  'options'=>array(
                                                      'showAnim'=>'fold',
                                                      'showOn'=>'both',//focus,button,both
@@ -77,7 +76,7 @@
                                                  ),
                                              ));  
                           ?>
-              <?php echo TbHtml::error($model,'date_created'); ?>
+              <?php echo TbHtml::error($model,'dateTo'); ?>
             </td>
             <td><?php echo $form->textFieldControlGroup($model,'meeting_no'); ?></td>
         </tr>
