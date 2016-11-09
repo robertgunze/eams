@@ -45,6 +45,7 @@ $('#close-button').click(function(){
         )
       );?>
     <?php endif;?>
+    <?php echo TbHtml::link('Go to Decisions',$this->createUrl('eacDecision/admin'),array('class'=>'btn btn-success'));?>
       <br /><br />
     <div class="deadline-form form wide" style="display:none">
        <?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm', array(
